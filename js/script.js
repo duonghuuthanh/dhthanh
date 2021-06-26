@@ -1,5 +1,7 @@
+const DOMAIN = 'https://duonghuuthanh.github.io/dhthanh'
+
 const loadCategories = (id="#categoryId") => {
-    fetch("../data/category.json").then(res => res.json()).then(data => {
+    fetch(`${DOMAIN}/data/category.json`).then(res => res.json()).then(data => {
         let msg = ""
         for (let i = 0; i < data.length; i++)
             msg += `
@@ -12,7 +14,7 @@ const loadCategories = (id="#categoryId") => {
 }
 
 const loadPublication = (id="#contentId") => {
-    fetch("../data/publications.json").then(res => res.json()).then(data => {
+    fetch(`${DOMAIN}/data/publications.json`).then(res => res.json()).then(data => {
         let msg = ""
         for (let i = 0; i < data.length; i++) 
             msg += `<li class="list-group-item" title="${data[i].abstract}">
