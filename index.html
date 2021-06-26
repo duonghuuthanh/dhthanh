@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link href="images/logo.png" rel="shortcut icon" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Dương Hữu Thành</title>
+        <link href="images/logo.png" rel="shortcut icon" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" href="css/style.css" />
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -16,11 +17,17 @@
                 <a class="navbar-brand" href="#">
                   <img src="images/logo.png" alt="logo" style="width:200px">
                 </a>
-                <ul class="navbar-nav" id="categoryId">
-                  <li class="nav-item active">
-                    <a class="nav-link" href="index.html">Trang chủ</a>
-                  </li>
-                </ul>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navId">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navId">
+                    <ul class="navbar-nav" id="categoryId">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="index.html">Trang chủ</a>
+                        </li>
+                    </ul>
+                </div>
+                
             </nav>
             
             <section id="contentId">

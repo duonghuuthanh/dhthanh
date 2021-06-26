@@ -5,9 +5,25 @@
 }, {
     "id": 2,
     "name": "Video",
-    "re": "video"
+    "sub": [{
+        "name": "Thiết kế Web",
+        "rel": "web-design"
+    }, {
+        "name": "Lập trình hướng đối tượng",
+        "rel": "java-oop"
+    }, {
+        "name": "Lập trình Java",
+        "rel": "java-programming"
+    }, {
+        "name": "Phát triển Web với Python Flask",
+        "rel": "python-flask"
+    }]
 }, {
     "id": 3,
     "name": "Các công trình công bố",
-    "re": "publication"
+    "rel": "publication"
+}, {
+    "id": 4,
+    "name": "Tài nguyên học tập",
+    "rel": "resource"
 }]

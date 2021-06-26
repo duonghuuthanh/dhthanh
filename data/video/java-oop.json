@@ -1,0 +1,57 @@
+[{
+    "subject": "Tổng quan lập trình hướng đối tượng",
+    "embeded_link": "https://www.youtube.com/embed/BwQ0fXRlKmo",
+    "group": "java-oop"
+}, {
+    "subject": "Nhập môn Lập trình Java - Phần 1",
+    "embeded_link": "https://www.youtube.com/embed/qKxePVasXNk",
+    "group": "java-oop"
+}, {
+    "subject": "Nhập môn Lập trình Java - Phần 2",
+    "embeded_link": "https://www.youtube.com/embed/pdMY6nhL4Cc",
+    "group": "java-oop"
+}, {
+    "subject": "Nhập môn Lập trình Java - Phần 3",
+    "embeded_link": "https://www.youtube.com/embed/ptOjDnsLOCc",
+    "group": "java-oop"
+}, {
+    "subject": "Lớp và đối tượng - Phần 1",
+    "embeded_link": "https://www.youtube.com/embed/NKD59ER1uA8",
+    "group": "java-oop"
+}, {
+    "subject": "Lớp và đối tượng - Phần 2",
+    "embeded_link": "https://www.youtube.com/embed/0cFkEbWDJw4",
+    "group": "java-oop"
+}, {
+    "subject": "Lớp và đối tượng - Phần 3",
+    "embeded_link": "https://www.youtube.com/embed/swzz6MjzswE",
+    "group": "java-oop"
+}, {
+    "subject": "Kế thừa - Phần 1",
+    "embeded_link": "https://www.youtube.com/embed/IhsUu-NspEI",
+    "group": "java-oop"
+}, {
+    "subject": "Kế thừa - Phần 2",
+    "embeded_link": "https://www.youtube.com/embed/zby7VhM4yYA",
+    "group": "java-oop"
+}, {
+    "subject": "Kế thừa - Phần 3",
+    "embeded_link": "https://www.youtube.com/embed/LjDMQl-1N7w",
+    "group": "java-oop"
+}, {
+    "subject": "Lớp trừu tượng",
+    "embeded_link": "https://www.youtube.com/embed/EPHDDLL9xQw",
+    "group": "java-oop"
+}, {
+    "subject": "Giao diện (interface)",
+    "embeded_link": "https://www.youtube.com/embed/wUAIUnrpj8k",
+    "group": "java-oop"
+}, {
+    "subject": "Lập trình tổng quan",
+    "embeded_link": "https://www.youtube.com/embed/zVSmnf12jh0",
+    "group": "java-oop"
+}, {
+    "subject": "Ôn tập lập trình hướng đối tượng",
+    "embeded_link": "https://www.youtube.com/embed/52hfH5HH_xk",
+    "group": "java-oop"
+}]
