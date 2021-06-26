@@ -1,4 +1,4 @@
-const DOMAIN = '..' //'https://duonghuuthanh.github.io/dhthanh'
+const DOMAIN = 'https://duonghuuthanh.github.io/dhthanh'
 
 const loadCategories = (id="#categoryId") => {
     fetch(`${DOMAIN}/data/category.json`).then(res => res.json()).then(data => {
@@ -82,6 +82,7 @@ const loadVideo = (videoType, subject, id="#contentId") => {
 
 $(document).ready(() => {
     loadCategories()
+    loadPublication()
 
     $("#categoryId").on("click", "li a", function() {
         $("#categoryId > li").removeClass("active")
