@@ -1,0 +1,13 @@
+[{
+    "id": 1,
+    "name": "Bài học",
+    "rel": "course" 
+}, {
+    "id": 2,
+    "name": "Video",
+    "re": "video"
+}, {
+    "id": 3,
+    "name": "Các công trình công bố",
+    "re": "publication"
+}]
