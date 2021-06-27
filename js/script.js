@@ -108,6 +108,9 @@ const loadHomePage = (id="#contentId") => {
                 video:true,
                 lazyLoad:true,
                 center:true,
+                autoplay:true,
+                autoplayTimeout:3000,
+                autoplayHoverPause:true,
                 responsive:{
                     480:{
                         items:2
