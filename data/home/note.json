@@ -1,9 +1,12 @@
 {
-    "subject": "Ghi chú nổi bật",
+    "subject": "Các ghi chú nổi bật",
     "type": "note",
     "data": [{
         "title": "Con trỏ trong C++",
         "content": "Miền giá trị của biến con trỏ là địa chỉ vùng nhớ."
+    }, {
+        "title": "Các đặc điểm của OOP",
+        "content": "<ul><li>Trừu tượng hoá (abstraction)</li><li>Đóng gói (Encapsulation)</li><li>Kế thừa (Inheritance)</li><li>Đa hình (Polymorphism)</li></ul>"
     }, {
         "title": "DRY (Don’t Repeat Yourself)",
         "content": "Mã nguồn lặp dẫn đến dễ phát sinh lỗi, khó khăn trong việc bảo trì phần mềm, thay đổi chương trình."
@@ -19,5 +22,8 @@
     }, {
         "title": "3 nguyên tắc vàng thiết kế giao diện (Mandel [Man97])",
         "content": "<ul><li>Người dùng được phép linh hoạt tương tác giao diện (Place the user in control).</li><li>Hạn chế bắt người dùng nhớ quá nhiều thông tin khi tương tác giao diện (Reduce the user’s memory load).</li><li>Thiết kế giao diện nhất quán (Make the interface consistent).</li></ul>"
+    }, {
+        "title": "Tính chất ACID của giao tác",
+        "content": "<ul><li>A (Atomicity)</li><li>C (Consistency)</li><li>I (Isolation)</li><li>D (Durability)</li></ul>"
     }]
 }
