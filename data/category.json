@@ -6,7 +6,7 @@
 }, {
     "id": 2,
     "name": "Video",
-    "icon": "fas fa-file-video",
+    "icon": "fas fa-photo-video",
     "sub": [{
         "name": "Thiết kế Web",
         "rel": "web-design"

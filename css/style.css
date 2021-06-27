@@ -1,3 +1,31 @@
 div.card {
     margin: 1% !important;
 }
+
+ul {
+    padding: 5px !important;
+}
+
+h1.subject::after {
+    content: "";
+    border-width: 2px;
+    border-color: blue;
+    border-style: solid;
+    position: relative;
+    width: 10%;
+    display: inline-block;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+h1.subject::before {
+    content: "";
+    border-width: 2px;
+    border-color: blue;
+    border-style: solid;
+    position: relative;
+    width: 10%;
+    display: inline-block;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}

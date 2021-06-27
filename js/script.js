@@ -3,7 +3,7 @@ if (location.href.indexOf("github") >= 0)
     DOMAIN = "https://duonghuuthanh.github.io/dhthanh"
 
 const spinner = `<div class="spinner-border text-primary"></div>`
-const bgcolors = ["bg-muted", "bg-primary", "bg-secondary", "bg-info", "bg-success", "bg-danger", "bg-warning", "bg-default"]
+const bgcolors = ["bg-muted", "bg-primary text-warning", "bg-secondary", "bg-info", "bg-success text-default", "bg-danger text-default", "bg-warning", "bg-default"]
 
 const loadCategories = (id="#categoryId") => {
     fetch(`${DOMAIN}/data/category.json`).then(res => res.json()).then(data => {
@@ -84,79 +84,70 @@ const loadVideo = (videoType, subject, id="#contentId") => {
 }
 
 const loadHomePage = (id="#contentId") => {
-    fetch(`${DOMAIN}/data/home.json`).then(res => res.json()).then(data => {
-       
-        // Load note
-        data.filter(data => data.type==="note").forEach(d => {
-
+    fetch(`${DOMAIN}/data/home/note.json`).then(res => res.json()).then(d => {
+        let note = ""
+        let c = parseInt(Math.random() * bgcolors.length)
+        d.data.forEach(v => {
+            note += `
+            <div class="col-md-4 col-xs-6">
+                <div class="card">
+                  <div class="card-header ${bgcolors[c++]}">${v.title}</div>
+                  <div class="card-body">${v.content}</div>
+                </div>
+            </div>
+            `
+            if (c == bgcolors.length)
+                c = 0
         })
-        // Load video
-        data.forEach(d => {
-            let video = ""
-            let note = ""
-            switch (d.type) {
-                case "note":
-                    d.data.forEach(v => {
-                        note += `
-                        <div class="col-md-4 col-xs-6">
-                            <div class="card">
-                              <div class="card-header ${bgcolors[parseInt(Math.random()*bgcolors.length)]}">${v.title}</div>
-                              <div class="card-body">${v.content}</div>
-                            </div>
-                        </div>
-                        `
-                    })
 
-                    $(id).append(`
-                        <div class="item">
-                            <h1>${d.subject}</h1>
-                            <div class="row">
-                                ${note}
-                            </div>
-                        </div>
-                    `)
-                    
-                    break
-                case "video":
-                    d.data.forEach(v => {
-                        video += `
-                        <div class="item-video" data-merge="3">
-                            <iframe width="100%" height="315" src="${v}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </div>
-                        `
-                    })
+        $(id).append(`
+            <div class="item">
+                <h1 class="subject text-center text-uppercase">${d.subject}</h1>
+                <div class="row">
+                    ${note}
+                </div>
+            </div>
+        `)
+    })
 
-                    $(id).append(`
-                        <div class="item">
-                            <h1>${d.subject}</h1>
-                            <div class="owl-carousel owl-theme">
-                                ${video}
-                            </div>
-                        </div>
-                    `)
-                    break
-            }
-            
-            $('.owl-carousel').owlCarousel({
-                items:1,
-                merge:true,
-                loop:true,
-                margin:10,
-                video:true,
-                lazyLoad:true,
-                center:true,
-                autoplay:true,
-                autoplayTimeout:3000,
-                autoplayHoverPause:true,
-                responsive:{
-                    480:{
-                        items:2
-                    },
-                    600:{
-                        items:4
-                    }
+    fetch(`${DOMAIN}/data/home/video.json`).then(res => res.json()).then(d => {
+        let video = ""
+        d.data.forEach(v => {
+            video += `
+            <div class="item-video" data-merge="3">
+                <iframe width="100%" height="315" src="${v}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            `
+        })
+
+        $(id).append(`
+            <div class="item">
+                <h1 class="subject text-center text-uppercase">${d.subject}</h1>
+                <div class="owl-carousel owl-theme">
+                    ${video}
+                </div>
+            </div>
+        `)
+
+        $('.owl-carousel').owlCarousel({
+            items:1,
+            merge:true,
+            loop:true,
+            margin:10,
+            video:true,
+            lazyLoad:true,
+            center:true,
+            autoplay:true,
+            autoplayTimeout:3000,
+            autoplayHoverPause:true,
+            responsive:{
+                480:{
+                    items:2
+                },
+                600:{
+                    items:4
                 }
-            })
+            }
         })
     })
 }
