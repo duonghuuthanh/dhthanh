@@ -1,10 +1,12 @@
 [{
     "id": 1,
     "name": "Bài học",
-    "rel": "course" 
+    "rel": "course",
+    "icon": "fas fa-book-reader"
 }, {
     "id": 2,
     "name": "Video",
+    "icon": "fas fa-file-video",
     "sub": [{
         "name": "Thiết kế Web",
         "rel": "web-design"
@@ -20,10 +22,12 @@
     }]
 }, {
     "id": 3,
-    "name": "Các công trình công bố",
-    "rel": "publication"
+    "name": "Công bố khoa học",
+    "rel": "publication",
+    "icon": "fas fa-university"
 }, {
     "id": 4,
     "name": "Tài nguyên học tập",
-    "rel": "resource"
+    "rel": "resource",
+    "icon": "fas fa-graduation-cap"
 }]

@@ -1,10 +1,13 @@
-const DOMAIN = 'https://duonghuuthanh.github.io/dhthanh'
+let DOMAIN = ""
+if (location.href.indexOf("github") >= 0)
+    DOMAIN = "https://duonghuuthanh.github.io/dhthanh"
+
+const spinner = `<div class="spinner-border text-primary"></div>`
 
 const loadCategories = (id="#categoryId") => {
     fetch(`${DOMAIN}/data/category.json`).then(res => res.json()).then(data => {
         let msg = ""
-        for (let i = 0; i < data.length; i++) {
-            let d = data[i]
+        data.forEach(d => {
             if ('sub' in d) {
                 let temp = ""
                 for (let j = 0; j < d['sub'].length; j++)
@@ -12,39 +15,39 @@ const loadCategories = (id="#categoryId") => {
 
                 msg += `
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="javascript:;" data-toggle="dropdown">${d.name}</a>
-                        <div class="dropdown-menu">
-                            ${temp}
-                        </div>
+                        <a class="nav-link dropdown-toggle" href="javascript:;" data-toggle="dropdown"><i class="${d.icon}"></i> ${d.name}</a>
+                        <div class="dropdown-menu">${temp}</div>
                     </li>
                 `
             }
             else {
                 msg += `
                     <li class="nav-item">
-                        <a class="nav-link" href="javascript:;" rel="${d.rel}">${d.name}</a>
+                        <a class="nav-link" href="javascript:;" rel="${d.rel}"><i class="${d.icon}"></i> ${d.name}</a>
                     </li>
                 `
             }
-        }
+        })
         $(id).append(msg)
     })
 }
 
 const loadPublication = (id="#contentId") => {
+    $(id).html(spinner)
     fetch(`${DOMAIN}/data/publications.json`).then(res => res.json()).then(data => {
         let msg = ""
-        for (let i = 0; i < data.length; i++) 
-            msg += `<li class="list-group-item" title="${data[i].abstract}">
-                <a href="${data[i].doi}">${data[i].subject} - ${data[i].year}</a>
-                <p>${data[i].ref}</p>
-            </li>`
+        
+        data.forEach(d => {
+            msg += `<li class="list-group-item" title="${d.abstract}">
+                        <a href="${d.doi}">${d.subject} - ${d.year}</a>
+                        <p>${d.ref}</p>
+                    </li>`
+        })
+            
 
         $(id).html(`
             <h1 class="text-center text-success">CÁC CÔNG TRÌNH KHOA HỌC ĐÃ CÔNG BỐ</h1>
-            <ul class="list-group list-group-flush">
-                ${msg}
-            </ul>
+            <ul class="list-group list-group-flush">${msg}</ul>
         `)
     })
 }
@@ -59,7 +62,6 @@ const loadVideo = (videoType, subject, id="#contentId") => {
     fetch(`${DOMAIN}/data/video/${videoType}.json`).then(res => res.json()).then(data => {
         let msg = ""
         data.forEach(d => {
-            
             let v = `
                 <iframe width="100%" height="315" src="${d.embeded_link}" title="${d.subject}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             `
@@ -80,9 +82,49 @@ const loadVideo = (videoType, subject, id="#contentId") => {
     })
 }
 
+const loadHomePage = (id="#contentId") => {
+    fetch(`${DOMAIN}/data/home.json`).then(res => res.json()).then(data => {
+        data.forEach(d => {
+            let video = ""
+            d.data.forEach(v => {
+                video += `
+                <div class="item-video" data-merge="3">
+                    <iframe width="100%" height="315" src="${v}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                `
+            })
+            
+            $(id).html(`
+                <h1>${d.subject}</h1>
+                <div class="owl-carousel owl-theme">
+                    ${video}
+                </div>
+            `)
+            $('.owl-carousel').owlCarousel({
+                items:1,
+                merge:true,
+                loop:true,
+                margin:10,
+                video:true,
+                lazyLoad:true,
+                center:true,
+                responsive:{
+                    480:{
+                        items:2
+                    },
+                    600:{
+                        items:4
+                    }
+                }
+            })
+        })
+    })
+}
+
 $(document).ready(() => {
     loadCategories()
-    loadPublication()
+    loadHomePage()
+    // loadPublication()
 
     $("#categoryId").on("click", "li a", function() {
         $("#categoryId > li").removeClass("active")
