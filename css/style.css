@@ -6,26 +6,21 @@ ul {
     padding: 5px !important;
 }
 
-h1.subject::after {
-    content: "";
-    border-width: 2px;
-    border-color: blue;
-    border-style: solid;
-    position: relative;
-    width: 10%;
-    display: inline-block;
-    margin-bottom: 10px;
-    margin-left: 10px;
+h1.subject {
+    text-shadow: 2px 3px 3px lightsalmon;
+    margin: 30px 0 !important;
 }
 
-h1.subject::before {
+h1.subject::after {
     content: "";
-    border-width: 2px;
-    border-color: blue;
-    border-style: solid;
     position: relative;
+    background: linear-gradient(rgb(238, 5, 5), rgb(136, 101, 81));
+    height: 5px;
     width: 10%;
-    display: inline-block;
-    margin-bottom: 10px;
-    margin-right: 10px;
+    display: block;
+    margin: 10px auto;
+}
+
+h1.subject.line-left::after {
+    width: 0 !important;
 }

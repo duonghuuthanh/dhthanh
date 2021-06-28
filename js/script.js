@@ -3,7 +3,8 @@ if (location.href.indexOf("github") >= 0)
     DOMAIN = "https://duonghuuthanh.github.io/dhthanh"
 
 const spinner = `<div class="spinner-border text-primary"></div>`
-const bgcolors = ["bg-muted", "bg-primary text-warning", "bg-secondary", "bg-info", "bg-success text-default", "bg-danger text-default", "bg-warning", "bg-default"]
+const bgcolors = ["bg-primary", "bg-secondary", "bg-info", "bg-success", "bg-danger", "bg-warning", "bg-default"]
+const contentId = "#contentId"
 
 const loadCategories = (id="#categoryId") => {
     fetch(`${DOMAIN}/data/category.json`).then(res => res.json()).then(data => {
@@ -33,7 +34,7 @@ const loadCategories = (id="#categoryId") => {
     })
 }
 
-const loadPublication = (id="#contentId") => {
+const loadPublication = (id=contentId) => {
     $(id).html(spinner)
     fetch(`${DOMAIN}/data/publications.json`).then(res => res.json()).then(data => {
         let msg = ""
@@ -53,13 +54,7 @@ const loadPublication = (id="#contentId") => {
     })
 }
 
-const loadResource = (id="#contentId") => {
-    $(id).html(`
-        <h1 class="text-center text-info">TÀI NGUYÊN HỌC TẬP</h1>
-    `)
-}
-
-const loadVideo = (videoType, subject, id="#contentId") => {
+const loadVideo = (videoType, subject, id=contentId) => {
     fetch(`${DOMAIN}/data/video/${videoType}.json`).then(res => res.json()).then(data => {
         let msg = ""
         data.forEach(d => {
@@ -83,7 +78,45 @@ const loadVideo = (videoType, subject, id="#contentId") => {
     })
 }
 
-const loadHomePage = (id="#contentId") => {
+const loadLearningResources = (id=contentId) => {
+    const loadResource = (resourceFile, resourceId) => {
+        fetch(`${DOMAIN}/data/learning/${resourceFile}`).then(res => res.json()).then(data => {
+            let msg = ""
+            data.forEach(d => {
+                msg += `
+                    <li class="list-group-item">
+                        <a href="${d.link}">${d.subject}</a>
+                    </li>
+                `
+            })
+
+            $(resourceId).html(msg)
+        })
+    }
+
+    fetch(`${DOMAIN}/data/learning/learning.json`).then(res => res.json()).then(data => {
+        let msg = ""
+        data.forEach(d => {
+            msg += `
+                <section>
+                    <h1 class="subject line-left text-danger text-uppercase">${d.subject}</h1>
+                    <ol id="${d.idHTML}" class="list-group"></ol>
+                </section>
+            `
+        })
+
+        $(id).html(`
+            <h1 class="text-center text-info">TÀI NGUYÊN HỌC TẬP</h1>    
+            ${msg}
+        `)
+
+        data.forEach(d => {
+            loadResource(d.file, `#${d.idHTML}`)
+        })
+    })
+}
+
+const loadHomePage = (id=contentId) => {
     fetch(`${DOMAIN}/data/home/note.json`).then(res => res.json()).then(d => {
         let note = ""
         let c = parseInt(Math.random() * bgcolors.length)
@@ -102,7 +135,7 @@ const loadHomePage = (id="#contentId") => {
 
         $(id).append(`
             <div class="item">
-                <h1 class="subject text-center text-uppercase">${d.subject}</h1>
+                <h1 class="subject text-center text-uppercase text-danger">${d.subject}</h1>
                 <div class="row">
                     ${note}
                 </div>
@@ -122,7 +155,7 @@ const loadHomePage = (id="#contentId") => {
 
         $(id).append(`
             <div class="item">
-                <h1 class="subject text-center text-uppercase">${d.subject}</h1>
+                <h1 class="subject text-center text-uppercase text-danger">${d.subject}</h1>
                 <div class="owl-carousel owl-theme">
                     ${video}
                 </div>
@@ -169,7 +202,7 @@ $(document).ready(() => {
                 loadPublication()
                 break
             case 'resource':
-                loadResource()
+                loadLearningResources()
                 break
             case 'java-oop':
                 loadVideo('java-oop', $(this).text())

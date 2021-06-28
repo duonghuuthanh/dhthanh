@@ -59,7 +59,7 @@
     "year": 2021,
     "doi": "http://dx.doi.org/10.1007/s10032-021-00363-7",
     "authors": "Duc Phan Van Hoai, Huu-Thanh Duong, Vinh Truong Hoang",
-    "ref": "Van Hoai, D.P., Duong, HT. & Hoang, V.T. Text recognition for Vietnamese identity card based on deep features network. IJDAR 24, 123–131 (2021). https://doi.org/10.1007/s10032-021-00363-7",
+    "ref": "Van Hoai, D.P., <strong>Duong, HT.</strong> & Hoang, V.T. Text recognition for Vietnamese identity card based on deep features network. IJDAR 24, 123–131 (2021). https://doi.org/10.1007/s10032-021-00363-7",
     "order": 7
 }, {
     "id": 8,
@@ -68,7 +68,7 @@
     "year": 2020,
     "doi": "http://dx.doi.org/10.37936/ecti-cit.2020141.204170",
     "authors": "Duc Phan Van Hoai, Thongchai Surinwarangkoon, Vinh Truong Hoang, Huu-Thanh Duong, Kittikhun Meethongjan",
-    "ref": "V. Truong Hoang, D. P. Van Hoai, T. Surinwarangkoon, H.-T. Duong, and K. Meethongjan, “A Comparative Study of Rice Variety Classification based on Deep Learning and Hand-crafted Features”, ECTI-CIT, vol. 14, no. 1, pp. 1-10, Mar. 2020.",
+    "ref": "V. Truong Hoang, D. P. Van Hoai, T. Surinwarangkoon, <strong>H.-T. Duong</strong>, and K. Meethongjan, “A Comparative Study of Rice Variety Classification based on Deep Learning and Hand-crafted Features”, ECTI-CIT, vol. 14, no. 1, pp. 1-10, Mar. 2020.",
     "order": 8
 }, {
     "id": 9,
@@ -77,7 +77,7 @@
     "year": 2019,
     "doi": "http://dx.doi.org/10.1109/INCIT.2019.8912121",
     "authors": "Huu-Thanh Duon, Vinh Truong Hoang",
-    "ref": "H. Duong and V. T. Hoang, “Dimensionality Reduction Based on Feature Selection for Rice Varieties Recognition,” 2019 4th International Conference on Information Technology (InCIT), 2019, pp. 199-202, doi: 10.1109/INCIT.2019.8912121.",
+    "ref": "<strong>H. Duong</strong> and V. T. Hoang, “Dimensionality Reduction Based on Feature Selection for Rice Varieties Recognition,” 2019 4th International Conference on Information Technology (InCIT), 2019, pp. 199-202, doi: 10.1109/INCIT.2019.8912121.",
     "order": 9
 }, {
     "id": 10,
@@ -85,7 +85,7 @@
     "aubstract": "Image classification problem requires a large number of labeled training images to obtain a good generalization. However, it is very time consuming and expensive to label data. The color information has been demonstrated that it contains relevant information for characterizing texture image. This paper presents a novel data augmentation method dedicated to color texture classification. We firstly use color features extracted from different color spaces to augment data in case of one sample training per class. The experimental results is very promising since it significantly improves the classification performance on four benchmark color texture datasets.",
     "year": 2019,
     "doi": "http://dx.doi.org/10.1109/INCIT.2019.8911934",
-    "authors": "Huu-Thanh Duon, Vinh Truong Hoang",
-    "ref": "H. Duong and V. T. Hoang, “Data Augmentation Based on Color Features for Limited Training Texture Classification,” 2019 4th International Conference on Information Technology (InCIT), 2019, pp. 208-211, doi: 10.1109/INCIT.2019.8911934.",
+    "authors": "Huu-Thanh Duong, Vinh Truong Hoang",
+    "ref": "<strong>H. Duong</strong> and V. T. Hoang, “Data Augmentation Based on Color Features for Limited Training Texture Classification,” 2019 4th International Conference on Information Technology (InCIT), 2019, pp. 208-211, doi: 10.1109/INCIT.2019.8911934.",
     "order": 10
 }]
