@@ -22,6 +22,9 @@
     }, {
         "name": "Phát triển Web với Python Flask",
         "rel": "python-flask"
+    }, {
+        "name": "Ôn tập kỹ thuật lập trình",
+        "rel": "programming-technique-review"
     }]
 }, {
     "id": 3,

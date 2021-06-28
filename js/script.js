@@ -39,8 +39,9 @@ const loadPublication = (id=contentId) => {
     fetch(`${DOMAIN}/data/publications.json`).then(res => res.json()).then(data => {
         let msg = ""
         
-        data.forEach(d => {
-            msg += `<li class="list-group-item" title="${d.abstract}">
+        data.forEach((d, idx) => {
+            let animate = idx % 2 == 0 ? 'animate__slideInLeft':'animate__slideInRight'
+            msg += `<li class="list-group-item wow ${animate}" title="${d.abstract}">
                         <a href="${d.doi}">${d.subject} - ${d.year}</a>
                         <p>${d.ref}</p>
                     </li>`
@@ -63,7 +64,7 @@ const loadVideo = (videoType, subject, id=contentId) => {
             `
             msg += `
                 <div class="col-md-6 col-xs-12">
-                    <div class="card">
+                    <div class="card wow animate__zoomIn">
                         <div class="card-header bg-info">${d.subject}</div>
                         <div class="card-content">${v}</div>
                     </div>
@@ -122,8 +123,8 @@ const loadHomePage = (id=contentId) => {
         let c = parseInt(Math.random() * bgcolors.length)
         d.data.forEach(v => {
             note += `
-            <div class="col-md-4 col-xs-6">
-                <div class="card">
+            <div class="col-md-4 col-xs-6 note">
+                <div class="card wow animate__zoomIn">
                   <div class="card-header ${bgcolors[c++]}">${v.title}</div>
                   <div class="card-body">${v.content}</div>
                 </div>
@@ -147,7 +148,7 @@ const loadHomePage = (id=contentId) => {
         let video = ""
         d.data.forEach(v => {
             video += `
-            <div class="item-video" data-merge="3">
+            <div class="item-video wow animate__slideInUp" data-merge="3">
                 <iframe width="100%" height="315" src="${v}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
             `
@@ -189,6 +190,14 @@ $(document).ready(() => {
     loadCategories()
     loadHomePage()
     // loadPublication()
+    wow = new WOW({
+        boxClass:     'wow',      // default
+        animateClass: 'animate__animated', // default
+        offset:       0,          // default
+        mobile:       true,       // default
+        live:         true        // default
+    })
+    wow.init();
 
     $("#categoryId").on("click", "li a", function() {
         $("#categoryId > li").removeClass("active")
@@ -218,6 +227,9 @@ $(document).ready(() => {
                 break
             case 'jsf':
                 loadVideo('jsf', $(this).text())
+                break
+            case 'programming-technique-review':
+                loadVideo('programming-technique-review', $(this).text())
                 break
             default:
                 if (t != null)

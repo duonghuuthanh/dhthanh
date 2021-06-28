@@ -14,7 +14,7 @@ h1.subject {
 h1.subject::after {
     content: "";
     position: relative;
-    background: linear-gradient(rgb(238, 5, 5), rgb(136, 101, 81));
+    background: linear-gradient(to right bottom, red, rgb(238, 144, 146), rgb(168, 23, 25));
     height: 5px;
     width: 20%;
     display: block;
@@ -23,4 +23,10 @@ h1.subject::after {
 
 h1.subject.line-left::after {
     width: 0 !important;
+}
+
+div.note:hover {
+    transform: scale(1.5);
+    transition: transform .5s;
+    z-index: 999;
 }
