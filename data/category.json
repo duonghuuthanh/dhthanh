@@ -1,8 +1,18 @@
 [{
     "id": 1,
-    "name": "Bài học",
+    "name": "Bài viết",
     "rel": "course",
-    "icon": "fas fa-book-reader"
+    "icon": "fas fa-book-reader",
+    "sub": [{
+        "name": "Thiết kế Web",
+        "rel": "post-web-design"
+    }, {
+        "name": "Python Flask",
+        "rel": "post-python-flask"
+    }, {
+        "name": "Lập trình Java",
+        "rel": "post-java"
+    }]
 }, {
     "id": 2,
     "name": "Video",
