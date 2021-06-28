@@ -17,6 +17,9 @@
         "name": "Lập trình Java",
         "rel": "java-programming"
     }, {
+        "name": "Phát triển ứng dụng Web với JSF",
+        "rel": "jsf"
+    }, {
         "name": "Phát triển Web với Python Flask",
         "rel": "python-flask"
     }]

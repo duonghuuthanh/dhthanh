@@ -1,1 +1,31 @@
-[]
+[{
+    "subject": "Java cơ bản - Phần 1",
+    "embeded_link": "https://www.youtube.com/embed/EpVWj7YVkUI"
+}, {
+    "subject": "Java cơ bản - Phần 2",
+    "embeded_link": "https://www.youtube.com/embed/DmDU4XKiuK0"
+}, {
+    "subject": "Giới thiệu MySQL",
+    "embeded_link": "https://www.youtube.com/embed/bv6mH1OzHrw"
+}, {
+    "subject": "JDBC - Phần 1",
+    "embeded_link": "https://www.youtube.com/embed/OIVrtSluDOQ"
+}, {
+    "subject": "JDBC - Phần 2",
+    "embeded_link": "https://www.youtube.com/embed/YRJgM2VikaE"
+}, {
+    "subject": "Spring JDBC",
+    "embeded_link": "https://www.youtube.com/embed/AMgGrPIfQ24"
+}, {
+    "subject": "Hibernate - Phần 1",
+    "embeded_link": "https://www.youtube.com/embed/J36jLRIvLE0"
+}, {
+    "subject": "Hibernate - Phần 2",
+    "embeded_link": "https://www.youtube.com/embed/4HB6KqAdMGw"
+}, {
+    "subject": "Hibernate - Phần 3",
+    "embeded_link": "https://www.youtube.com/embed/XtBXztx0LS4"
+}, {
+    "subject": "Giới thiệu JavaFX",
+    "embeded_link": "https://www.youtube.com/embed/Pww7m2kkvsg"
+}]

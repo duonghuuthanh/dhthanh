@@ -16,7 +16,7 @@ h1.subject::after {
     position: relative;
     background: linear-gradient(rgb(238, 5, 5), rgb(136, 101, 81));
     height: 5px;
-    width: 10%;
+    width: 20%;
     display: block;
     margin: 10px auto;
 }

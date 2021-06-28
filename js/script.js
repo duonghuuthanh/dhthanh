@@ -216,6 +216,9 @@ $(document).ready(() => {
             case 'python-flask':
                 loadVideo('python-flask', $(this).text())
                 break
+            case 'jsf':
+                loadVideo('jsf', $(this).text())
+                break
             default:
                 if (t != null)
                     alert('comming soon...')
