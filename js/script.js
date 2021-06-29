@@ -41,16 +41,17 @@ const loadPublication = (id=contentId) => {
         
         data.forEach((d, idx) => {
             let animate = idx % 2 == 0 ? 'animate__slideInLeft':'animate__slideInRight'
-            msg += `<li class="list-group-item wow ${animate}" title="${d.abstract}">
-                        <a href="${d.doi}">${d.subject} - ${d.year}</a>
+            msg += `<li class="list-group-item wow ${animate}" title="${d.abstract}" rel="${d.authors}">
+                        <a href="javascript:;" rel="${d.doi}" class="paper">${d.subject} - ${d.year}</a>
+                        
+                        (<a class="text-danger" href="${d.doi}">${d.doi}</a>)
                         <p>${d.ref}</p>
                     </li>`
         })
-            
 
         $(id).html(`
             <h1 class="text-center text-success">CÁC CÔNG TRÌNH KHOA HỌC ĐÃ CÔNG BỐ</h1>
-            <ul class="list-group list-group-flush">${msg}</ul>
+            <ul class="list-group list-group-flush publication">${msg}</ul>
         `)
     })
 }
@@ -182,10 +183,32 @@ const loadHomePage = (id=contentId) => {
     })
 }
 
+const loadCarousel = (id="#myBanner", path="images/home/friends/", num=21) => {
+    let indicators = ""
+    let items = ""
+    for (let i = 0; i < num; i++) {
+        let cls = i == 0 ? 'active': ''
+
+        indicators += `
+            <li data-target="#myBanner" data-slide-to="${i}" class="${cls}"></li>
+        `
+
+        items += `
+            <div class="carousel-item ${cls}">
+                <img class="img-fluid" src="${path}${i + 1}.png" alt="friends">
+            </div>
+        `
+    }
+
+    $(id + " > .carousel-indicators").html(indicators)
+    $(id + " > .carousel-inner").html(items)
+}
+
 $(document).ready(() => {
     loadCategories()
     loadHomePage()
-    // loadPublication()
+    loadCarousel()
+
     wow = new WOW({
         boxClass:     'wow',      // default
         animateClass: 'animate__animated', // default
@@ -194,6 +217,7 @@ $(document).ready(() => {
         live:         true        // default
     })
     wow.init();
+
 
     $("#categoryId").on("click", "li a", function() {
         $("#categoryId > li").removeClass("active")
@@ -231,5 +255,15 @@ $(document).ready(() => {
                 if (t != null)
                     alert('comming soon...')
         }
+    })
+
+    $("#contentId").on("click", ".publication li a.paper", function() {
+        $("#myModal").modal('show')
+        $("#myModal .modal-title").html(`
+            <a href="${$(this).attr('rel')}">${$(this).text()}</a>
+            <br>
+            <em>${$(this).parent().attr('rel')}</em>
+        `)
+        $("#myModal .modal-body").text($(this).parent().attr('title'))
     })
 })
