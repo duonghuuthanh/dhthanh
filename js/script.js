@@ -123,12 +123,10 @@ const loadHomePage = (id=contentId) => {
         let c = parseInt(Math.random() * bgcolors.length)
         d.data.forEach(v => {
             note += `
-            <div class="col-md-4 col-xs-6 note">
-                <div class="card wow animate__zoomIn">
+                <div class="card wow animate__zoomIn note">
                   <div class="card-header ${bgcolors[c++]}">${v.title}</div>
                   <div class="card-body">${v.content}</div>
                 </div>
-            </div>
             `
             if (c == bgcolors.length)
                 c = 0
@@ -137,9 +135,7 @@ const loadHomePage = (id=contentId) => {
         $(id).append(`
             <div class="item">
                 <h1 class="subject text-center text-uppercase text-danger">${d.subject}</h1>
-                <div class="row">
-                    ${note}
-                </div>
+                <div class="card-columns">${note}</div>
             </div>
         `)
     })
