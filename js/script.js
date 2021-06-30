@@ -17,7 +17,7 @@ const loadCategories = (id="#categoryId") => {
 
                 msg += `
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="javascript:;" data-toggle="dropdown"><i class="${d.icon}"></i> ${d.name}</a>
+                        <a class="nav-link dropdown-toggle" href="#${d.rel}" data-toggle="dropdown"><i class="${d.icon}"></i> ${d.name}</a>
                         <div class="dropdown-menu">${temp}</div>
                     </li>
                 `
@@ -25,7 +25,7 @@ const loadCategories = (id="#categoryId") => {
             else {
                 msg += `
                     <li class="nav-item">
-                        <a class="nav-link" href="javascript:;" rel="${d.rel}"><i class="${d.icon}"></i> ${d.name}</a>
+                        <a class="nav-link" href="#${d.rel}" rel="${d.rel}"><i class="${d.icon}"></i> ${d.name}</a>
                     </li>
                 `
             }
@@ -209,8 +209,18 @@ const loadCarousel = (id="#myBanner", path="images/home/friends/", num=22) => {
 
 $(document).ready(() => {
     loadCategories()
-    loadHomePage()
-    loadCarousel()
+
+    switch (location.hash) {
+        case "#publication":
+            loadPublication()
+            break
+        case "#resource":
+            loadLearningResources()
+            break
+        default: 
+            loadHomePage()
+            loadCarousel()
+    }
 
     wow = new WOW({
         boxClass:     'wow',      // default
@@ -222,7 +232,7 @@ $(document).ready(() => {
     wow.init();
 
 
-    $("#categoryId").on("click", "li a", function() {
+    $("#categoryId").on("click", "li a", function(event) {
         $("#categoryId > li").removeClass("active")
         $(this).parent().addClass("active")
 
