@@ -58,12 +58,16 @@ const loadPublication = (id=contentId) => {
 
 const loadVideo = (videoType, subject, id=contentId) => {
     fetch(`${DOMAIN}/data/video/${videoType}.json`).then(res => res.json()).then(data => {
-        let msg = ""
+        $(id).html(`
+            <h1 class="text-center text-danger text-uppercase">${subject}</h1>
+            <div class="row" id="video"></div>
+        `)
+        
         data.forEach(d => {
             let v = `
                 <iframe width="100%" height="315" src="${d.embeded_link}" title="${d.subject}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             `
-            msg += `
+            let msg = `
                 <div class="col-md-6 col-xs-12">
                     <div class="card wow animate__zoomIn">
                         <div class="card-header bg-info">${d.subject}</div>
@@ -71,12 +75,11 @@ const loadVideo = (videoType, subject, id=contentId) => {
                     </div>
                 </div>
             `
+
+            $("#video").append(msg)
         })
 
-        $(id).html(`
-            <h1 class="text-center text-danger text-uppercase">${subject}</h1>
-            <div class="row">${msg}</div>
-        `)
+        
     })
 }
 
@@ -183,7 +186,7 @@ const loadHomePage = (id=contentId) => {
     })
 }
 
-const loadCarousel = (id="#myBanner", path="images/home/friends/", num=21) => {
+const loadCarousel = (id="#myBanner", path="images/home/friends/", num=22) => {
     let indicators = ""
     let items = ""
     for (let i = 0; i < num; i++) {

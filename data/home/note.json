@@ -5,6 +5,9 @@
         "title": "Con trỏ trong C++",
         "content": "Miền giá trị của biến con trỏ là địa chỉ vùng nhớ."
     }, {
+        "title": "Ưu điểm chính của lập trình hướng đối tượng",
+        "content": "<ul><li>OOP cho phép <strong>che giấu dữ liệu</strong>, hạn chế tối đa truy cập từ bên ngoài.</li><li>OOP cho phép <strong>tái sử dụng</strong> mã nguồn hiệu quả, tiết kiệm thời gian của lập trình viên, cũng như giúp cho việc mở rộng chương trình, bảo trì trở nên dễ dàng hơn.</li></ul>"
+    }, {
         "title": "Các đặc điểm của OOP",
         "content": "<ul><li>Trừu tượng hoá (abstraction)</li><li>Đóng gói (Encapsulation)</li><li>Kế thừa (Inheritance)</li><li>Đa hình (Polymorphism)</li></ul>"
     }, {
@@ -24,6 +27,6 @@
         "content": "<ul><li>Người dùng được phép linh hoạt tương tác giao diện (Place the user in control).</li><li>Hạn chế bắt người dùng nhớ quá nhiều thông tin khi tương tác giao diện (Reduce the user’s memory load).</li><li>Thiết kế giao diện nhất quán (Make the interface consistent).</li></ul>"
     }, {
         "title": "Tính chất ACID của giao tác",
-        "content": "<ul><li>A (Atomicity)</li><li>C (Consistency)</li><li>I (Isolation)</li><li>D (Durability)</li></ul>"
+        "content": "<ul><li title='tức là một giao tác thành công nếu tất cả các thao tác của nó thành công, ngược lại tồn tại một thao tác thất bại thì toàn bộ giao tác thất bại'>A (Atomicity): giao tác là một đơn vị xử lý nguyên tố, không thể chia nhỏ.</li><li>C (Consistency): một giao tác phải chuyển cơ sở dữ liệu từ trạng thái nhất quán này sang trạng thái nhất quán khác.</li><li title='tức là giao tác này không thể thấy được tác động của giao tác khác nếu nó chưa hoàn thành'>I (Isolation): một giao tác phải được cô lập với các giao tác khác.</li><li>D (Durability): một giao tác khi hoàn tất, kết quả của giao tác sẽ tác động bền vững và không thể xoá đi dưới cơ sở dữ liệu từ những vấn đề của hệ thống</li></ul>"
     }]
 }

@@ -25,8 +25,12 @@ h1.subject.line-left::after {
     width: 0 !important;
 }
 
-div.note:hover {
-    transform: scale(1.5);
-    transition: transform .5s;
-    z-index: 999;
+@media screen and (min-width: 500px) {
+    div.note:hover {
+        transform: scale(1.5);
+        transition: transform .5s;
+        z-index: 999;
+        position: relative;
+    }
 }
+
