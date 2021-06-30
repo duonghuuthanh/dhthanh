@@ -223,51 +223,35 @@ $(document).ready(() => {
     }
 
     wow = new WOW({
-        boxClass:     'wow',      // default
-        animateClass: 'animate__animated', // default
-        offset:       0,          // default
-        mobile:       true,       // default
-        live:         true        // default
+        boxClass:     'wow',      
+        animateClass: 'animate__animated', 
+        offset:       0,          
+        mobile:       true,      
+        live:         true        
     })
     wow.init();
-
 
     $("#categoryId").on("click", "li a", function(event) {
         $("#categoryId > li").removeClass("active")
         $(this).parent().addClass("active")
 
         let t = $(this).attr("rel")
-        switch (t) {
-            case 'course':
-                break
-            case 'publication':
-                loadPublication()
-                break
-            case 'resource':
-                loadLearningResources()
-                break
-            case 'java-oop':
-                loadVideo('java-oop', $(this).text())
-                break
-            case 'java-programming':
-                loadVideo('java-programming', $(this).text())
-                break
-            case 'web-design':
-                loadVideo('web-design', $(this).text())
-                break
-            case 'python-flask':
-                loadVideo('python-flask', $(this).text())
-                break
-            case 'jsf':
-                loadVideo('jsf', $(this).text())
-                break
-            case 'programming-technique-review':
-                loadVideo('programming-technique-review', $(this).text())
-                break
-            default:
-                if (t != null)
-                    alert('comming soon...')
-        }
+        if (t.startsWith("video"))
+            loadVideo(t, $(this).text())
+        else
+            switch (t) {
+                case 'course':
+                    break
+                case 'publication':
+                    loadPublication()
+                    break
+                case 'resource':
+                    loadLearningResources()
+                    break
+                default:
+                    if (t != null)
+                        alert('comming soon...')
+            }
     })
 
     $("#contentId").on("click", ".publication li a.paper", function() {
