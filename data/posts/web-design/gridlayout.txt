@@ -1,6 +1,6 @@
 <h1 class="text-center text-danger"><strong>SỬ DỤNG GRID LAYOUT</strong></h1>
 
-<p>Nội dung sau tham khảo từ: <a href="https://www.w3schools.com/css/css_grid.asp" style="color:blue; text-decoration:underline">https://www.w3schools.com/css/css_grid.asp</a> v&agrave; <a href="https://css-tricks.com/snippets/css/complete-guide-grid/" style="color:blue; text-decoration:underline">https://css-tricks.com/snippets/css/complete-guide-grid/</a>.Grid layout bố cục th&agrave;nh hệ thống lưới (grid) gồm nhiều d&ograve;ng v&agrave; nhiều cột gi&uacute;p dễ d&agrave;ng thiết kế trang Web m&agrave; kh&ocirc;ng cần sử dụng float v&agrave; position. Cho cấu tr&uacute;c HTML như sau:</p>
+<p>Nội dung sau tham khảo từ: <a href="https://www.w3schools.com/css/css_grid.asp">https://www.w3schools.com/css/css_grid.asp</a> v&agrave; <a href="https://css-tricks.com/snippets/css/complete-guide-grid/" >https://css-tricks.com/snippets/css/complete-guide-grid/</a>.Grid layout bố cục th&agrave;nh hệ thống lưới (grid) gồm nhiều d&ograve;ng v&agrave; nhiều cột gi&uacute;p dễ d&agrave;ng thiết kế trang Web m&agrave; kh&ocirc;ng cần sử dụng float v&agrave; position. Cho cấu tr&uacute;c HTML như sau:</p>
 
 <table border="1" cellpadding="5" cellspacing="0" style="border-collapse:collapse; width:100%">
 	<tbody>

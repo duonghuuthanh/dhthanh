@@ -69,7 +69,7 @@ const loadPost = (postType, id=contentId) => {
                 ${lessons}
             </ul>
         `)
-
+        $("#popupId").show("slow")
         $("#popupId li:first-child > a").click()
     })
 }
@@ -227,6 +227,7 @@ const loadCarousel = (id="#myBanner", path="images/home/friends/", num=22) => {
 
 $(document).ready(() => {
     loadCategories()
+    $("#popupId").hide()
 
     switch (location.hash) {
         case "#publication":
@@ -254,6 +255,7 @@ $(document).ready(() => {
         $(this).parent().addClass("active")
 
         let t = $(this).attr("rel")
+        
         if (t !== undefined && t.startsWith("video"))
             loadVideo(t, $(this).text())
         else if (t != undefined && t.startsWith("post"))
@@ -285,6 +287,8 @@ $(document).ready(() => {
     })
 
     $("#popupId").on("click", "a.post", function() {
+        $("#popupId li").removeClass('bg-warning')
+        $(this).parent().addClass('bg-warning')
         fetch(`${DOMAIN}/${$(this).attr("rel")}`).then(res => res.text()).then((data) => {
             $(contentId).html(data)
         })

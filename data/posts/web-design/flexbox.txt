@@ -1,8 +1,6 @@
 <h1 class="text-center text-danger"><strong>SỬ DỤNG FLEXBOX</strong></h1>
 
-<p>Flexbox l&agrave; một giải ph&aacute;p hiệu quả thiết kế&nbsp;thiết kế layout responsive dễ d&agrave;ng hơn, m&agrave; kh&ocirc;ng cần sử dụng float hay position.</p>
-
-<p>Thiết lập flex container (th&agrave;nh phần chứa c&aacute;c item kh&aacute;c) bằng c&aacute;ch&nbsp;<strong><code>display:flex</code></strong>. C&aacute;c th&agrave;nh phần c&ograve;n b&ecirc;n trong flex container sẽ trở th&agrave;nh flex items, ta c&oacute; thể sử dụng một số thuộc t&iacute;nh điều chỉnh flex item theo &yacute; muốn như: order, flex-grow, flex-shrink, flex-basis, flex, align-self (chi tiết https://www.w3schools.com/css/css3_flexbox_items.asp).</p>
+<p>Flexbox l&agrave; một giải ph&aacute;p hiệu quả thiết kế&nbsp;thiết kế layout responsive dễ d&agrave;ng hơn, m&agrave; kh&ocirc;ng cần sử dụng float hay position. Thiết lập flex container (th&agrave;nh phần chứa c&aacute;c item kh&aacute;c) bằng c&aacute;ch&nbsp;<strong><code>display:flex</code></strong>. C&aacute;c th&agrave;nh phần c&ograve;n b&ecirc;n trong flex container sẽ trở th&agrave;nh flex items, ta c&oacute; thể sử dụng một số thuộc t&iacute;nh điều chỉnh flex item theo &yacute; muốn như: order, flex-grow, flex-shrink, flex-basis, flex, align-self (chi tiết <a href="https://www.w3schools.com/css/css3_flexbox_items.asp">https://www.w3schools.com/css/css3_flexbox_items.asp</a>).</p>
 
 <table border="1" cellpadding="5" cellspacing="0" style="border-collapse:collapse; font-family:&quot;Courier New&quot;; line-height:10px; width:100%">
   <tbody>
@@ -41,7 +39,7 @@
 
 <p><img src="images/lessons/2021/07/01/image_wT8Pod1.png" style="height:160px; width:546px" /></p>
 
-<p>Một số thuộc t&iacute;nh quan trọng thường sử dụng trong flexbox container (nội dung sau tham khảo từ: <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" style="color:blue; text-decoration:underline">https://css-tricks.com/snippets/css/a-guide-to-flexbox/</a>)</p>
+<p>Một số thuộc t&iacute;nh quan trọng thường sử dụng trong flexbox container (nội dung sau tham khảo từ: <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">https://css-tricks.com/snippets/css/a-guide-to-flexbox/</a>)</p>
 
 <p><span style="color:#2980b9"><strong>flex-direction</strong></span>: row | row-reverse | column | column-reverse; =&gt;&nbsp;chỉ định hướng hiển thị của c&aacute;c flex item, chẳng hạn gi&aacute; trị row l&agrave; hiển thị từ tr&aacute;i sang phải, row-reverse l&agrave; từ phải sang tr&aacute;i, column từ tr&ecirc;n xuống dưới.</p>
 

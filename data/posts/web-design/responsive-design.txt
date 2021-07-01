@@ -1,0 +1,76 @@
+<h1 class="text-center text-danger"><strong>THIẾT KẾ RESPONSIVE</strong></h1>
+
+<p>Thiết kế responsive gi&uacute;p trang web hiển thị tốt tr&ecirc;n tất cả c&aacute;c thiết bị: desktop, tablet, phone.</p>
+
+<p><img src="/images/lessons/2021/07/01/image_Ayw3JEZ.png" style="height:360px; width:618px" /></p>
+
+<h3><strong>Viewport</strong></h3>
+
+<p>Để tạo một website responsive, ta phải khai b&aacute;o meta viewport. Viewport thiết lập v&ugrave;ng nh&igrave;n thấy (visible view) của trang web. Để chỉ định c&aacute;c thiết lập viewport sử dụng thẻ meta như sau:<br />
+-&nbsp;&nbsp; &nbsp;width=device-width: thiết lập chiều rộng của trang theo chiều rộng m&agrave;n h&igrave;nh thiết bị.<br />
+-&nbsp;&nbsp; &nbsp;initial-scale=1.0: thiết lập mức độ zoom khi lần đầu trang web được nạp bởi tr&igrave;nh duyệt.</p>
+
+<table border="1" cellpadding="5" cellspacing="0" style="border-collapse:collapse; width:100%">
+	<tbody>
+		<tr>
+			<td><code>&lt;meta name=&quot;viewport&quot;&nbsp;&nbsp;content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</code></td>
+		</tr>
+	</tbody>
+</table>
+
+<h3><strong>Media queries</strong></h3>
+
+<p>Media Query gi&uacute;p thiết lập hiển thị ph&ugrave; hợp hơn tr&ecirc;n từng thiết bị m&agrave; kh&ocirc;ng cần lập tr&igrave;nh xử l&yacute;. C&uacute; ph&aacute;p</p>
+
+<table border="1" cellpadding="5" cellspacing="0" style="border-collapse:collapse; width:100%">
+	<tbody>
+		<tr>
+			<td><code>@media not|only mediatype and (expressions) {<br />
+			&nbsp; CSS-Code;</code><br />
+			}</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>Trong đ&oacute;&nbsp;<br />
+-&nbsp;&nbsp; &nbsp;expressions l&agrave; c&aacute;c biểu thức điều kiện về k&iacute;ch thước m&agrave;n h&igrave;nh &aacute;p dụng, hoặc hướng m&agrave;n h&igrave;nh hoặc độ ph&acirc;n giải m&agrave;n h&igrave;nh.&nbsp;<br />
+-&nbsp;&nbsp; &nbsp;mediatype chỉ định loại thiết bị sẽ được &aacute;p dụng CSS, n&oacute; c&oacute; thể nhận c&aacute;c gi&aacute; trị:<br />
++&nbsp; &nbsp; all: cho tất cả thiết bị.<br />
++&nbsp; &nbsp; screen: cho m&agrave;n h&igrave;nh m&aacute;y t&iacute;nh, tablet, phone.<br />
++&nbsp; &nbsp; print: hiển thị khi người d&ugrave;ng click in trang.<br />
++&nbsp; &nbsp; projection: d&ugrave;ng cho m&aacute;y chiếu.<br />
+Sử dụng media query theo một trong ba c&aacute;ch sau:<br />
+-&nbsp;&nbsp; &nbsp;Sử dụng @media&nbsp;<br />
+-&nbsp;&nbsp; &nbsp;Khai b&aacute;o trong thẻ link với thuộc t&iacute;nh media<br />
+-&nbsp;&nbsp; &nbsp;Sử dụng từ kho&aacute; @import để import nạp v&agrave;o trong tập tin CSS.<br />
+V&iacute; dụ</p>
+
+<table border="1" cellpadding="5" cellspacing="0" style="border-collapse:collapse; width:100%">
+	<tbody>
+		<tr>
+			<td><code>@media only screen and (max-width:600px) {<br />
+			&nbsp;&nbsp; &nbsp;body {<br />
+			&nbsp;&nbsp; &nbsp; &nbsp;background-color:lightblue;<br />
+			&nbsp;&nbsp; &nbsp; &nbsp;font-size:30px;<br />
+			&nbsp; }</code><br />
+			&nbsp;</td>
+		</tr>
+	</tbody>
+</table>
+
+<h3><strong>H&igrave;nh ảnh trong thiết kế Responsive</strong></h3>
+
+<p>H&igrave;nh ảnh (img) n&ecirc;n thiết lập chiều rộng theo %, chiều cao l&agrave; auto. Sử dụng thể &lt;picture&gt; để hiển thị h&igrave;nh ảnh dựa tr&ecirc;n chiều rộng của m&agrave;n h&igrave;nh.</p>
+
+<table border="1" cellpadding="5" cellspacing="0" style="border-collapse:collapse; width:100%">
+	<tbody>
+		<tr>
+			<td><code>&lt;picture&gt;<br />
+			&nbsp; &lt;source srcset=&quot;img1.jpg&quot;&nbsp;media=&quot;(max-width: 600px)&quot;&gt;<br />
+			&nbsp; &lt;source srcset=&quot;img2.jpg&quot;&nbsp;media=&quot;(max-width: 1500px)&quot;&gt;<br />
+			&nbsp; &lt;source srcset=&quot;img3.jpg&quot;&gt;<br />
+			&nbsp; &lt;img src=&quot;img1.jpg&quot; alt=&quot;demo&quot;&gt;<br />
+			&lt;/picture&gt;</code></td>
+		</tr>
+	</tbody>
+</table>
