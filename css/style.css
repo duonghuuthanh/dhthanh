@@ -26,6 +26,10 @@ h1.subject.line-left::after {
     width: 0 !important;
 }
 
+.my-name {
+    text-shadow: 1px 2px 2px gold;
+}
+
 @media screen and (min-width: 500px) {
     div.note:hover {
         transform: scale(1.5);

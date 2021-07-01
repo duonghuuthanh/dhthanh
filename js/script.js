@@ -236,7 +236,7 @@ $(document).ready(() => {
         $(this).parent().addClass("active")
 
         let t = $(this).attr("rel")
-        if (t.startsWith("video"))
+        if (t !== undefined && t.startsWith("video"))
             loadVideo(t, $(this).text())
         else
             switch (t) {
