@@ -2,7 +2,7 @@
 
 <p>Thiết kế responsive gi&uacute;p trang web hiển thị tốt tr&ecirc;n tất cả c&aacute;c thiết bị: desktop, tablet, phone.</p>
 
-<p><img src="images/lessons/2021/07/01/image_Ayw3JEZ.png" style="height:360px; width:618px" /></p>
+<p style="text-align:center"><img src="images/lessons/2021/07/01/image_Ayw3JEZ.png" style="height:360px; width:618px" /></p>
 
 <h3><strong>Viewport</strong></h3>
 

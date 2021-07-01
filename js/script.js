@@ -256,11 +256,13 @@ $(document).ready(() => {
 
         let t = $(this).attr("rel")
         
+        $(contentId).removeClass("text-justify")
         if (t !== undefined && t.startsWith("video"))
             loadVideo(t, $(this).text())
-        else if (t != undefined && t.startsWith("post"))
+        else if (t != undefined && t.startsWith("post")) {
             loadPost(t)
-        else
+            $(contentId).addClass("text-justify")
+        } else
             switch (t) {
                 case 'course':
                     break

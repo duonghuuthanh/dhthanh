@@ -1,0 +1,53 @@
+<h1 class="text-center text-danger"><strong>M&Aacute;Y ẢO JAVA (VIRTUAL JAVA MACHINE)</strong></h1>
+
+<h3><strong>Tổng quan JVM</strong></h3>
+
+<p>M&aacute;y ảo Java (JVM) d&ugrave;ng thực thi chương tr&igrave;nh Java,&nbsp;Mỗi nền tảng sẽ c&oacute; một JVM tương ứng c&oacute; cơ chế hoạt động giống nhau, n&ecirc;n c&aacute;c chương tr&igrave;nh chạy giống nhau tr&ecirc;n bất kỳ nền tảng n&agrave;o c&oacute; hỗ trợ m&aacute;y ảo Java.&nbsp;JVM c&oacute; 3 th&agrave;nh phần ch&iacute;nh: Class Loader, Runtime Data Area, Execution Engine.</p>
+
+<p>- Class Loader: d&ugrave;ng t&igrave;m kiếm v&agrave; nạp c&aacute;c tập tin .class v&agrave;o v&ugrave;ng nhớ JVM.&nbsp;<br />
+- Execution Engine: chuyển m&atilde; bytecode th&agrave;nh m&atilde; m&aacute;y tr&ecirc;n hệ điều h&agrave;nh tương ứng v&agrave; thực thi n&oacute;.<br />
+- JVM Memory: v&ugrave;ng nhớ hệ điều h&agrave;nh cấp cho JVM.</p>
+
+<p style="text-align:center"><img src="images/lessons/2021/07/01/image_b0YfGLp.png" style="height:auto; width:60%" /></p>
+
+<h3><strong>Quản l&yacute; bộ nhớ trong Java</strong></h3>
+
+<p>Bộ nhớ hệ điều h&agrave;nh cấp ph&aacute;t cho JVM gồm c&oacute; 5 v&ugrave;ng</p>
+
+<p><span style="color:black">- Method Area: lưu trữ dữ liệu lớp như t&ecirc;n lớp, t&ecirc;n lớp cha trực tiếp, c&aacute;c phương thức, c&aacute;c thuộc t&iacute;nh (bao gồm thuộc t&iacute;nh tĩnh) v&agrave; m&atilde; nguồn c&aacute;c phương thức. Mỗi JVM chỉ c&oacute; một Method Area d&ugrave;ng chung cho tất cả c&aacute;c thread.</span><br>
+
+<span style="color:black">- Heap Area: lưu trữ c&aacute;c đối tượng kiểu chuỗi, mảng, thể hiện của c&aacute;c lớp. Mỗi JVM được cấp một Heap Area, d&ugrave;ng chung cho tất cả c&aacute;c thread.</span><br>
+
+<span style="color:black">- Stack Area: lưu trữ c&aacute;c biến cục bộ, mỗi tiến tr&igrave;nh thread c&oacute; một v&ugrave;ng nhớ stack ri&ecirc;ng. Trong stack chứa nhiều frame, mỗi frame sẽ được tạo khi h&agrave;m/phương thức được gọi để lưu trữ c&aacute;c biến cục bộ, v&agrave; c&aacute;c đối số truyền v&agrave;o cho n&oacute;. Frame sẽ bị hủy khi lời gọi h&agrave;m/phương thức kết th&uacute;c.</span><br>
+
+<span style="color:black">- PC Registers (Program Counter): thanh ghi lưu địa chỉ lệnh đang thực thi, mỗi thread c&oacute; PC ri&ecirc;ng.</span><br>
+
+<span style="color:black">- Native Method Stacks: chứa c&aacute;c h&agrave;m hệ thống d&ugrave;ng trong chương tr&igrave;nh, mỗi thread c&oacute; Native Method Stack ri&ecirc;ng</span></p>
+
+
+<h3><strong>Bộ nhớ Stack v&agrave; Heap</strong></h3>
+
+<h4><strong>Bộ nhớ Heap</strong></h4>
+
+<p>- Bộ nhớ n&agrave;y được sử dụng để lưu c&aacute;c đối tượng được tạo ra khi chương tr&igrave;nh thực thi (runtime).<br />
+- Dung lượng của bộ nhớ n&agrave;y phụ thuộc k&iacute;ch thước v&agrave; số lượng c&aacute;c đối tượng được tạo trong qu&aacute; tr&igrave;nh thực thi chương tr&igrave;nh.<br />
+- Khi bộ nhớ tr&ecirc;n Heap kh&ocirc;ng đủ để cấp ph&aacute;t cho đối tượng ngoại lệ java.lang.OutOfMemoryError sẽ được n&eacute;m ra.<br />
+- Thời gian sống của đối tượng tr&ecirc;n Heap phụ thuộc hoạt động bộ thu gom r&aacute;c (Garbage Collector).<br />
+- Bộ thu gom r&aacute;c n&agrave;y chạy tr&ecirc;n bộ nhớ Heap v&agrave; sẽ tự động x&oacute;a c&aacute;c đối tượng khi trong chương tr&igrave;nh kh&ocirc;ng c&ograve;n biến n&agrave;o tham chiếu đến n&oacute; nữa.</p>
+
+<h4><strong>Bộ nhớ Stack</strong></h4>
+
+<p>- Bộ nhớ n&agrave;y thường c&oacute; dung lượng nhỏ d&ugrave;ng lưu trữ c&aacute;c biến cục bộ bao gồm c&aacute;c biến c&oacute; kiểu dữ liệu cơ bản, c&aacute;c biến tham chiếu đến đối tượng tr&ecirc;n bộ nhớ Heap, c&aacute;c đối số được truyền v&agrave;o h&agrave;m.&nbsp;<br />
+- Bộ nhớ n&agrave;y hoạt động theo cơ chế LIFO (Last-In First-Out) c&oacute; nghĩa l&agrave; biến được tạo sau sẽ bị hủy trước.<br />
+- Nếu bộ nhớ Stack kh&ocirc;ng đủ để cấp ph&aacute;t cho biến cục bộ th&igrave; ngoại lệ java.lang.StackOverFlowError sẽ được n&eacute;m ra.&nbsp;<br />
+- Khi một phương thức được gọi, một khối bộ nhớ tr&ecirc;n Stack sẽ được cấp ph&aacute;t cho n&oacute; để lưu c&aacute;c biến cục bộ v&agrave; khối bộ nhớ n&agrave;y sẽ được giải ph&oacute;ng khi phương thức đ&atilde; thực hiện xong.<br />
+&nbsp;</p>
+
+<h3><strong>Garbage Collector</strong></h3>
+
+<p>Garbage Collector l&agrave; bộ thu gom r&aacute;c trong JVM, n&oacute; tự động hủy c&aacute;c đối tượng kh&ocirc;ng c&ograve;n sử dụng (kh&ocirc;ng c&oacute; tham chiếu n&agrave;o đến n&oacute;) trong bộ nhớ Heap v&agrave; kh&ocirc;ng gian n&agrave;y c&oacute; thể d&ugrave;ng cấp ph&aacute;t cho những đối tượng kh&aacute;c.&nbsp;<br />
+Tham chiếu đến một đối tượng c&oacute; thể bị hủy trong c&aacute;c trường hợp sau:<br />
+- Biến tham chiếu khai b&aacute;o cục bộ hết phạm vi hoạt động.<br />
+- Biến tham chiếu đến đối tượng kh&aacute;c.<br />
+- Biến được g&aacute;n gi&aacute; trị null.<br />
+&nbsp;</p>

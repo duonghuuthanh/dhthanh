@@ -1,0 +1,15 @@
+<h1 class="text-center text-danger"><strong>Sơ lược lịch sử ng&ocirc;n ngữ Java</strong></h1>
+
+<p>Java l&agrave; ng&ocirc;n ngữ lập tr&igrave;nh cấp cao m&atilde; nguồn mở (open source) được x&acirc;y dựng tr&ecirc;n nền tảng ng&ocirc;n ngữ C/C++, sử dụng c&uacute; ph&aacute;p ng&ocirc;n ngữ C v&agrave; đặc trưng hướng đối tượng ng&ocirc;n ngữ C++, được khởi đầu bởi James Gosling v&agrave; c&aacute;c đồng nghiệp ở c&ocirc;ng ty Sun Microsystems v&agrave;o năm 1991 v&agrave; l&agrave; một phần của dự &aacute;n Xanh (Green). Ban đầu họ &yacute; định t&igrave;m kiếm ng&ocirc;n ngữ lập tr&igrave;nh điều khiển c&aacute;c thiết bị điện tử gia dụng như tivi, m&aacute;y giặt, l&ograve; nướng, m&aacute;y vi s&oacute;ng&hellip; v&agrave; C/C++ l&agrave; ng&ocirc;n ngữ được họ xem x&eacute;t sử dụng.</p>
+
+<p>Tuy nhi&ecirc;n, tr&igrave;nh bi&ecirc;n dịch của C/C++ lại phụ thuộc tr&ecirc;n từng CPU kh&aacute;c nhau v&agrave; việc x&acirc;y dựng c&aacute;c tr&igrave;nh bi&ecirc;n dịch cho từng loại CPU tr&ecirc;n c&aacute;c thiết bị điện tử kh&aacute;c nhau đ&oacute; l&agrave; rất tốn k&eacute;m. Do đ&oacute;, họ bắt tay v&agrave;o nghi&ecirc;n cứu để ph&aacute;t triển ng&ocirc;n ngữ ri&ecirc;ng c&oacute; thể hoạt động hiệu quả v&agrave; độc lập thiết bị. Ng&ocirc;n ngữ n&agrave;y ban đầu c&oacute; t&ecirc;n l&agrave; Oak (c&acirc;y sồi), một lo&agrave;i c&acirc;y được trồng rất nhiều ở cơ quan của James Gosling.</p>
+
+<p style="text-align:center"><img src="images/lessons/2021/07/01/image-20210701203414-1.jpeg" style="height:240px; width:320px" /></p>
+
+<p style="text-align:center"><em>Games Gosling &ndash; cha đẻ ng&ocirc;n ngữ Java</em></p>
+
+<p>Năm 1995, n&oacute; được đổi t&ecirc;n th&agrave;nh Java v&igrave; t&ecirc;n Oak đ&atilde; được đăng k&yacute; bản quyền trước đ&oacute; bởi c&ocirc;ng ty Oak Technologies. Java l&agrave; t&ecirc;n một h&ograve;n đảo của Indonesia, v&agrave; h&ograve;n đảo n&agrave;y c&oacute; trồng rất nhiều caf&eacute; n&ecirc;n thường thấy biểu tượng của ng&ocirc;n ngữ Java l&agrave; một ly caf&eacute; nghi ng&uacute;t kh&oacute;i. Java được ph&aacute;t h&agrave;nh năm 1994, được giới thiệu v&agrave;o năm 1995 tại hội thảo SunWorld.</p>
+
+<p>Từ l&uacute;c ra đời, Java được giữa bản quyền v&agrave; ph&aacute;t triển li&ecirc;n tục bởi c&ocirc;ng ty Sun Microsystems. Năm 2010, Sun Microsystems được b&aacute;n lại cho c&ocirc;ng ty Oracle, Oracle cam kết tiếp tục đổi mới, đẩy mạnh ph&aacute;t triển nền tảng Java th&ocirc;ng qua dự &aacute;n m&atilde; nguồn mở OpenJDK v&agrave; JCP (Java Community Process).</p>
+
+<p>Java c&oacute; thể tương th&iacute;ch với nhiều d&ograve;ng m&aacute;y PC, Macintosh, với nhiều hệ điều h&agrave;nh như Windows, Linux, OSX&hellip; v&agrave; l&agrave; ng&ocirc;n ngữ vừa bi&ecirc;n dịch, vừa th&ocirc;ng dịch: đầu ti&ecirc;n m&atilde; nguồn Java được bi&ecirc;n dịch th&agrave;nh m&atilde; bytecode v&agrave; chạy tr&ecirc;n từng nền tảng nhờ tr&igrave;nh th&ocirc;ng dịch. Java ban đầu được sử dụng chủ yếu lập tr&igrave;nh trong m&ocirc;i trường mạng v&agrave; internet với khẩu hiệu &ldquo;viết một lần, chạy mọi nơi&rdquo; (write once, run anywhere).</p>

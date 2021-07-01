@@ -1,1 +1,40 @@
-[]
+[{
+    "subject": "Sử dụng &lt;table&gt;",
+    "embeded_link": "https://www.youtube.com/embed/WO6TR_zthqk"
+}, {
+    "subject": "Sử dụng &lt;div&gt; bố cục đơn giản",
+    "embeded_link": "https://www.youtube.com/embed/KKTpOM0oAO8"
+}, {
+    "subject": "Minh hoạ sử dụng thuộc tính float và clear",
+    "embeded_link": "https://www.youtube.com/embed/YaLRN5mpPLs"
+}, {
+    "subject": "Thuộc tính overflow, float, clear, position và display",
+    "embeded_link": "https://www.youtube.com/embed/nwFSzkdymQM"
+}, {
+    "subject": "Bài tập sử dụng flexbox, float và các hiệu ứng",
+    "embeded_link": "https://www.youtube.com/embed/D80N_QlNR3g"
+}, {
+    "subject": "Giới thiệu flexbox và các thuộc tính transform, transition, animation",
+    "embeded_link": "https://www.youtube.com/embed/EfoVQA0jbu0"
+}, {
+    "subject": "Bài tập sử dụng flexbox, tạo menu, menu con.",
+    "embeded_link": "https://www.youtube.com/embed/kL2kmpWeBp0"
+}, {
+    "subject": "Sử dụng một số thuộc tính CSS cơ bản và sử dụng flexbox",
+    "embeded_link": "https://www.youtube.com/embed/_BHfY8T7e0w"
+}, {
+    "subject": "Tạo submenu, thuộc tính flex-wrap của flexbox và trượt dọc với thuộc tính overflow",
+    "embeded_link": "https://www.youtube.com/embed/n0scCV087sY"
+}, {
+    "subject": "Tạo hiệu ứng (transform, transition, animation), sử dụng thuộc tính position và z-index.",
+    "embeded_link": "https://www.youtube.com/embed/5gt3sv_qDtQ"
+}, {
+    "subject": "Làm web ô tô tổng hợp - Phần 1",
+    "embeded_link": "https://www.youtube.com/embed/LaQz023JccA"
+}, {
+    "subject": "Làm web ô tô tổng hợp - Phần 2",
+    "embeded_link": "https://www.youtube.com/embed/qWF6qpfi2ts"
+}, {
+    "subject": "Thiết kế trang Web đơn giản (Thế giới di động mở)",
+    "embeded_link": "https://www.youtube.com/embed/MnqXvPk9Yi4"
+}]

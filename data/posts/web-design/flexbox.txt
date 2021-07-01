@@ -5,7 +5,7 @@
 <table border="1" cellpadding="5" cellspacing="0" style="border-collapse:collapse; font-family:&quot;Courier New&quot;; line-height:10px; width:100%">
   <tbody>
     <tr>
-      <td style="width:50%">
+      <td>
       <p><code>&lt;div class=&quot;flex-container&quot;&gt;</code></p>
 
       <p><code>&nbsp;&nbsp; &lt;div class=&quot;flex-item&quot;&gt;FLEX 1&lt;/div&gt;</code></p>
@@ -14,6 +14,9 @@
 
       <p><code>&nbsp;&nbsp; &lt;div class=&quot;flex-item&quot;&gt;FLEX 3&lt;/div&gt;</code></p>
       <code>&lt;/div&gt;</code></td>
+      
+    </tr>
+    <tr>
       <td>
       <p><code>.flex-container {</code></p>
 
