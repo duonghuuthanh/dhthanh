@@ -56,6 +56,24 @@ const loadPublication = (id=contentId) => {
     })
 }
 
+const loadPost = (postType, id=contentId) => {
+    fetch(`${DOMAIN}/data/posts/${postType}.json`).then(res => res.json()).then(data => {
+        let lessons = ""
+        data.forEach(d => {
+            lessons += `
+                <li class='list-group-item'><a class="post" href="javascript:;" rel="${d.file}">${d.subject}</a></li>
+            `
+        })
+        $("#popupId").html(`
+            <ul class="list-group">
+                ${lessons}
+            </ul>
+        `)
+
+        $("#popupId li:first-child > a").click()
+    })
+}
+
 const loadVideo = (videoType, subject, id=contentId) => {
     fetch(`${DOMAIN}/data/video/${videoType}.json`).then(res => res.json()).then(data => {
         $(id).html(`
@@ -238,6 +256,8 @@ $(document).ready(() => {
         let t = $(this).attr("rel")
         if (t !== undefined && t.startsWith("video"))
             loadVideo(t, $(this).text())
+        else if (t != undefined && t.startsWith("post"))
+            loadPost(t)
         else
             switch (t) {
                 case 'course':
@@ -262,5 +282,11 @@ $(document).ready(() => {
             <em>${$(this).parent().attr('rel')}</em>
         `)
         $("#myModal .modal-body").text($(this).parent().attr('title'))
+    })
+
+    $("#popupId").on("click", "a.post", function() {
+        fetch(`${DOMAIN}/${$(this).attr("rel")}`).then(res => res.text()).then((data) => {
+            $(contentId).html(data)
+        })
     })
 })

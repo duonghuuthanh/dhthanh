@@ -1,0 +1,88 @@
+<h1 class="text-center text-danger"><strong>SỬ DỤNG GRID LAYOUT</strong></h1>
+
+<p>Nội dung sau tham khảo từ: <a href="https://www.w3schools.com/css/css_grid.asp" style="color:blue; text-decoration:underline">https://www.w3schools.com/css/css_grid.asp</a> v&agrave; <a href="https://css-tricks.com/snippets/css/complete-guide-grid/" style="color:blue; text-decoration:underline">https://css-tricks.com/snippets/css/complete-guide-grid/</a>.Grid layout bố cục th&agrave;nh hệ thống lưới (grid) gồm nhiều d&ograve;ng v&agrave; nhiều cột gi&uacute;p dễ d&agrave;ng thiết kế trang Web m&agrave; kh&ocirc;ng cần sử dụng float v&agrave; position. Cho cấu tr&uacute;c HTML như sau:</p>
+
+<table border="1" cellpadding="5" cellspacing="0" style="border-collapse:collapse; width:100%">
+	<tbody>
+		<tr>
+			<td><code>&lt;div class=&quot;grid-container&quot;&gt;<br />
+			&nbsp; &lt;div class=&quot;grid-item&quot;&gt;1&lt;/div&gt;<br />
+			&nbsp; &lt;div class=&quot;grid-item&quot;&gt;2&lt;/div&gt;<br />
+			&nbsp; &lt;div class=&quot;grid-item&quot;&gt;3&lt;/div&gt;<br />
+			&nbsp; &lt;div class=&quot;grid-item&quot;&gt;4&lt;/div&gt;<br />
+			&nbsp; &lt;div class=&quot;grid-item&quot;&gt;5&lt;/div&gt;<br />
+			&nbsp; &lt;div class=&quot;grid-item&quot;&gt;6&lt;/div&gt;<br />
+			&nbsp; &lt;div class=&quot;grid-item&quot;&gt;7&lt;/div&gt;<br />
+			&nbsp; &lt;div class=&quot;grid-item&quot;&gt;8&lt;/div&gt;<br />
+			&nbsp; &lt;div class=&quot;grid-item&quot;&gt;9&lt;/div&gt;<br />
+			&lt;/div&gt;</code></td>
+		</tr>
+	</tbody>
+</table>
+
+<p>Để thiết lập bố cục . grid-container th&agrave;nh dạng lưới, ta cho gi&aacute; trị thuộc t&iacute;nh display của n&oacute; l&agrave; grid hoặc inline-grid, khi đ&oacute; c&aacute;c th&agrave;nh phần con của n&oacute; tự động l&agrave; grid item.</p>
+
+<p>grid-template-columns, grid-template-rows: định nghĩa cho c&aacute;c d&ograve;ng, c&aacute;c cột của lưới, c&aacute;c gi&aacute; trị tương ứng c&aacute;ch nhau bằng khoảng trắng.</p>
+
+<table border="1" cellpadding="5" cellspacing="0" style="border-collapse:collapse; width:100%">
+	<tbody>
+		<tr>
+			<td>
+			<p><code>.grid-container {<br />
+			&nbsp; display: grid;<br />
+			&nbsp; grid-template-columns: 20% 30% 40%;<br />
+			&nbsp; background-color: #2196F3;<br />
+			&nbsp; padding: 10px;<br />
+			}</code></p>
+
+			<p><code>.grid-item {<br />
+			&nbsp; background-color: rgba(255, 255, 255, 0.8);<br />
+			&nbsp; border: 1px solid rgba(0, 0, 0, 0.8);<br />
+			&nbsp; padding: 20px;<br />
+			&nbsp; font-size: 30px;<br />
+			&nbsp; text-align: center;</code><br />
+			}</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p><img src="images/lessons/2021/07/01/image_eOaQqqZ.png" style="height:180px; width:536px" /></p>
+
+<p>Thiết lập khoảng c&aacute;ch giữa c&aacute;c d&ograve;ng v&agrave; cột trong lưới<br />
+-&nbsp;&nbsp; &nbsp;column-gap: khoảng c&aacute;ch giữa c&aacute;c cột.<br />
+-&nbsp;&nbsp; &nbsp;row-gap: khoảng c&aacute;ch giữa c&aacute;c d&ograve;ng.<br />
+-&nbsp;&nbsp; &nbsp;gap: khoảng c&aacute;ch giữa d&ograve;ng v&agrave; cột.<br />
+<img src="images/lessons/2021/07/01/image_mGNikwh.png" style="height:316px; width:386px" /></p>
+
+<p>grid-column-start, grid-column-end, grid-row-start, grid-row-end: chỉ định vị tr&iacute; grid item trong lưới bằng c&aacute;ch sử dụng đường kẻ của lưới. Trong đ&oacute; grid-column-starty/grid-row-start chỉ định đường grid item bắt đầu, grid-column-end/grid-row-end chỉ định đường grid item kết th&uacute;c.</p>
+
+<table border="1" cellpadding="5" cellspacing="0" style="border-collapse:collapse; width:100%">
+	<tbody>
+		<tr>
+			<td><code>.grid-item {<br />
+			&nbsp; grid-column-start: &lt;number&gt; | &lt;name&gt; | span &lt;number&gt; | span &lt;name&gt; | auto;<br />
+			&nbsp; grid-column-end: &lt;number&gt; | &lt;name&gt; | span &lt;number&gt; | span &lt;name&gt; | auto;<br />
+			&nbsp; grid-row-start: &lt;number&gt; | &lt;name&gt; | span &lt;number&gt; | span &lt;name&gt; | auto;<br />
+			&nbsp; grid-row-end: &lt;number&gt; | &lt;name&gt; | span &lt;number&gt; | span &lt;name&gt; | auto;<br />
+			}</code></td>
+		</tr>
+	</tbody>
+</table>
+
+<p>V&iacute; dụ</p>
+
+<table border="1" cellpadding="5" cellspacing="0" style="border-collapse:collapse; width:100%">
+	<tbody>
+		<tr>
+			<td><code>.grid-item {<br />
+			&nbsp; grid-column-start: 2;<br />
+			&nbsp; grid-column-end: five;<br />
+			&nbsp; grid-row-start: row1-start;<br />
+			&nbsp; grid-row-end: 3;</code><br />
+			&nbsp;</td>
+		</tr>
+	</tbody>
+</table>
+
+<p><img src="images/lessons/2021/07/01/image_fhFkGDL.png" style="height:334px; width:512px" /></p>

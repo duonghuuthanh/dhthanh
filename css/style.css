@@ -39,3 +39,28 @@ h1.subject.line-left::after {
     }
 }
 
+#popupId {
+    position: fixed;
+    left:-300px;
+    width: 300px;
+    transition: left .5s;
+    z-index: 999999;
+}
+
+#popupId::after {
+    content: "\f02a";
+    display: inline-block;
+    padding: 12px 15px;
+    position: absolute;
+    left:97%;
+    top: 9%;
+    background-color: white;
+    border-style: solid solid solid none;
+    border-width: 1px;
+    border-color: #dfdfdf;
+}
+
+#popupId:hover {
+    left: 0;
+}
+

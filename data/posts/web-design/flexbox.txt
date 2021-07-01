@@ -1,0 +1,66 @@
+<h1 class="text-center text-danger"><strong>SỬ DỤNG FLEXBOX</strong></h1>
+
+<p>Flexbox l&agrave; một giải ph&aacute;p hiệu quả thiết kế&nbsp;thiết kế layout responsive dễ d&agrave;ng hơn, m&agrave; kh&ocirc;ng cần sử dụng float hay position.</p>
+
+<p>Thiết lập flex container (th&agrave;nh phần chứa c&aacute;c item kh&aacute;c) bằng c&aacute;ch&nbsp;<strong><code>display:flex</code></strong>. C&aacute;c th&agrave;nh phần c&ograve;n b&ecirc;n trong flex container sẽ trở th&agrave;nh flex items, ta c&oacute; thể sử dụng một số thuộc t&iacute;nh điều chỉnh flex item theo &yacute; muốn như: order, flex-grow, flex-shrink, flex-basis, flex, align-self (chi tiết https://www.w3schools.com/css/css3_flexbox_items.asp).</p>
+
+<table border="1" cellpadding="5" cellspacing="0" style="border-collapse:collapse; font-family:&quot;Courier New&quot;; line-height:10px; width:100%">
+  <tbody>
+    <tr>
+      <td style="width:50%">
+      <p><code>&lt;div class=&quot;flex-container&quot;&gt;</code></p>
+
+      <p><code>&nbsp;&nbsp; &lt;div class=&quot;flex-item&quot;&gt;FLEX 1&lt;/div&gt;</code></p>
+
+      <p><code>&nbsp;&nbsp; &lt;div class=&quot;flex-item&quot;&gt;FLEX 2&lt;/div&gt;</code></p>
+
+      <p><code>&nbsp;&nbsp; &lt;div class=&quot;flex-item&quot;&gt;FLEX 3&lt;/div&gt;</code></p>
+      <code>&lt;/div&gt;</code></td>
+      <td>
+      <p><code>.flex-container {</code></p>
+
+      <p><code>&nbsp;&nbsp; display:flex;</code></p>
+
+      <p><code>}</code></p>
+
+      <p><code>.flex-item {</code></p>
+
+      <p><code>&nbsp;&nbsp; color:#FAFAFA;</code></p>
+
+      <p><code>&nbsp;&nbsp; background-color:#020732;</code></p>
+
+      <p><code>&nbsp;&nbsp; padding: 10px;</code></p>
+
+      <p><code>&nbsp;&nbsp; margin-right:5px;</code></p>
+      <code>}</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Kết quả hiển thị tr&ecirc;n tr&igrave;nh duyệt</p>
+
+<p><img src="images/lessons/2021/07/01/image_wT8Pod1.png" style="height:160px; width:546px" /></p>
+
+<p>Một số thuộc t&iacute;nh quan trọng thường sử dụng trong flexbox container (nội dung sau tham khảo từ: <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" style="color:blue; text-decoration:underline">https://css-tricks.com/snippets/css/a-guide-to-flexbox/</a>)</p>
+
+<p><span style="color:#2980b9"><strong>flex-direction</strong></span>: row | row-reverse | column | column-reverse; =&gt;&nbsp;chỉ định hướng hiển thị của c&aacute;c flex item, chẳng hạn gi&aacute; trị row l&agrave; hiển thị từ tr&aacute;i sang phải, row-reverse l&agrave; từ phải sang tr&aacute;i, column từ tr&ecirc;n xuống dưới.</p>
+
+<p><img src="images/lessons/2021/07/01/image.png" style="height:174px; width:378px" /></p>
+
+<p><span style="color:#2980b9"><strong>flex-wrap</strong></span>: nowrap | wrap | wrap-reverse; =&gt;&nbsp;mặc định flex item sẽ được xử l&yacute; hiển thị chỉ tr&ecirc;n 1 d&ograve;ng hoặc 1 cột (tuỳ flex-direction), muốn thay đổi xử l&yacute; n&agrave;y cho ch&uacute;ng xuống d&ograve;ng th&igrave; sử dụng thuộc t&iacute;nh n&agrave;y.</p>
+
+<p><img src="images/lessons/2021/07/01/image_Dp7CFW1.png" style="height:182px; width:350px" /></p>
+
+<p><span style="color:#2980b9"><strong>justify-content</strong>:</span> flex-start | flex-end | center | space-between | space-around | space-evenly | start | end | left | right ... + safe | unsafe; =&gt;&nbsp;thuộc t&iacute;nh n&agrave;y gi&uacute;p canh lề theo chiều ngang c&aacute;c flex item một c&aacute;ch linh hoạt v&agrave; đa dạng.</p>
+
+<p><img src="images/lessons/2021/07/01/image_aYL6Lev.png" style="height:552px; width:340px" /></p>
+
+<p><span style="color:#2980b9"><strong>align-items</strong></span>: stretch | flex-start | flex-end | center | baseline | first baseline | last baseline | start | end | self-start | self-end + ... safe | unsafe; =&gt;&nbsp;canh lề c&aacute;c flex item theo chiều dọc.</p>
+
+<p><img src="images/lessons/2021/07/01/image_PA9isDg.png" style="height:426px; width:334px" /></p>
+
+<p><span style="color:#2980b9"><strong>align-content</strong></span>: flex-start | flex-end | center | space-between | space-around | space-evenly | stretch | start | end | baseline | first baseline | last baseline + ... safe | unsafe; =&gt;&nbsp;canh lề nguy&ecirc;n khối flex theo cả chiều ngang v&agrave; chiều dọc nếu c&oacute; kh&ocirc;ng gian trống.</p>
+
+<p><img src="images/lessons/2021/07/01/image_JZ9ns0P.png" style="height:470px; width:370px" /></p>
+
+<p>Ch&uacute; &yacute; c&aacute;c thuộc t&iacute;nh float, clear v&agrave; vertical-align kh&ocirc;ng c&oacute; hiệu lực cho c&aacute;c flex item.</p>
