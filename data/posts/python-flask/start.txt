@@ -8,19 +8,19 @@
 
 <p><span style="color:#2980b9"><strong>Bước 1</strong></span>. Tạo m&ocirc;i trường ảo (m&ocirc;i trường n&agrave;y c&oacute; thể tạo bất kỳ đầu tr&ecirc;n m&aacute;y, ở đ&acirc;y tạo trong project) bằng lệnh: <code>virtualenv demoenv</code> (demoenv l&agrave; t&ecirc;n m&ocirc;i trường ảo, nếu tr&ecirc;n m&aacute;y c&oacute; c&agrave;i nhiều phi&ecirc;n bản python, khi tạo m&ocirc;i trường ảo muốn chỉ đỉnh phi&ecirc;n bản sử dụng giống như sau&nbsp;<code>virtualenv --python=/usr/bin/python3.8 demenv</code>)</p>
 
-<p><img alt="t1" src="images/lessons/2021/07/02/screen-shot-2021-07-02-at-34044-pm.png" style="width:80%" /></p>
+<p><img alt="t1" src="images/lessons/2021/07/02/screen-shot-2021-07-02-at-34044-pm.png" style="width:50%" /></p>
 
 <p><span style="color:#2980b9"><strong>Bước 2</strong></span>. K&iacute;ch hoạt m&ocirc;i trường ảo bằng lệnh:&nbsp;</p>
 
-<p>- Tr&ecirc;n windows: <code>demoenv/Scripts/activate</code></p>
+<p>- Tr&ecirc;n Windows: <code>demoenv/Scripts/activate</code></p>
 
-<p>- Tr&ecirc;n macos hoặc linux: <code>source demoenv/bin/activate</code></p>
+<p>- Tr&ecirc;n MacOS hoặc Linux: <code>source demoenv/bin/activate</code></p>
 
-<p><img alt="" src="images/lessons/2021/07/02/screen-shot-2021-07-02-at-34204-pm.png" style="width:80%" /></p>
+<p><img alt="" src="images/lessons/2021/07/02/screen-shot-2021-07-02-at-34204-pm.png" style="width:50%" /></p>
 
 <p><span style="color:#2980b9"><strong>Bước 3</strong></span>. C&agrave;i đặt flask trong m&ocirc;i trường ảo bằng lệnh: <code>pip install flask</code></p>
 
-<p><img alt="" src="/images/lessons/2021/07/02/screen-shot-2021-07-02-at-34643-pm.png" style="width:80%" /><img alt="t3" src="images/lessons/2021/07/02/screen-shot-2021-07-02-at-34643-pm_DyGJ28c.png" style="width:80%" /></p>
+<p><img alt="" src="/images/lessons/2021/07/02/screen-shot-2021-07-02-at-34643-pm.png" style="width:50%" />
 
 <p><span style="color:#2980b9"><strong>Bước 4</strong></span>. Tạo tập tin python <code>demoapp/index.py </code>v&agrave; viết m&atilde; nguồn như sau:</p>
 
@@ -43,13 +43,13 @@
 	</tbody>
 </table>
 
-<p><span style="color:#2980b9"><strong>Bước 5</strong></span>. Thực thi lệnh sau để chạy ứng dụng Web: python index.py -m flask run</p>
+<p><span style="color:#2980b9"><strong>Bước 5</strong></span>. Thực thi lệnh sau để chạy ứng dụng Web: <code>python index.py -m flask run</code></p>
 
-<p><img alt="t4" src="images/lessons/2021/07/02/screen-shot-2021-07-02-at-34859-pm.png" style="width:80%" /></p>
+<p><img alt="t4" src="images/lessons/2021/07/02/screen-shot-2021-07-02-at-34859-pm.png" style="width:50%" /></p>
 
-<p><span style="color:#2980b9"><strong>Bước 6</strong></span>. Truy cập trang http://127.0.0.1:5000/ kết quả như sau:</p>
+<p><span style="color:#2980b9"><strong>Bước 6</strong></span>. Truy cập trang <code>http://127.0.0.1:5000/</code> kết quả như sau:</p>
 
-<p><img alt="t5" src="images/lessons/2021/07/02/screen-shot-2021-07-02-at-34922-pm.png" style="width:80%" /></p>
+<p><img alt="t5" src="images/lessons/2021/07/02/screen-shot-2021-07-02-at-34922-pm.png" style="width:40%" /></p>
 
 <p>&nbsp;</p>
 

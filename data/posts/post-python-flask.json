@@ -6,4 +6,8 @@
     "subject": "Sử dụng template và static files",
     "file": "data/posts/python-flask/template-static.txt",
     "order": 2
+}, {
+    "subject": "Giao tiếp giữa views và templates",
+    "file": "data/posts/python-flask/params.txt",
+    "order": 3
 }]

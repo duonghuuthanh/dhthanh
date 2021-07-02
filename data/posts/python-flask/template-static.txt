@@ -51,7 +51,7 @@
 
 <p><img alt="t" src="images/lessons/2021/07/02/screen-shot-2021-07-02-at-43544-pm.png" style="width:50%" /></p>
 
-<h3><strong>Static File</strong></h3>
+<h3><strong>Static Files</strong></h3>
 
 <p>Tạo thư mục <strong><code>demoapp/static</code></strong>,&nbsp;đ&acirc;y l&agrave; thư mục mặc định flask t&igrave;m c&aacute;c t&agrave;i nguy&ecirc;n ứng dụng Web như css, js, h&igrave;nh ảnh, &acirc;m thanh.&nbsp;Ta c&oacute; thể thay đổi điều n&agrave;y bằng c&aacute;ch thiết lập vị tr&iacute; thư mục chứa template cho biến&nbsp;<strong><code>app.static_folder</code></strong>.&nbsp;</p>
 

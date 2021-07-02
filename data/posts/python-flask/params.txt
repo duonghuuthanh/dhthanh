@@ -1,0 +1,117 @@
+<h1 class="text-center text-danger"><strong>GIAO TIẾP GIỮA VIEWS V&Agrave; TEMPLATE</strong></h1>
+
+<h3><strong>Request Params</strong></h3>
+
+<p>Giả sử trong&nbsp;<code>/hello</code> cho ph&eacute;p truyền 2 tham số dạng request params như sau <strong><code>/hello?first_name=&amp;last_name=</code></strong>. Thuộc t&iacute;nh <code>request.args</code> chứa danh s&aacute;ch tham số truyền tr&ecirc;n url, ta lấy gi&aacute; trị hai tham số n&agrave;y trong views như sau:</p>
+
+<table border="1" cellpadding="5" cellspacing="0" style="border-collapse:collapse; width:100%">
+	<tbody>
+		<tr>
+			<td>
+			<p><code>from flask import Flask, render_template, <strong>request</strong></code></p>
+
+			<p><code>app = Flask(__name__)</code></p>
+
+			<p><code>@app.route(&quot;/hello&quot;)<br />
+			def hello():<br />
+			&nbsp;<strong> fn = request.args.get(&quot;first_name&quot;)<br />
+			&nbsp; ln = request.args.get(&quot;last_name&quot;)</strong><br />
+			&nbsp; user = {<br />
+			&nbsp; &nbsp; &quot;first_name&quot;: fn if fn else &quot;Thanh&quot;,<br />
+			&nbsp; &nbsp; &quot;last_name&quot;: ln if ln else &quot;Duong&quot;<br />
+			&nbsp; }<br />
+			&nbsp; return render_template(&#39;index.html&#39;, user=user)</code></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>Truy cập&nbsp;<code>http://127.0.0.1:5000/hello?first_name=Huu-Thanh&amp;last_name=Duong</code> kết quả như sau:</p>
+
+<p><img alt="t" src="images/lessons/2021/07/02/screen-shot-2021-07-02-at-80928-pm.png" style="width:50%" /></p>
+
+<h3><strong>Path Params</strong></h3>
+
+<p>Ta c&oacute; thể truyền tham số trực tiếp tr&ecirc;n url, giả sử ta cho ph&eacute;p truyền một số nguy&ecirc;n tr&ecirc;n <code>url/{age}</code> rồi hiển thị ra c&acirc;u số tuổi, ta định nghĩa một action như sau:&nbsp;</p>
+
+<table border="1" cellpadding="5" cellspacing="0" style="border-collapse:collapse; width:100%">
+	<tbody>
+		<tr>
+			<td>
+			<p><code>@app.route(&quot;/hello/<strong>&lt;int:age&gt;</strong>&quot;)<br />
+			def test(age):&nbsp;<br />
+			&nbsp; return &quot;&lt;h1&gt;You are %d years old&lt;/h1&gt;&quot; % age</code></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>Ch&uacute; &yacute; tuỳ kiểu dữ liệu mong muốn truyền v&agrave;o th&igrave; <code>int</code> c&oacute; thể thay bằng kiểu dữ liệu kh&aacute;c như <code>float</code>, <code>str</code>, mặc định nếu kh&ocirc;ng đề cập th&igrave; kiểu dữ liệu cho tham số l&agrave; <code>str</code>.</p>
+
+<p>Truy cập&nbsp;<code>http://127.0.0.1:5000/hello/18</code> kết quả giống như sau:</p>
+
+<p><img alt="t" src="images/lessons/2021/07/02/screen-shot-2021-07-02-at-81756-pm.png" style="width:50%" /></p>
+
+<h3><strong>Body Params</strong></h3>
+
+<p>Khi truyền tham số từ template v&agrave;o views th&ocirc;ng qua c&aacute;c HTTP Post hoặc Put th&igrave; dữ liệu truyền đặt trong body của request. Giả sử ta c&oacute; form như sau cho ph&eacute;p người d&ugrave;ng nhập v&agrave;o username v&agrave; password để đăng nhập hệ thống.</p>
+
+<table border="1" cellpadding="5" cellspacing="0" style="border-collapse:collapse; width:100%">
+	<tbody>
+		<tr>
+			<td>
+			<p><code>&lt;!DOCTYPE html&gt;<br />
+			&lt;html&gt;<br />
+			&nbsp; &lt;head&gt;<br />
+			&nbsp; &nbsp; &lt;title&gt;Login&lt;/title&gt;<br />
+			&nbsp; &lt;/head&gt;<br />
+			&nbsp; &lt;body&gt;<br />
+			&nbsp; &nbsp; {% if err_code == 200 %}<br />
+			&nbsp; &nbsp; &lt;h1 style=&quot;color:blue&quot;&gt;{{ msg }}&lt;/h1&gt;<br />
+			&nbsp; &nbsp; {% else %}<br />
+			&nbsp; &nbsp; &lt;p style=&quot;color:red;&quot;&gt;{{ msg }}&lt;/p&gt;<br />
+			&nbsp; &nbsp;<strong> &lt;form method=&quot;POST&quot; action=&quot;/login&quot;&gt;</strong><br />
+			&nbsp; &nbsp; &nbsp; &lt;input type=&quot;text&quot; placeholder=&quot;Input username...&quot; <strong>name=&quot;username&quot;</strong> /&gt;<br />
+			&nbsp; &nbsp; &nbsp; &lt;input type=&quot;password&quot; placeholder=&quot;Input password...&quot; <strong>name=&quot;password&quot;</strong> /&gt;<br />
+			&nbsp; &nbsp; &nbsp; &lt;input type=&quot;submit&quot; value=&quot;Login&quot; /&gt;<br />
+			&nbsp; &nbsp; <strong>&lt;/form&gt;</strong><br />
+			&nbsp; &nbsp; {% endif %}<br />
+			&nbsp; &lt;/body&gt;<br />
+			&lt;/html&gt;</code></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>Trong <code>demoapp/index.py</code> viết th&ecirc;m action xử l&yacute; như sau. Action n&agrave;y hỗ trợ 2 phương thức HTTP l&agrave; get để cho ph&eacute;p người d&ugrave;ng truy cập v&agrave;o trang login v&agrave; post để cho ph&eacute;p xử l&yacute; khi người d&ugrave;ng submit form bằng post.&nbsp;</p>
+
+<p>Để lấy tham số truyền body dạng form sử dụng <code>request.form</code>.</p>
+
+<table border="1" cellpadding="5" cellspacing="0" style="border-collapse:collapse; width:100%">
+	<tbody>
+		<tr>
+			<td>
+			<p><code>@app.route(&quot;/login&quot;, methods=[&quot;get&quot;, &quot;post&quot;])<br />
+			def login():<br />
+			&nbsp; msg, err_code = &quot;&quot;, -1<br />
+			&nbsp; if request.method == &quot;POST&quot;:<br />
+			&nbsp; &nbsp; <strong>username = request.form.get(&quot;username&quot;)<br />
+			&nbsp; &nbsp; password = request.form.get(&quot;password&quot;)</strong><br />
+			&nbsp; &nbsp; if username == &quot;admin&quot; and password == &quot;123&quot;:<br />
+			&nbsp; &nbsp; &nbsp; msg, err_code = &quot;WELCOME ADMIN!&quot;, 200<br />
+			&nbsp; &nbsp; else:<br />
+			&nbsp; &nbsp; &nbsp; msg, err_code = &quot;Username or password is incorrect!&quot;, 400</code></p>
+
+			<p><code>&nbsp; return render_template(&quot;login.html&quot;, msg=msg, err_code=err_code)</code></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>Truy cập v&agrave;o<code> http://127.0.0.1:5000/login</code> v&agrave; đăng nhập với username=admin, password=123</p>
+
+<p><img alt="t1" src="images/lessons/2021/07/02/screen-shot-2021-07-02-at-83555-pm.png" style="width:50%" />&nbsp;<img alt="t2" src="images/lessons/2021/07/02/screen-shot-2021-07-02-at-83634-pm.png" style="width:49%" /></p>
+
+<p>Truy cập v&agrave;o <code>http://127.0.0.1:5000/login</code> v&agrave; đăng nhập sai th&ocirc;ng tin username hay password</p>
+
+<p><img alt="t3" src="images/lessons/2021/07/02/screen-shot-2021-07-02-at-83647-pm.png" style="width:50%" />&nbsp;<img alt="t4" src="images/lessons/2021/07/02/screen-shot-2021-07-02-at-83709-pm.png" style="width:49%" /></p>
