@@ -1,0 +1,9 @@
+[{
+    "subject": "Tạo ứng dụng Web đầu tiên với Python Flask",
+    "file": "data/posts/python-flask/start.txt",
+    "order": 1
+}, {
+    "subject": "Sử dụng template và static files",
+    "file": "data/posts/python-flask/template-static.txt",
+    "order": 2
+}]

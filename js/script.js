@@ -259,6 +259,7 @@ $(document).ready(() => {
     wow.init();
 
     $("#categoryId").on("click", "li a", function(event) {
+        $("#popupId").hide()
         $("#categoryId > li").removeClass("active")
         $(this).parent().addClass("active")
 

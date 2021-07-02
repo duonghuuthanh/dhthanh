@@ -1,0 +1,95 @@
+<h1 class="text-center text-danger"><strong>SỬ DỤNG TEMPLATE V&Agrave; STATIC FILES</strong></h1>
+
+<h3><strong>Template</strong></h3>
+
+<p>Tạo thư mục <code><strong>demoapp/template</strong>s</code>, đ&acirc;y l&agrave; thư mục mặc định flask t&igrave;m c&aacute;c tập tin HTML, ta c&oacute; thể thay đổi điều n&agrave;y bằng c&aacute;ch thiết lập vị tr&iacute; thư mục chứa template cho biến&nbsp;<strong><code>app.template_folder</code></strong>.&nbsp;</p>
+
+<p>Trong thư mục n&agrave;y tạo tập tin <code>index.html </code>c&oacute; nội dung như sau:</p>
+
+<table border="1" cellpadding="5" cellspacing="0" style="border-collapse:collapse; width:100%">
+	<tbody>
+		<tr>
+			<td><code>&lt;!DOCTYPE html&gt;<br />
+			&lt;html&gt;<br />
+			&nbsp; &lt;head&gt;<br />
+			&nbsp; &nbsp; &lt;title&gt;DemoApp&lt;/title&gt;<br />
+			&nbsp; &lt;/head&gt;<br />
+			&nbsp; &lt;body&gt;<br />
+			&nbsp; &nbsp; &lt;h1&gt;Welcome {{ user.first_name }} {{ user.last_name }}!&lt;/h1&gt;<br />
+			&nbsp; &lt;/body&gt;<br />
+			&lt;/html&gt;</code></td>
+		</tr>
+	</tbody>
+</table>
+
+<p>Bổ sung action cho demoapp/index.py để kết xuất hiển thị tập tin index.html v&agrave; trả ra th&ocirc;ng tin user cho template</p>
+
+<table border="1" cellpadding="5" cellspacing="0" style="border-collapse:collapse; width:100%">
+	<tbody>
+		<tr>
+			<td>
+			<p><code>from flask import Flask, <strong>render_template</strong></code></p>
+
+			<p><code>app = Flask(__name__)</code></p>
+
+			<p><code>@app.route(&quot;/hello&quot;)<br />
+			def hello():<br />
+			&nbsp; user = {<br />
+			&nbsp; &nbsp; &quot;first_name&quot;: &quot;Thanh&quot;,<br />
+			&nbsp; &nbsp; &quot;last_name&quot;: &quot;Duong&quot;<br />
+			&nbsp; }<br />
+			&nbsp; return <strong>render_template(&#39;index.html&#39;, user=user)</strong></code></p>
+
+			<p><code>if __name__ == &#39;__main__&#39;:<br />
+			&nbsp; app.run(debug=True)</code></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>Truy cập <strong><code>http://127.0.0.1/hello</code></strong> kết quả giống như sau:</p>
+
+<p><img alt="t" src="images/lessons/2021/07/02/screen-shot-2021-07-02-at-43544-pm.png" style="width:50%" /></p>
+
+<h3><strong>Static File</strong></h3>
+
+<p>Tạo thư mục <strong><code>demoapp/static</code></strong>,&nbsp;đ&acirc;y l&agrave; thư mục mặc định flask t&igrave;m c&aacute;c t&agrave;i nguy&ecirc;n ứng dụng Web như css, js, h&igrave;nh ảnh, &acirc;m thanh.&nbsp;Ta c&oacute; thể thay đổi điều n&agrave;y bằng c&aacute;ch thiết lập vị tr&iacute; thư mục chứa template cho biến&nbsp;<strong><code>app.static_folder</code></strong>.&nbsp;</p>
+
+<p>Trong thư mục n&agrave;y tạo tập tin <strong><code>style.css</code></strong> c&oacute; nội dung như sau:</p>
+
+<table border="1" cellpadding="5" cellspacing="0" style="border-collapse:collapse; width:100%">
+	<tbody>
+		<tr>
+			<td><code>body {<br />
+			&nbsp; background-color: lightblue;<br />
+			&nbsp; font-family: Arial, Helvetica, sans-serif;<br />
+			&nbsp; color: red;<br />
+			}</code></td>
+		</tr>
+	</tbody>
+</table>
+
+<p>Import tập tin css n&agrave;y v&agrave;o index.html như sau:</p>
+
+<table border="1" cellpadding="5" cellspacing="0" style="border-collapse:collapse; width:100%">
+	<tbody>
+		<tr>
+			<td><code>&lt;!DOCTYPE html&gt;<br />
+			&lt;html&gt;<br />
+			&nbsp; &lt;head&gt;<br />
+			&nbsp; &nbsp; &lt;title&gt;DemoApp&lt;/title&gt;<br />
+			&nbsp; &nbsp; <strong>&lt;link rel=&quot;stylesheet&quot; href=&quot;{{ url_for(&#39;static&#39;, filename=&#39;style.css&#39;) }}&quot; /&gt;</strong><br />
+			&nbsp; &lt;/head&gt;<br />
+			&nbsp; &lt;body&gt;<br />
+			&nbsp; &nbsp; &lt;h1&gt;Welcome {{ user.first_name }} {{ user.last_name }}!&lt;/h1&gt;<br />
+			&nbsp; &lt;/body&gt;<br />
+			&lt;/html&gt;</code></td>
+		</tr>
+	</tbody>
+</table>
+
+<p>Sau đ&oacute; truy cập lại trang&nbsp;<strong><code>http://127.0.0.1/hello</code></strong> kết quả như sau:</p>
+
+<p><img alt="t2" src="images/lessons/2021/07/02/screen-shot-2021-07-02-at-44840-pm.png" style="width:50%" /></p>
+
+<p>&nbsp;</p>

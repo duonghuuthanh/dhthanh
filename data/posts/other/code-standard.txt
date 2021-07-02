@@ -480,8 +480,8 @@
 		</tr>
 	</tbody>
 </table>
-
-<p><span style="color:#000000"><strong>Tổng kết</strong></span></p>
+<p></p>
+<h3><span style="color:#000000"><strong>Tổng kết</strong></span></h3>
 
 <p><span style="color:#000000">Phong c&aacute;ch lập tr&igrave;nh kh&ocirc;ng phải l&agrave; một vấn đề thi&ecirc;n về kỹ thuật, tuy nhi&ecirc;n n&oacute; &ldquo;l&agrave;m đẹp&rdquo; hơn cho những vấn đề kỹ thuật trong lập tr&igrave;nh rất nhiều. Mục ti&ecirc;u hướng tới phong c&aacute;ch lập tr&igrave;nh gi&uacute;p chương tr&igrave;nh dễ đọc, dễ hiểu, dễ bảo tr&igrave;, dễ t&aacute;i sử dụng, dễ d&agrave;ng chuyển giao giữa c&aacute;c th&agrave;nh vi&ecirc;n n&ecirc;n sẽ giảm bớt nhiều rủi ro về nh&acirc;n sự, to&agrave;n bộ chương tr&igrave;nh sẽ trở n&ecirc;n nhất qu&aacute;n, đồng bộ. Tr&ecirc;n đ&acirc;y ch&uacute;ng t&ocirc;i liệt k&ecirc; một số nguy&ecirc;n tắc th&ocirc;ng dụng nhất trong lập tr&igrave;nh, c&aacute;c bạn c&oacute; thể d&ugrave;ng c&aacute;c từ kh&oacute;a ch&uacute;ng t&ocirc;i cung cấp để t&igrave;m kiếm th&ecirc;m t&agrave;i liệu, c&aacute;c nguy&ecirc;n tắc hữu &iacute;t tr&ecirc;n internet.</span></p>
 

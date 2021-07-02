@@ -1,0 +1,56 @@
+<h1 class="text-center text-danger">XÂY DỰNG ỨNG DỤNG WEB ĐẦU TIÊN VỚI PYTHON FLASK</h1>
+<p><em>Ta có thể sử dụng một số IDE có hỗ trợ sẵn cấu trúc project của Flask. Trong bài viết này trình bày cách tạo project từ đầu có thể sử dụng một trình soạn thảo nào đó như notepad, sublime text hoặc visual code </em></p>
+<p>Đầu tiên ta cần tài và cài python phiên bản mới nhất tại <a href="https://www.python.org/downloads/">https://www.python.org/downloads/</a>. Tạo thư mục project tại vị trí bất kỳ trên máy, ở đây tạo thư mục project tại Desktop và đặt tên thư mục demoapp. Sau đó mở terminal hoặc prompt command và di chuyển (cd) vị trí project.</p>
+
+<h3>Các bước thực hiện</h3>
+
+<p>C&agrave;i đặt thư viện tạo m&ocirc;i trường ảo bằng lệnh: <code>pip install virtualenv</code></p>
+
+<p><span style="color:#2980b9"><strong>Bước 1</strong></span>. Tạo m&ocirc;i trường ảo (m&ocirc;i trường n&agrave;y c&oacute; thể tạo bất kỳ đầu tr&ecirc;n m&aacute;y, ở đ&acirc;y tạo trong project) bằng lệnh: <code>virtualenv demoenv</code> (demoenv l&agrave; t&ecirc;n m&ocirc;i trường ảo, nếu tr&ecirc;n m&aacute;y c&oacute; c&agrave;i nhiều phi&ecirc;n bản python, khi tạo m&ocirc;i trường ảo muốn chỉ đỉnh phi&ecirc;n bản sử dụng giống như sau&nbsp;<code>virtualenv --python=/usr/bin/python3.8 demenv</code>)</p>
+
+<p><img alt="t1" src="images/lessons/2021/07/02/screen-shot-2021-07-02-at-34044-pm.png" style="width:80%" /></p>
+
+<p><span style="color:#2980b9"><strong>Bước 2</strong></span>. K&iacute;ch hoạt m&ocirc;i trường ảo bằng lệnh:&nbsp;</p>
+
+<p>- Tr&ecirc;n windows: <code>demoenv/Scripts/activate</code></p>
+
+<p>- Tr&ecirc;n macos hoặc linux: <code>source demoenv/bin/activate</code></p>
+
+<p><img alt="" src="images/lessons/2021/07/02/screen-shot-2021-07-02-at-34204-pm.png" style="width:80%" /></p>
+
+<p><span style="color:#2980b9"><strong>Bước 3</strong></span>. C&agrave;i đặt flask trong m&ocirc;i trường ảo bằng lệnh: <code>pip install flask</code></p>
+
+<p><img alt="" src="/images/lessons/2021/07/02/screen-shot-2021-07-02-at-34643-pm.png" style="width:80%" /><img alt="t3" src="images/lessons/2021/07/02/screen-shot-2021-07-02-at-34643-pm_DyGJ28c.png" style="width:80%" /></p>
+
+<p><span style="color:#2980b9"><strong>Bước 4</strong></span>. Tạo tập tin python <code>demoapp/index.py </code>v&agrave; viết m&atilde; nguồn như sau:</p>
+
+<table border="1" cellpadding="5" cellspacing="0" style="border-collapse:collapse; width:100%">
+	<tbody>
+		<tr>
+			<td>
+			<p><code>from flask import Flask&nbsp;</code></p>
+
+			<p><code>app = Flask(__name__)</code></p>
+
+			<p><code>@app.route(&quot;/&quot;)<br />
+			def index():<br />
+			&nbsp; &nbsp; return &quot;&lt;h1&gt;Welcome to our Websites!!!&lt;/h1&gt;&quot;</code></p>
+
+			<p><code>if __name__ == &#39;__main__&#39;:<br />
+			&nbsp; &nbsp; app.run(debug=True)</code></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p><span style="color:#2980b9"><strong>Bước 5</strong></span>. Thực thi lệnh sau để chạy ứng dụng Web: python index.py -m flask run</p>
+
+<p><img alt="t4" src="images/lessons/2021/07/02/screen-shot-2021-07-02-at-34859-pm.png" style="width:80%" /></p>
+
+<p><span style="color:#2980b9"><strong>Bước 6</strong></span>. Truy cập trang http://127.0.0.1:5000/ kết quả như sau:</p>
+
+<p><img alt="t5" src="images/lessons/2021/07/02/screen-shot-2021-07-02-at-34922-pm.png" style="width:80%" /></p>
+
+<p>&nbsp;</p>
+
+
