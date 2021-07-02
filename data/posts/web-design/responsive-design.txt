@@ -60,7 +60,7 @@ V&iacute; dụ</p>
 
 <h3><strong>H&igrave;nh ảnh trong thiết kế Responsive</strong></h3>
 
-<p>H&igrave;nh ảnh (img) n&ecirc;n thiết lập chiều rộng theo %, chiều cao l&agrave; auto. Sử dụng thể &lt;picture&gt; để hiển thị h&igrave;nh ảnh dựa tr&ecirc;n chiều rộng của m&agrave;n h&igrave;nh.</p>
+<p>H&igrave;nh ảnh (img) n&ecirc;n thiết lập chiều rộng theo %, chiều cao l&agrave; auto. Sử dụng thẻ &lt;picture&gt; để hiển thị h&igrave;nh ảnh dựa tr&ecirc;n chiều rộng của m&agrave;n h&igrave;nh.</p>
 
 <table border="1" cellpadding="5" cellspacing="0" style="border-collapse:collapse; width:100%">
 	<tbody>

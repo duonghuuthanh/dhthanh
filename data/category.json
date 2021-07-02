@@ -12,6 +12,9 @@
     }, {
         "name": "Lập trình Java",
         "rel": "post-java-programming"
+    }, {
+        "name": "Khác",
+        "rel": "post-other"
     }]
 }, {
     "id": 2,

@@ -163,25 +163,23 @@ const loadHomePage = (id=contentId) => {
     })
 
     fetch(`${DOMAIN}/data/home/video.json`).then(res => res.json()).then(d => {
-        let video = ""
-        d.data.forEach(v => {
-            video += `
-            <div class="item-video wow animate__slideInUp" data-merge="3">
-                <iframe width="100%" height="315" src="${v}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            `
-        })
-
         $(id).append(`
-            <div class="item">
+            <div class="item wow animate__slideInUp">
                 <h1 class="subject text-center text-uppercase text-danger">${d.subject}</h1>
-                <div class="owl-carousel owl-theme">
-                    ${video}
+                <div class="owl-carousel owl-theme" id="myVideo">
                 </div>
             </div>
         `)
 
-        $('.owl-carousel').owlCarousel({
+        d.data.forEach(v => {
+            $("#myVideo").append(`
+                <div class="item-video" data-merge="3">
+                    <iframe width="100%" height="315" data-src="${v}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            `)
+        })
+
+        let owl = $('.owl-carousel').owlCarousel({
             items:1,
             merge:true,
             loop:true,
@@ -201,6 +199,16 @@ const loadHomePage = (id=contentId) => {
                 }
             }
         })
+
+        owl.on('changed.owl.carousel', function(event) {
+            var current = event.item.index;
+            var currentVideo = $(event.target).find('.owl-item').eq(current).find('iframe');
+           
+            if ( currentVideo.length ) {
+              var currentVideoSrc = currentVideo.attr('data-src');
+              currentVideo.attr('src', currentVideoSrc);
+            }
+          });
     })
 }
 
