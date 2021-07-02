@@ -26,8 +26,8 @@
 	<tbody>
 		<tr>
 			<td><code>@media not|only mediatype and (expressions) {<br />
-			&nbsp; CSS-Code;</code><br />
-			}</td>
+			&nbsp; CSS-Code;<br />
+			}</code></td>
 		</tr>
 	</tbody>
 </table>
@@ -52,8 +52,8 @@ V&iacute; dụ</p>
 			&nbsp;&nbsp; &nbsp;body {<br />
 			&nbsp;&nbsp; &nbsp; &nbsp;background-color:lightblue;<br />
 			&nbsp;&nbsp; &nbsp; &nbsp;font-size:30px;<br />
-			&nbsp; }</code><br />
-			&nbsp;</td>
+			&nbsp;&nbsp;&nbsp; }<br>
+			}</code></td>
 		</tr>
 	</tbody>
 </table>
