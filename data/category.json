@@ -5,18 +5,23 @@
     "icon": "fas fa-book-reader",
     "sub": [{
         "name": "Thiết kế Web",
+        "image": "images/home/lessons/web-design.png",
         "rel": "post-web-design"
     }, {
         "name": "Python Flask",
+        "image": "images/home/lessons/flask.png",
         "rel": "post-python-flask"
     }, {
         "name": "Lập trình Java",
+        "image": "images/home/lessons/java.png",
         "rel": "post-java-programming"
     }, {
         "name": "Trí tuệ nhân tạo",
+        "image": "images/home/lessons/ai.png",
         "rel": "post-ai"
     }, {
         "name": "Khác",
+        "image": "images/home/lessons/others.png",
         "rel": "post-other"
     }]
 }, {

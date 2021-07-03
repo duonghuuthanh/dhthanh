@@ -114,7 +114,7 @@ Hai chiền lược t&igrave;m kiếm m&ugrave; phổ biến l&agrave; &nbsp;t&i
 - C&aacute;c d&ograve;ng tiếp theo , d&ograve;ng thứ i trong c&aacute;c d&ograve;ng n&agrave;y ghi hai số xi, yi l&agrave; tọa độ điểm i.<br />
 Dữ liệu ra ghi v&agrave;o file dao.out c&oacute; cấu tr&uacute;c sau :<br />
 - Nếu c&oacute; đường đi th&igrave; d&ograve;ng đầu ghi số đảo gh&eacute; v&agrave;o lấy xăng (trừ U, V). D&ograve;ng thứ hai ghi số hiệu c&aacute;c đảo đ&oacute; theo thứ tự h&agrave;nh tr&igrave;nh&nbsp;<br />
-- Nếu kh&ocirc;ng c&oacute; đường đi th&igrave; ghi &ldquo;khong ton tai loi giai&rdquo;.<br />
+- Nếu kh&ocirc;ng c&oacute; đường đi th&igrave; ghi &ldquo;khong ton tai loi giai&rdquo;.
 &nbsp;</p>
 
 <p><em>Gợi ý: Đầu tiên, ta xây dựng một đồ thị trong đó mỗi đỉnh của đồ thị là các hòn đảo, cạnh nối hai đỉnh của đồ thị nếu khoảng cách Ơclit (đơn vị là km) của hai đỉnh nhỏ hơn m. Để giải quyết bài toán này, ta áp dụng thuật giải BFS để tìm đường đi từ đỉnh u đến đỉnh v trên đồ thị vừa xây dựng.  

@@ -1,9 +1,10 @@
 div.card {
-    margin: 1% !important;
+   
+    padding: 0;
 }
 
 ul {
-    padding: 5px !important;
+    padding: 10px !important;
 }
 
 h1.subject {
@@ -28,6 +29,22 @@ h1.subject.line-left::after {
 
 .my-name {
     text-shadow: 1px 2px 2px gold;
+}
+
+.lesson-card {
+    padding: 10px;
+}
+
+.lesson-card > div.card:hover {
+    box-shadow: 3px 4px 3px wheat;
+}
+
+a.lesson {
+    padding: 0;
+}
+
+h5 {
+    margin: 0;
 }
 
 @media screen and (min-width: 500px) {

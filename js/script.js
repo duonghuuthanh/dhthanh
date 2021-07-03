@@ -10,6 +10,11 @@ const loadCategories = (id="#categoryId") => {
     fetch(`${DOMAIN}/data/category.json`).then(res => res.json()).then(data => {
         let msg = ""
         data.forEach(d => {
+            // load for home
+            if (d.id == 1 && 'sub' in d)
+                loadLessonsHome(contentId, d['sub'])
+
+             // loaf category
             if ('sub' in d) {
                 let temp = ""
                 for (let j = 0; j < d['sub'].length; j++)
@@ -210,6 +215,33 @@ const loadHomePage = (id=contentId) => {
     })
 }
 
+const loadLessonsHome = (id=contentId, lessons) => {
+    let msg = ""
+    lessons.forEach(lesson => {
+        msg += `
+            <div class="col-md-4 col-xs-12 lesson-card">
+                <div class="card wow animate__flip">
+                    <div class="card-header"><h5>${lesson.name}</h5></div>
+                    <div class="card-content">
+                        <a class="dropdown-item lesson" href="javascript:;" rel=${lesson.rel}>
+                            <img src="${lesson.image}" class="img-fluid" alt="${lesson.name}" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        `
+    })
+
+    $(id).append(`
+        <div class="item wow animate__slideInUp">
+            <h1 class="subject text-center text-uppercase text-danger">CÁC CHỦ ĐỀ BÀI VIẾT</h1>
+            <div class="row">
+                ${msg}
+            </div>
+        </div>
+    `)
+}
+
 const loadCarousel = (id="#myBanner", path="images/home/friends/", num=22) => {
     let indicators = ""
     let items = ""
@@ -283,6 +315,11 @@ $(document).ready(() => {
                     if (t != null)
                         alert('comming soon...')
             }
+    })
+
+    $("#contentId").on("click", "a.lesson", function() {
+        let t = $(this).attr("rel")
+        loadPost(t)
     })
 
     $("#contentId").on("click", ".publication li a.paper", function() {
