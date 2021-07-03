@@ -1,0 +1,25 @@
+<h1 class="text-center text-danger"><strong>SƠ LƯỢC TR&Iacute; TUỆ NH&Acirc;N TẠO</strong></h1>
+
+<p>Tr&iacute; tuệ nh&acirc;n tạo (AI: Artificial Intelligence) l&agrave; tr&iacute; th&ocirc;ng minh của m&aacute;y do con người tạo ra.&nbsp;AI l&agrave; ng&agrave;nh khoa học rất rộng gồm nhiều lĩnh vực như machine learing, natural language processing, deep learning, computer vision, v.v. Những &yacute; tưởng đầu ti&ecirc;n của AI được đề xuất bởi Alan Turing đưa ra những năm 1950 &ndash; trước sự xuất hiện của m&aacute;y t&iacute;nh hiện đại.</p>
+
+<p><strong>Ph&acirc;n biệt tr&iacute; tuệ nh&acirc;n tạo (AI), m&aacute;y học (machine learning) v&agrave; học s&acirc;u (deep learning)</strong></p>
+
+<p>- Artificial Intelligence: m&ocirc; phỏng tr&iacute; th&ocirc;ng minh của con người tr&ecirc;n m&aacute;y t&iacute;nh.<br />
+- Machine Learning: huấn luyện m&aacute;y t&iacute;nh để n&oacute; nhận dạng dữ liệu hoặc dự đo&aacute;n.<br />
+- Deep Learning: m&aacute;y t&iacute;nh c&oacute; thể tự huấn luyện.</p>
+
+<h3>Một số th&agrave;nh tựu tr&iacute; tuệ nh&acirc;n tạo</h3>
+
+<p><img src="images/lessons/2021/07/03/image.png" style="width:80%" /></p>
+
+<p><strong>C&aacute;c trợ l&yacute; ảo&nbsp;</strong></p>
+
+<p><img src="images/lessons/2021/07/03/image_e8Nxx5b.png" style="width:80%" /></p>
+
+<p><strong>Ứng dụng trong thương mại điện tử</strong></p>
+
+<p><img src="images/lessons/2021/07/03/image_uQ2M2U7.png" style="width:80%" /></p>
+
+<p><strong>C&aacute;c ứng dụng sinh trắc học</strong></p>
+
+<p><img src="images/lessons/2021/07/03/image_EDjqefo.png" style="width:80%" /></p>

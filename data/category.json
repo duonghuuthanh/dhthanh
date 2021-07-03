@@ -13,6 +13,9 @@
         "name": "Lập trình Java",
         "rel": "post-java-programming"
     }, {
+        "name": "Trí tuệ nhân tạo",
+        "rel": "post-ai"
+    }, {
         "name": "Khác",
         "rel": "post-other"
     }]

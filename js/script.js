@@ -71,7 +71,7 @@ const loadPost = (postType, id=contentId) => {
         `)
         $("#popupId").show("slow")
         $("#popupId li:first-child > a").click()
-    })
+    }).catch(() => alert("Comming soon..."))
 }
 
 const loadVideo = (videoType, subject, id=contentId) => {
@@ -96,9 +96,7 @@ const loadVideo = (videoType, subject, id=contentId) => {
 
             $("#video").append(msg)
         })
-
-        
-    })
+    }).catch(() => alert("Comming soon..."))
 }
 
 const loadLearningResources = (id=contentId) => {

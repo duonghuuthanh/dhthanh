@@ -1,0 +1,13 @@
+[{
+    "subject": "Sơ lược trí tuệ nhân tạo",
+    "file": "data/posts/ai/intro.txt",
+    "order": 1
+}, {
+    "subject": "Tìm kiếm mù",
+    "file": "data/posts/ai/blind-search.txt",
+    "order": 1
+}, {
+    "subject": "Tìm kiếm heuristic",
+    "file": "data/posts/ai/heuristic-search.txt",
+    "order": 1
+}]
