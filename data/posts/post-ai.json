@@ -5,9 +5,13 @@
 }, {
     "subject": "Tìm kiếm mù",
     "file": "data/posts/ai/blind-search.txt",
-    "order": 1
+    "order": 2
 }, {
     "subject": "Tìm kiếm heuristic",
     "file": "data/posts/ai/heuristic-search.txt",
-    "order": 1
+    "order": 3
+}, {
+    "subject": "Các chiến lược tiềm kiếm heuristic",
+    "file": "data/posts/ai/heuristic-strategy.txt",
+    "order": 4
 }]

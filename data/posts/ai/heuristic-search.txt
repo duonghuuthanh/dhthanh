@@ -1,0 +1,50 @@
+<h1 class="text-center text-danger"><strong>T&Igrave;M KIẾM HEURISTIC</strong></h1>
+
+<p>Theo Feigenbaum Feldman th&igrave; &quot;heuristic l&agrave; c&aacute;c qui tắc, phương ph&aacute;p, chiến lược, mẹo giải hay phương c&aacute;ch n&agrave;o đ&oacute; nhằm l&agrave;m giảm khối lượng t&igrave;m kiếm lời giải trong kh&ocirc;ng gian b&agrave;i to&aacute;n cực lớn&quot;. Heuristic l&agrave; phỏng đo&aacute;n, ước chừng dựa tr&ecirc;n trực gi&aacute;c v&agrave; kinh nghiệm. T&igrave;m kiếm kiểu Heuristic đ&ocirc;i l&uacute;c lại đưa ra kết quả kh&ocirc;ng tốt, thẩm ch&iacute; l&agrave; rất tồi.</p>
+
+<h2><strong>H&agrave;m đ&aacute;nh gi&aacute;</strong></h2>
+
+<p>H&agrave;m đ&aacute;nh gi&aacute; l&agrave; sự ước lượng khả năng đến đ&iacute;ch của một trạng th&aacute;i.&nbsp; H&agrave;m đ&aacute;nh gi&aacute; được x&acirc;y dựng dựa tr&ecirc;n những phương ph&aacute;p kh&aacute;c nhau:<br />
+- X&aacute;c suất một đỉnh nằm tr&ecirc;n đường đi tối ưu.<br />
+- Khoảng c&aacute;ch hay sự kh&aacute;c biệt giữa một đỉnh với tập c&aacute;c đỉnh đ&iacute;ch.<br />
+Trong qu&aacute; tr&igrave;nh t&igrave;m kiếm, tại mỗi bước ta chọn trạng th&aacute;i ph&aacute;t triển sao cho gi&aacute; trị h&agrave;m đ&aacute;nh gi&aacute; của trạng th&aacute;i đ&oacute; l&agrave; tốt nhất &ndash; trạng th&aacute;i đ&oacute; c&oacute; khả năng tiến về đ&iacute;ch cao nhất.<br />
+<strong>V&iacute; dụ 1</strong>: b&agrave;i to&aacute;n 8-puzzle</p>
+
+<p><img src="images/lessons/2021/07/03/image_d0JO9xS.png" style="width:40%" /></p>
+
+<p><strong>H&agrave;m đ&aacute;nh gi&aacute; 1</strong>: với mỗi trạng th&aacute;i u, h(u) l&agrave; số &ocirc; kh&ocirc;ng nằm đ&uacute;ng vị tr&iacute;, chẳng hạn:<br />
+<img src="images/lessons/2021/07/03/image_KP3HUFY.png" style="width:40%" /></p>
+
+<p><strong>H&agrave;m đ&aacute;nh gi&aacute; 2</strong>: h(u) l&agrave; tổng khoảng c&aacute;ch &ocirc; sai vị tr&iacute; ở trạng th&aacute;i u với vị tr&iacute; của n&oacute; trong trạng th&aacute;i đ&iacute;ch. Khoảng c&aacute;ch l&agrave; số dịch chuyển &iacute;t nhất theo h&agrave;ng hoặc theo cột để đẩy một số về đ&uacute;ng vị tr&iacute; của n&oacute; trong trạng th&aacute;i đ&iacute;ch.&nbsp;</p>
+
+<p><img src="images/lessons/2021/07/03/image_dxdM8ZB.png" style="width:60%" /></p>
+
+<p><strong>V&iacute; dụ 2</strong>: x&eacute;t b&agrave;i to&aacute;n 8 qu&acirc;n hậu với giả thiết đ&atilde; đặt trước 3 qu&acirc;n hậu, y&ecirc;u cầu t&igrave;m c&aacute;ch đặt th&ecirc;m 5 qu&acirc;n hậu sao cho vẫn đảm bảo t&iacute;nh chất kh&ocirc;ng qu&acirc;n hậu n&agrave;o c&oacute; thể ăn qu&acirc;n hậu n&agrave;o.</p>
+
+<p><img src="images/lessons/2021/07/03/image_xrFDd1W.png" style="width:40%" /></p>
+
+<p>H&agrave;m đ&aacute;nh gi&aacute; ở trạng th&aacute;i u l&agrave; f(u) = số &ocirc; c&oacute; thể đặt qu&acirc;n hậu. Trong v&iacute; dụ n&agrave;y, f(n) = 17 (c&aacute;c &ocirc; m&agrave;u trắng). Tại c&aacute;c &ocirc; m&agrave;u trắng, ta thử đặt c&aacute;c qu&acirc;n hậu, tại &ocirc; n&agrave;o c&oacute; gi&aacute; trị f lớn nhất th&igrave; chọn n&oacute; tiếp tục ph&aacute;t triển.&nbsp; Qu&aacute; tr&igrave;nh lặp lại cho đến khi cả 5 qu&acirc;n hậu đều được đặt l&ecirc;n b&agrave;n cờ hoặc kh&ocirc;ng c&ograve;n &ocirc; trắng n&agrave;o.</p>
+
+<p><strong>V&iacute; dụ 3</strong>:&nbsp;b&agrave;i to&aacute;n m&atilde; đi tuần t&igrave;m c&aacute;ch cho con m&atilde; đi qua tất cả c&aacute;c &ocirc; của b&agrave;n cờ n&times;n.<br />
+H&agrave;m đ&aacute;nh gi&aacute;:<br />
+- f(u) = số nước đi kế tiếp c&oacute; thể đi khi qu&acirc;n m&atilde; ở vị tr&iacute; u (0 &le; f(u) &le; 8).<br />
+- Tại mỗi bước ta chọn vị tr&iacute; u sao cho f(u) nhỏ nhất, tức l&agrave; tại mỗi bước ưu ti&ecirc;n chọn vị tr&iacute; kh&oacute; đi trước.<br />
+<img src="images/lessons/2021/07/03/image_aO2u4Db.png" style="width:40%" /></p>
+
+<p><strong>V&iacute; dụ 4</strong>: cho n c&ocirc;ng việc, c&ocirc;ng việc i ho&agrave;n th&agrave;nh trong thời gian t[i]. &nbsp;C&aacute;c c&ocirc;ng việc được thực hiện tr&ecirc;n m m&aacute;y (c&ocirc;ng suất như nhau, mỗi m&aacute;y đều thực hiện được c&ocirc;ng việc bất k&igrave; trong n c&ocirc;ng việc). Mỗi c&ocirc;ng việc được l&agrave;m li&ecirc;n tục tr&ecirc;n m&aacute;y cho đến khi xong. H&atilde;y tổ chức m&aacute;y thực hiện n c&ocirc;ng việc sao cho c&agrave;ng sớm c&agrave;ng tốt.</p>
+
+<p>Heuristic minh họa giải quyết b&agrave;i to&aacute;n<br />
+- Sắp xếp c&aacute;c c&ocirc;ng việc giảm dần theo thời gian ho&agrave;n tất.<br />
+- Lấy m việc ph&acirc;n c&ocirc;ng cho m m&aacute;y. Gọi maxT l&agrave; thời gian ho&agrave;n tất lớn nhất trong m c&ocirc;ng việc n&agrave;y.&nbsp;<br />
+- Xếp th&ecirc;m việc cho m&aacute;y c&oacute; tổng thời gian ho&agrave;n tất nhỏ hơn maxT (chọn việc theo thứ tự đ&atilde; xếp). Lặp lại qu&aacute; tr&igrave;nh n&agrave;y cho đến khi kh&ocirc;ng c&ograve;n m&aacute;y n&agrave;o c&oacute; tổng thời gian ho&agrave;n tất nhỏ hơn maxT.<br />
+- Xếp th&ecirc;m c&ocirc;ng việc cho m&aacute;y c&oacute; tổng thời gian ho&agrave;n tất nhỏ nhất .</p>
+
+<p>6 c&ocirc;ng việc, 3 m&aacute;y, thời gian ho&agrave;n tất c&aacute;c c&ocirc;ng việc lần lượt l&agrave; 2, 5, 8, 5, 1. &Aacute;p dụng heuristic n&agrave;y xếp c&aacute;c c&ocirc;ng việc như sau (tối ưu):<br />
+- M&aacute;y 1: cv3(8)<br />
+- M&aacute;y 2: cv2(5), cv1(2), cv4(1)<br />
+- M&aacute;y 3: cv5(5), cv6(1)&nbsp;<br />
+5 c&ocirc;ng việc, 2 m&aacute;y, thời gian ho&agrave;n tất c&aacute;c c&ocirc;ng việc lần lượt 3, 3, 2, 2, 2 (kh&ocirc;ng tối ưu).<br />
+- M&aacute;y 1: cv1(3), cv3(2), cv5(2)<br />
+- M&aacute;y 2: cv2(3), cv4(2)</p>
+
+<p>

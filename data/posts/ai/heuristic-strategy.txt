@@ -1,0 +1,9 @@
+<h1 class="text-center text-danger"><strong>C&Aacute;C CHIẾN LƯỢC T&Igrave;M KIẾM HEURISTIC</strong></h1>
+
+<p>T&igrave;m kiếm tốt nhất &ndash; đầu ti&ecirc;n (Best-First Search)<br />
+- AT (Algorithm for Tree Search)<br />
+- UCS (Uniform Cost Search)<br />
+- AKT (Algorithm for Knowlegeble Tree Search)<br />
+- A* (A Star)<br />
+T&igrave;m kiếm leo đồi (Hill Climbing Search)<br />
+&nbsp;</p>
