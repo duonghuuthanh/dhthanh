@@ -1,0 +1,192 @@
+<h1 class="text-center text-danger"><strong>T&Igrave;M KIẾM M&Ugrave;</strong></h1>
+
+<h2>Giới thiệu b&agrave;i to&aacute;n t&igrave;m kiếm</h2>
+
+<p>Tìm kiếm là bài toán nền tảng quan trọng của trí tuệ nhân tạo, mục đích của bài toán tìm một dãy các hành động để chuyển từ tập trạng thái ban đầu đến trạng thái đích.</p>
+
+<p>B&agrave;i to&aacute;n t&igrave;m kiếm gồm 5 th&agrave;nh phần<br />
+- Q: tập hữu hạn c&aacute;c trạng th&aacute;i.<br />
+- S (tập con của&nbsp;Q): tập c&aacute;c trạng th&aacute;i đầu.&nbsp;<br />
+- G (tập con&nbsp;của Q): tập c&aacute;c trạng th&aacute;i đ&iacute;ch.<br />
+- succs: ph&eacute;p chuyển đổi giữa c&aacute;c trạng th&aacute;i.<br />
+- cost: chi ph&iacute; cho ph&eacute;p chuyển đổi trạng th&aacute;i.<br />
+<strong>V&iacute; dụ 1</strong>:&nbsp;T&igrave;m đường đi giữa th&agrave;nh phố&nbsp;</p>
+
+<p><img src="images/lessons/2021/07/03/image_ebgule3.png" style="width:50%" /><br />
+Q = {START, a, b, c, d, e, f, h, p, q, r, GOAL}<br />
+S = {START}<br />
+G = {GOAL}<br />
+succs:<br />
+- succs(a) = {}<br />
+- succs(b) = {a}<br />
+- succs(d) = {b, c, e}<br />
+&hellip;<br />
+cost: khoảng c&aacute;ch giữa 2 đỉnh s v&agrave; s&rsquo; của đồ thị.&nbsp;<br />
+- Cho cost(s, s&rsquo;) = 1</p>
+
+<p>V&iacute; dụ 2:&nbsp;Sử dụng 3 can A, B, C c&oacute; sức chứa lần lượt 3 l&iacute;t, 5 l&iacute;t, 9 l&iacute;t để đong được 7 l&iacute;t nước. (<em>Người ta đã chứng minh được rằng, bài toán đong nước chỉ có lời giải khi số nước cần đong là một bội số của ước số chung lớn nhất của thể tích hai bình.
+</em>)</p>
+
+<p><img src="images/lessons/2021/07/03/image_fCzJC7q.png" style="width:50%" /><br />
+Gọi<br />
+- a l&agrave; số nước trong can A (0 &le; a &le; 3).&nbsp;<br />
+- b l&agrave; số nước trong can B (0 &le; b &le; 5).<br />
+- c l&agrave; số nước trong can C (0 &le; c &le; 9).</p>
+
+<p>Q: (a, b, c)<br />
+S: (0, 0, 0)<br />
+G: (_,_, 7)<br />
+succs: đổ nước từ can n&agrave;y sang can kh&aacute;c.<br />
+cost: mỗi lần đổ nước từ can n&agrave;y sang can kh&aacute;c chi ph&iacute; l&agrave; 1.<br />
+=&gt; Sau đ&acirc;y l&agrave; hai lời giải minh hoạ</p>
+
+<p><img src="images/lessons/2021/07/03/image_aFWomDM.png" style="width:30%" /></p>
+
+<p>Một số b&agrave;i to&aacute;n t&igrave;m kiếm trong tr&iacute; tuệ nh&acirc;n tạo</p>
+
+<p><img src="images/lessons/2021/07/03/image_tqY6wVn.png" style="width:80%" /></p>
+
+<h2>T&igrave;m kiếm m&ugrave;</h2>
+
+<p>T&igrave;m kiếm m&ugrave; l&agrave; chiến lược t&igrave;m kiếm&nbsp;c&oacute; t&iacute;nh chất <strong>m&ugrave; qu&aacute;ng</strong>, n&oacute; kh&ocirc;ng quan t&acirc;m đến tri thức của đỉnh hiện h&agrave;nh v&agrave; đỉnh đ&iacute;ch cần tới.&nbsp;<br />
+Hai chiền lược t&igrave;m kiếm m&ugrave; phổ biến l&agrave; &nbsp;t&igrave;m kiếm theo chiều rộng v&agrave; theo chiều s&acirc;u l&agrave; v&eacute;t cạn kh&ocirc;ng gian t&igrave;m kiếm, c&aacute;c thuật to&aacute;n n&agrave;y&nbsp;kh&oacute; &aacute;p dụng cho c&aacute;c b&agrave;i to&aacute;n c&oacute; kh&ocirc;ng gian t&igrave;m kiếm lớn, như b&agrave;i to&aacute;n sau:</p>
+
+<p><img src="images/lessons/2021/07/03/image_sB6Rc5g.png" style="width:70%" /></p>
+
+<h3>T&igrave;m kiếm theo chiều rộng</h3>
+
+<p>&Yacute; tưởng: Từ đỉnh xuất ph&aacute;t th&ecirc;m c&aacute;c đỉnh kề với n&oacute; v&agrave;o tập S. Tiếp tục th&ecirc;m c&aacute;c đỉnh kề với c&aacute;c đỉnh vừa th&ecirc;m v&agrave;o S. Q&uacute;a tr&igrave;nh n&agrave;y lặp lại cho đến khi S chứa đỉnh đ&iacute;ch hoặc kh&ocirc;ng c&ograve;n thay đổi sau bổ sung.<br />
+<img src="images/lessons/2021/07/03/image_kzUk21m.png" style="width:40%" /></p>
+
+<p>C&aacute;c bước thực hiện thuật to&aacute;n t&igrave;m kiếm theo chiều rộng (Breadth First Search) t&igrave;m đường đi từ đỉnh p đến đỉnh q.</p>
+
+<table border="1" cellpadding="5" cellspacing="0" style="border-collapse:collapse; width:100%">
+  <tbody>
+    <tr>
+      <td><code>- Đ&aacute;nh dấu c&aacute;c đỉnh chưa thăm d[i] = 0<br />
+      - Th&ecirc;m đỉnh p v&agrave;o h&agrave;ng đợi.<br />
+      - Đ&aacute;nh dấu đ&atilde; thăm p: d[p] = 1<br />
+      - Lặp (h&agrave;ng đợt kh&aacute;c rỗng)<br />
+      &nbsp; + Lấy r từ h&agrave;ng đợi.<br />
+      &nbsp; + Nếu r = q th&igrave; dừng thuật to&aacute;n v&agrave; xuất đường đi.<br />
+      &nbsp; + Ngược lại th&ecirc;m c&aacute;c đỉnh k chưa thăm (d[k] = 0) v&agrave; kề với r v&agrave;o h&agrave;ng đợi.&nbsp;<br />
+      &nbsp; + Đ&aacute;nh dấu đ&atilde; thăm c&aacute;c đỉnh k: d[k] = 1</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Minh hoạ m&atilde; nguồn</p>
+
+<p>- N: số đỉnh.<br />
+- a[N][N]: ma trận kề.<br />
+- queue[N]: h&agrave;ng đợi<br />
+- previous[N]: d&ugrave;ng lưu vết đường đi, previous[i] = j l&agrave; đỉnh trước đỉnh i l&agrave; đỉnh j.<br />
+- visited[N]: d&ugrave;ng đ&aacute;nh dấu đỉnh đ&atilde; thăm qua chưa.</p>
+
+<table border="1" cellpadding="5" cellspacing="0" style="border-collapse:collapse; width:100%">
+  <tbody>
+    <tr>
+      <td><code>int queue[N], previous[N] = {0}, visited[N] = {0};<br />
+      int front = 0, rear = -1;<br />
+      queue[++rear] = start; // đặt đỉnh start v&agrave;o queue<br />
+      visited[start] = 1; // đ&aacute;nh dấu đ&atilde; thăm start<br />
+      while (front &lt;= rear)<br />
+      {<br />
+      &nbsp; int x = queue[front++]; // lấy đỉnh trong queue<br />
+      &nbsp; if (x == goal) // nếu l&agrave; đỉnh goal th&igrave; dừng<br />
+      &nbsp; &nbsp; break;<br />
+      &nbsp; for (int y = 1; y &lt;= N; y++)<br />
+      &nbsp; &nbsp; if (visited[y] == 0 &amp;&amp; a[x][y] == 1)<br />
+      &nbsp; &nbsp; {<br />
+      &nbsp; &nbsp; &nbsp; queue[++rear] = y;<br />
+      &nbsp; &nbsp; &nbsp; visited[y] = 1;<br />
+      &nbsp; &nbsp; &nbsp; previous[y] = x;<br />
+      &nbsp; &nbsp; }<br />
+      }</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>V&iacute; dụ b&agrave;i tập ứng dụng:&nbsp;V&ugrave;ng Hạ Long c&oacute; N h&ograve;n đảo được đ&aacute;nh số từ 1 đến N. Tọa độ h&ograve;n đảo thứ i tr&ecirc;n mặt phẳng tọa độ được cho bởi cặp số x, y. Tr&ecirc;n mỗi h&ograve;n đảo c&oacute; bể chứa xăng c&oacute; khả năng cung cấp đầy đủ c&aacute;c thiết bị chứa xăng cho cano. Biết rằng c&aacute;c thiết bị chứa xăng của cano kh&ocirc;ng thể chứa đủ số xăng đi hết M km.&nbsp; H&atilde;y t&igrave;m h&agrave;nh tr&igrave;nh cho cano đi từ một đảo U đến đảo V (0 &lt; U, V &le; N) m&agrave; số lần gh&eacute; qua c&aacute;c đảo để lấy xăng l&agrave; nhỏ nhất.</p>
+
+<p>Dữ liệu v&agrave;o trong file dao.inp c&oacute; cấu tr&uacute;c sau:<br />
+- D&ograve;ng đầu ghi 4 số nguy&ecirc;n dương M, N, U, V<br />
+- C&aacute;c d&ograve;ng tiếp theo , d&ograve;ng thứ i trong c&aacute;c d&ograve;ng n&agrave;y ghi hai số xi, yi l&agrave; tọa độ điểm i.<br />
+Dữ liệu ra ghi v&agrave;o file dao.out c&oacute; cấu tr&uacute;c sau :<br />
+- Nếu c&oacute; đường đi th&igrave; d&ograve;ng đầu ghi số đảo gh&eacute; v&agrave;o lấy xăng (trừ U, V). D&ograve;ng thứ hai ghi số hiệu c&aacute;c đảo đ&oacute; theo thứ tự h&agrave;nh tr&igrave;nh&nbsp;<br />
+- Nếu kh&ocirc;ng c&oacute; đường đi th&igrave; ghi &ldquo;khong ton tai loi giai&rdquo;.<br />
+&nbsp;</p>
+
+<p><em>Gợi ý: Đầu tiên, ta xây dựng một đồ thị trong đó mỗi đỉnh của đồ thị là các hòn đảo, cạnh nối hai đỉnh của đồ thị nếu khoảng cách Ơclit (đơn vị là km) của hai đỉnh nhỏ hơn m. Để giải quyết bài toán này, ta áp dụng thuật giải BFS để tìm đường đi từ đỉnh u đến đỉnh v trên đồ thị vừa xây dựng.  
+Xuất phát từ đỉnh u lần lượt lấy các đỉnh kề của u có màu trắng đưa vào hàng đợi Q, tiếp tục thêm các đỉnh kề màu trắng của các đỉnh vừa thêm vào Q. Quá trình này lặp lại cho đến khi Q chứa v (tìm thầy đường đi từ u đền v với số lần ghé qua các đảo lấy xăng là nhỏ nhất) hoặc Q không còn thay đổi sau bổ sung (không tồn tại đương đi).
+</em></p>
+
+<h3>T&igrave;m kiếm theo chiều s&acirc;u</h3>
+
+<p>&Yacute; tưởng: tại đỉnh hiện h&agrave;nh chọn đỉnh tiếp theo (trong tập c&aacute;c đỉnh m&agrave; đỉnh hiện h&agrave;nh c&oacute; thể đi tới) l&agrave;m đỉnh hiện h&agrave;nh đến khi đỉnh hiện h&agrave;nh l&agrave; đỉnh đ&iacute;ch.&nbsp;Nếu tại đỉnh hiện h&agrave;nh kh&ocirc;ng t&igrave;m được đỉnh tiếp theo th&igrave; quay lại đỉnh trước đ&oacute; để t&igrave;m đường đi kh&aacute;c. Qu&aacute; tr&igrave;nh n&agrave;y lặp lại cho đến khi t&igrave;m được đường đi mới hoặc quay lui đến đỉnh xuất ph&aacute;t m&agrave; vẫn kh&ocirc;ng t&igrave;m thấy th&igrave; kết luận kh&ocirc;ng c&oacute; đường đi.<br />
+<img src="images/lessons/2021/07/03/image_WpvYV1l.png" style="width:40%" /></p>
+
+<p>C&agrave;i đặt thuật to&aacute;n t&igrave;m kiếm theo chiều s&acirc;u tương tự thuật to&aacute;n t&igrave;m kiếm theo chiều rộng, nhưng thay h&agrave;ng đợt (queue) bằng ngăn xếp (stack).<br />
+V&iacute; dụ b&agrave;i tập ứng dụng:&nbsp;Một h&igrave;nh chữ nhật chia th&agrave;nh MxN &ocirc; (M d&ograve;ng N cột) (M, N &le; 100). Mỗi &ocirc; ghi một số nguy&ecirc;n dương &nbsp;(trong khoảng từ 1 đền 255). Một miền của bảng l&agrave; tập hợp tất cả c&aacute;c &ocirc; c&oacute; c&ugrave;ng gi&aacute; trị số sao cho ch&uacute;ng c&ugrave;ng đi được sang nhau bằng c&aacute;ch đi qua c&aacute;c &ocirc; chung cạnh v&agrave; c&ugrave;ng gi&aacute; trị số đang x&eacute;t.&nbsp;Địa chỉ của một miền l&agrave; tọa độ d&ograve;ng cột ở &ocirc; đầu ti&ecirc;n thuộc miền theo thứ tự duyệt từ tr&aacute;i sang phải v&agrave; từ tr&ecirc;n xuống dưới. Diện t&iacute;ch của một miền l&agrave; số &ocirc; thuộc miền đ&oacute;.&nbsp; Lập tr&igrave;nh x&aacute;c định số miền của bảng v&agrave; miền c&oacute; diện t&iacute;ch lớn nhất (chỉ r&otilde; diện t&iacute;ch v&agrave; địa chỉ miền).</p>
+
+<p>V&iacute; dụ bảng sau c&oacute; 4 miền, miền c&oacute; diện t&iacute;ch lớn nhất l&agrave; 7 c&oacute; địa chỉ (1, 3).</p>
+
+<table cellspacing="0" style="border-collapse:collapse; width:305px">
+  <tbody>
+    <tr>
+      <td style="background-color:#2e663e; border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:1px solid black; text-align:center; vertical-align:top; width:62px">
+      <p><span style="color:black">1</span></p>
+      </td>
+      <td style="background-color:#2e663e; border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:1px solid black; text-align:center; vertical-align:top; width:60px">
+      <p><span style="color:black">1</span></p>
+      </td>
+      <td style="background-color:#00b0f0; border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:1px solid black; text-align:center; vertical-align:top; width:61px">
+      <p><span style="color:black">2</span></p>
+      </td>
+      <td style="background-color:#00b0f0; border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:1px solid black; text-align:center; vertical-align:top; width:61px">
+      <p><span style="color:black">2</span></p>
+      </td>
+      <td style="background-color:#00b0f0; border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:1px solid black; text-align:center; vertical-align:top; width:61px">
+      <p><span style="color:black">2</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td style="background-color:#2e663e; border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:1px solid black; text-align:center; vertical-align:top; width:62px">
+      <p><span style="color:black">1</span></p>
+      </td>
+      <td style="background-color:#00b0f0; border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:1px solid black; text-align:center; vertical-align:top; width:60px">
+      <p><span style="color:black">2</span></p>
+      </td>
+      <td style="background-color:#00b0f0; border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:1px solid black; text-align:center; vertical-align:top; width:61px">
+      <p><span style="color:black">2</span></p>
+      </td>
+      <td style="background-color:#ffc000; border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:1px solid black; text-align:center; vertical-align:top; width:61px">
+      <p><span style="color:black">1</span></p>
+      </td>
+      <td style="background-color:#00b0f0; border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:1px solid black; text-align:center; vertical-align:top; width:61px">
+      <p><span style="color:black">2</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td style="background-color:#7030a0; border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:1px solid black; text-align:center; vertical-align:top; width:62px">
+      <p><span style="color:black">3</span></p>
+      </td>
+      <td style="background-color:#ffc000; border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:1px solid black; text-align:center; vertical-align:top; width:60px">
+      <p><span style="color:black">1</span></p>
+      </td>
+      <td style="background-color:#ffc000; border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:1px solid black; text-align:center; vertical-align:top; width:61px">
+      <p><span style="color:black">1</span></p>
+      </td>
+      <td style="background-color:#ffc000; border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:1px solid black; text-align:center; vertical-align:top; width:61px">
+      <p><span style="color:black">1</span></p>
+      </td>
+      <td style="background-color:#00b0f0; border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:1px solid black; text-align:center; vertical-align:top; width:61px">
+      <p><span style="color:black">2</span></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p></p>
+<p><em>Ta xây dựng đồ thị cho bài toán trong đó mỗi ô trong hình chữ nhật là một đỉnh của đồ thị, giữa hai đỉnh có một cạnh nếu giữa hai ô tương ứng của hai đỉnh có chung một cạnh và có cùng giá trị số. Bài toán quy về tìm số đồ thị con của đồ thị vừa xây dựng và ta chỉ áp dụng thuật giải tìm kiếm theo chiều sâu trên đồ thị này. Sau khi duyệt qua hết đồ thị theo thuật giải tìm kiếm theo chiều sâu thì số đỉnh trước là NULL (NIL) chính là số miền cần tìm.</em></p>
+
+<p>&nbsp;</p>
