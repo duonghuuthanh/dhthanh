@@ -17,8 +17,9 @@ const loadCategories = (id="#categoryId") => {
              // loaf category
             if ('sub' in d) {
                 let temp = ""
-                for (let j = 0; j < d['sub'].length; j++)
-                    temp += `<a class="dropdown-item" href="javascript:;" rel=${d['sub'][j].rel}>${d['sub'][j].name}</a>`
+                d['sub'].forEach(s => {
+                    temp += `<a class="dropdown-item" href="#${s.rel}" rel=${s.rel}>${s.name}</a>`
+                })
 
                 msg += `
                     <li class="nav-item dropdown">
@@ -80,6 +81,7 @@ const loadPost = (postType, id=contentId) => {
 }
 
 const loadVideo = (videoType, subject, id=contentId) => {
+   
     fetch(`${DOMAIN}/data/video/${videoType}.json`).then(res => res.json()).then(data => {
         $(id).html(`
             <h1 class="text-center text-danger text-uppercase">${subject}</h1>
@@ -223,7 +225,7 @@ const loadLessonsHome = (id=contentId, lessons) => {
                 <div class="card wow animate__flip">
                     <div class="card-header"><h5>${lesson.name}</h5></div>
                     <div class="card-content">
-                        <a class="dropdown-item lesson" href="javascript:;" rel=${lesson.rel}>
+                        <a class="dropdown-item lesson" href="#${lesson.rel}" rel="${lesson.rel}">
                             <img src="${lesson.image}" class="img-fluid" alt="${lesson.name}" />
                         </a>
                     </div>
@@ -266,18 +268,21 @@ const loadCarousel = (id="#myBanner", path="images/home/friends/", num=22) => {
 $(document).ready(() => {
     loadCategories()
     $("#popupId").hide()
-
-    switch (location.hash) {
-        case "#publication":
-            loadPublication()
-            break
-        case "#resource":
-            loadLearningResources()
-            break
-        default: 
-            loadHomePage()
-            loadCarousel()
-    }
+    
+    if (location.hash.startsWith("#post"))
+        loadPost(location.hash.substring(1))
+    else
+        switch (location.hash) {
+            case "#publication":
+                loadPublication()
+                break
+            case "#resource":
+                loadLearningResources()
+                break
+            default: 
+                loadHomePage()
+                loadCarousel()
+        }
 
     wow = new WOW({
         boxClass:     'wow',      
