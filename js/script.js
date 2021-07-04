@@ -242,6 +242,8 @@ const loadLessonsHome = (id=contentId, lessons) => {
             </div>
         </div>
     `)
+
+    loadHomePage()
 }
 
 const loadCarousel = (id="#myBanner", path="images/home/friends/", num=22) => {
@@ -280,7 +282,7 @@ $(document).ready(() => {
                 loadLearningResources()
                 break
             default: 
-                loadHomePage()
+                // loadHomePage()
                 loadCarousel()
         }
 
