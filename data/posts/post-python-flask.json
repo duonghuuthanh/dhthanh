@@ -10,4 +10,20 @@
     "subject": "Giao tiếp giữa views và templates",
     "file": "data/posts/python-flask/params.txt",
     "order": 3
+}, {
+    "subject": "Upload tập tin",
+    "file": "",
+    "order": 4
+}, {
+    "subject": "Làm việc với SQLite",
+    "file": "",
+    "order": 5
+}, {
+    "subject": "Làm việc với SqlAlchemy",
+    "file": "",
+    "order": 6
+}, {
+    "subject": "Xây dựng các trang quản trị",
+    "file": "",
+    "order": 7
 }]

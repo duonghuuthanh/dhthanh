@@ -3,7 +3,7 @@
     "type": "note",
     "data": [{
         "title": "Con trỏ trong C++",
-        "content": "Miền giá trị của biến con trỏ là địa chỉ vùng nhớ."
+        "content": "Miền giá trị của biến con trỏ là địa chỉ ô nhớ."
     }, {
         "title": "Danh sách đặc và danh sách liên kết",
         "content": "<h5>Danh sách đặc</h5><ul><li>Kích thước danh sách cố định.</li><li>Các ô nhớ của các phần tử tổ chức liên tiếp trong bộ nhớ. -> Thao tác tìm kiếm nhanh, chèn và xoá chậm.</li></ul><h5>Danh sách liên kết</h5><ul><li>Kích thước danh sách không giới hạn.</li><li>Các ô nhớ của các phần tử tổ chức rời rạc trong bộ nhớ. -> thao tác chèn, xoá nhanh, tìm kiếm chậm.</li></ul>"
@@ -31,5 +31,8 @@
     }, {
         "title": "Tính chất ACID của giao tác",
         "content": "<ul><li title='tức là một giao tác thành công nếu tất cả các thao tác của nó thành công, ngược lại tồn tại một thao tác thất bại thì toàn bộ giao tác thất bại'>A (Atomicity): giao tác là một đơn vị xử lý nguyên tố, không thể chia nhỏ.</li><li>C (Consistency): một giao tác phải chuyển cơ sở dữ liệu từ trạng thái nhất quán này sang trạng thái nhất quán khác.</li><li title='tức là giao tác này không thể thấy được tác động của giao tác khác nếu nó chưa hoàn thành'>I (Isolation): một giao tác phải được cô lập với các giao tác khác.</li><li>D (Durability): một giao tác khi hoàn tất, kết quả của giao tác sẽ tác động bền vững và không thể xoá đi dưới cơ sở dữ liệu từ những vấn đề của hệ thống</li></ul>"
+    }, {
+        "title": "Các nguyên tắc kiểm thử phần mềm",
+        "content": "<ul><li>Kiểm thử vét cạn là bất khả thi (exhaustive testing is impossible).</li><li>Kiểm thử sớm (early testing): quá trình kiểm thử nên bắt đầu càng sớm càng tốt trong quy trình phát triển phần mềm vì chi phí phải trả sẽ càng tăng nếu lỗi được tìm thấy càng trễ trong quy trình phát triển phần mềm </li><li>Gom cụm lỗi (defect clustering): lỗi thường tập trung ở một vài module, tính năng của hệ thống.</li><li>Nguyên lý thuốc trừ sâu (pesticide paradox): một bộ test case nếu được thực hiện lặp đi lặp lại sẽ khó phát hiện bug mới. Test case cần được kiểm tra, đánh giá, viết lại và thêm mới thường xuyên sẽ giúp phát hiện nhiều bug hơn.</li><li>Kiểm thử phụ thuộc ngữ cảnh (testing is context dependent): mỗi lĩnh vực có yêu cầu, chức năng, ràng buộc, rủi ro và mục đích kiểm thử khác nhau.</li><li>Sự vắng mặt của lỗi là ảo tưởng (absence–of–errors fallacy)</li></ul>"
     }]
 }

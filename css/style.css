@@ -33,10 +33,21 @@ h1.subject.line-left::after {
 
 .lesson-card {
     padding: 10px;
+    
 }
 
 .lesson-card > div.card:hover {
     box-shadow: 3px 4px 3px wheat;
+}
+
+.lesson-card .card-content {
+    overflow: hidden;
+}
+.lesson-card img {
+    transition: .5s;
+}
+.lesson-card img:hover {
+    transform: scale(1.05);
 }
 
 a.lesson {
@@ -47,19 +58,23 @@ h5 {
     margin: 0;
 }
 
+div.note:hover {
+   
+    z-index: 999;
+    position: relative;
+    overflow: hidden;
+}
+
 @media screen and (min-width: 500px) {
     div.note:hover {
-        transform: scale(1.5);
+        transform: scale(1.2);
         transition: transform .5s;
-        z-index: 999;
-        position: relative;
     }
 }
 
 #popupId {
     position: fixed;
     width: 15%;
-    
 }
 
 

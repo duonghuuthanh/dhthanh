@@ -136,6 +136,7 @@ const loadLearningResources = (id=contentId) => {
         $(id).html(`
             <h1 class="text-center text-info">TÀI NGUYÊN HỌC TẬP</h1>    
             ${msg}
+            <p></p>
         `)
 
         data.forEach(d => {
@@ -218,6 +219,9 @@ const loadHomePage = (id=contentId) => {
 }
 
 const loadLessonsHome = (id=contentId, lessons) => {
+    if (location.hash != "") 
+        return    
+    
     let msg = ""
     lessons.forEach(lesson => {
         msg += `
@@ -340,9 +344,14 @@ $(document).ready(() => {
     })
 
     $("#popupId").on("click", "a.post", function() {
+        let path = $(this).attr("rel")
+        if (path === undefined || path === "") {
+            alert("Comming soon...");
+            return
+        }
         $("#popupId li").removeClass('bg-warning')
         $(this).parent().addClass('bg-warning')
-        fetch(`${DOMAIN}/${$(this).attr("rel")}`).then(res => res.text()).then((data) => {
+        fetch(`${DOMAIN}/${path}`).then(res => res.text()).then((data) => {
             $(contentId).html(data)
         })
     })

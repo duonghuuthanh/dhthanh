@@ -14,4 +14,24 @@
     "subject": "Các chiến lược tìm kiếm heuristic",
     "file": "data/posts/ai/heuristic-strategy.txt",
     "order": 4
+}, {
+    "subject": "Tổng quan máy học (machine learning)",
+    "file": "",
+    "order": 4
+}, {
+    "subject": "Không gian vector",
+    "file": "",
+    "order": 4
+}, {
+    "subject": "Trực quan hoá dữ liệu",
+    "file": "",
+    "order": 4
+}, {
+    "subject": "Các thuật toán học không giám sát",
+    "file": "",
+    "order": 4
+}, {
+    "subject": "Các thuật toán học có giám sát",
+    "file": "",
+    "order": 4
 }]

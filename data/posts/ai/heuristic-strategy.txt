@@ -7,3 +7,12 @@
 - A* (A Star)<br />
 T&igrave;m kiếm leo đồi (Hill Climbing Search)<br />
 &nbsp;</p>
+
+<h3>Best-First Search</h3>
+
+<p>Ý tưởng: tại trạng thái hiện hành tìm trạng thái tốt nhất trong tất cả trạng thái đã sinh ra để đi tiếp. Quá trình này lặp lại cho đến khi tìm được trạng thái đích hoặc không còn trạng thái nào để xét. 
+Cài đặt thuật toán dùng hai danh sách</p>
+<p>- Open: chứa các trạng thái sinh ra, nhưng chưa xét. Open xem như hàng đợi ưu tiên, trạng thái có độ ưu tiên cao nhất là trạng thái tốt nhất</p>
+<p>- Close: chứa các trạng thái đã xét. </p>
+
+
