@@ -1,1 +1,40 @@
-[]
+[{
+    "subject": "Gửi dữ liệu lên server bằng URL params và GET params",
+    "embeded_link": "https://www.youtube.com/embed/p-3RwKbz1po"
+}, {
+    "subject": "Gửi dữ liệu lên server bằng POST params",
+    "embeded_link": "https://www.youtube.com/embed/CQgqfd5G2Mk"
+}, {
+    "subject": "Gửi dữ liệu từ views ra template",
+    "embeded_link": "https://www.youtube.com/embed/RGiroQZ-vOU"
+}, {
+    "subject": "Giới thiệu template và tạo template filter",
+    "embeded_link": "https://www.youtube.com/embed/xf5KDne1MrQ"
+}, {
+    "subject": "Template Inheritance - Phần 1",
+    "embeded_link": "https://www.youtube.com/embed/3jhkkT1XIqg"
+}, {
+    "subject": "Template Inheritance - Phần 2",
+    "embeded_link": "https://www.youtube.com/embed/Pyyua9MZf4E"
+}, {
+    "subject": "Tạo Get API đơn giản và sử dụng phương thức fetch() của JS để gọi API.",
+    "embeded_link": "https://www.youtube.com/embed/S0waKXwqH8w"
+}, {
+    "subject": "Giới thiệu SqlAlchemy tương tác MySQL",
+    "embeded_link": "https://www.youtube.com/embed/hLgs1rNO5ik"
+}, {
+    "subject": "Truy vấn cơ bản trong SqlAlchemy",
+    "embeded_link": "https://www.youtube.com/embed/9FP2eawVqTs"
+}, {
+    "subject": "Tạo trang Admin",
+    "embeded_link": "https://www.youtube.com/embed/j1eBRXO3CDA"
+}, {
+    "subject": "Tạo chức năng login cho trang Admin",
+    "embeded_link": "https://www.youtube.com/embed/VMlQYzoSs8o"
+}, {
+    "subject": "Quan hệ m2m trong SQLAlchemy",
+    "embeded_link": "https://www.youtube.com/embed/QEr06fyrdQk"
+}, {
+    "subject": "Triển khai ứng dụng Web phát triển với Python Flask + SqlAlchemy lên PythonAnywhere.",
+    "embeded_link": "https://www.youtube.com/embed/bJj8ALkVcao"
+}]
