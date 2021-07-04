@@ -11,7 +11,7 @@
     "file": "data/posts/ai/heuristic-search.txt",
     "order": 3
 }, {
-    "subject": "Các chiến lược tiềm kiếm heuristic",
+    "subject": "Các chiến lược tìm kiếm heuristic",
     "file": "data/posts/ai/heuristic-strategy.txt",
     "order": 4
 }]
