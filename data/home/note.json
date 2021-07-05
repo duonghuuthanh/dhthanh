@@ -6,7 +6,7 @@
         "content": "Miền giá trị của biến con trỏ là địa chỉ ô nhớ."
     }, {
         "title": "Danh sách đặc và danh sách liên kết",
-        "content": "<h5>Danh sách đặc</h5><ul><li>Kích thước danh sách cố định.</li><li>Các ô nhớ của các phần tử tổ chức liên tiếp trong bộ nhớ. -> Thao tác tìm kiếm nhanh, chèn và xoá chậm.</li></ul><h5>Danh sách liên kết</h5><ul><li>Kích thước danh sách không giới hạn.</li><li>Các ô nhớ của các phần tử tổ chức rời rạc trong bộ nhớ. -> thao tác chèn, xoá nhanh, tìm kiếm chậm.</li></ul>"
+        "content": "<h5>Danh sách đặc</h5><ul><li>Kích thước danh sách cố định.</li><li>Các ô nhớ của các phần tử tổ chức liên tiếp trong bộ nhớ. -> Thao tác tìm kiếm nhanh, chèn và xoá chậm.</li></ul><h5>Danh sách liên kết</h5><ul><li>Kích thước danh sách phụ thuộc bộ nhớ khả dụng RAM.</li><li>Các ô nhớ của các phần tử tổ chức rời rạc trong bộ nhớ. -> thao tác chèn, xoá nhanh, tìm kiếm chậm.</li></ul>"
     }, {
         "title": "Ưu điểm chính của lập trình hướng đối tượng",
         "content": "<ul><li>OOP cho phép <strong>che giấu dữ liệu</strong>, hạn chế tối đa truy cập từ bên ngoài.</li><li>OOP cho phép <strong>tái sử dụng</strong> mã nguồn hiệu quả, tiết kiệm thời gian của lập trình viên, cũng như giúp cho việc mở rộng chương trình, bảo trì trở nên dễ dàng hơn.</li></ul>"
