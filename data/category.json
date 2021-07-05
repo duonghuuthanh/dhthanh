@@ -50,6 +50,9 @@
         "name": "Phát triển Web với Python Flask",
         "rel": "video-python-flask"
     }, {
+        "name": "Xây dựng ứng dụng trắc nghiệm tiếng Anh đơn giản với JavaFX và MySQL",
+        "rel": "video-multiple-choice-javafx"
+    }, {
         "name": "Ôn tập kỹ thuật lập trình",
         "rel": "video-programming-technique-review"
     }]

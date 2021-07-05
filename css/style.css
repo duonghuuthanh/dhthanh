@@ -92,12 +92,12 @@ div.note:hover {
     }
 
     #popupId::after {
-        content: "\f02a";
+        content: "\f0c9";
         display: inline-block;
         padding: 12px 15px;
         position: absolute;
         left:97%;
-        top: 3%;
+        top: 5%;
         background-color: rgb(255, 255, 255, 0.6);
         border-style: solid solid solid none;
         border-width: 1px;
@@ -116,8 +116,3 @@ div.note:hover {
         height: auto !important;
     }
 }
-
-
-
-
-

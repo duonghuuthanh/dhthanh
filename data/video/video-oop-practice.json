@@ -1,1 +1,25 @@
-[]
+[{
+    "subject": "Lớp và đối tượng - Phần bài tập 1",
+    "embeded_link": "https://www.youtube.com/embed/UzXQbMUE1ME"
+}, {
+    "subject": "Lớp và đối tượng - Phần bài tập 2",
+    "embeded_link": "https://www.youtube.com/embed/wLUqYpRRZAY"
+}, {
+    "subject": "Kế thừa - Phần bài tập 1",
+    "embeded_link": "https://www.youtube.com/embed/9t-yFxqjct0"
+}, {
+    "subject": "Kế thừa - Phần bài tập 2",
+    "embeded_link": "https://www.youtube.com/embed/zI9woR8qoVM"
+}, {
+    "subject": "Bài tập Lớp và đối tượng (Minh hoạ quan hệ Aggregation)",
+    "embeded_link": "https://www.youtube.com/embed/gEJehWgbx_Y"
+}, {
+    "subject": "Bài tập Lớp trừu tượng",
+    "embeded_link": "https://www.youtube.com/embed/4zAT3TPMGU4"
+}, {
+    "subject": "Bài tập lớp trừu tượng (Quản lý danh sách hình bất kỳ)",
+    "embeded_link": "https://www.youtube.com/embed/--z3wwSh1uM"
+}, {
+    "subject": "Bài tập lớp trừu tượng (Game đặt bom)",
+    "embeded_link": "https://www.youtube.com/embed/JsnOAnx5Q7E"
+}]

@@ -18,7 +18,7 @@ const loadCategories = (id="#categoryId") => {
             if ('sub' in d) {
                 let temp = ""
                 d['sub'].forEach(s => {
-                    temp += `<a class="dropdown-item" href="#${s.rel}" rel=${s.rel}>${s.name}</a>`
+                    temp += `<a class="dropdown-item" href="#${s.rel}" rel=${s.rel}><i class="fas fa-edit"></i> ${s.name}</a>`
                 })
 
                 msg += `
@@ -67,7 +67,7 @@ const loadPost = (postType, id=contentId) => {
         let lessons = ""
         data.forEach(d => {
             lessons += `
-                <li class='list-group-item'><a class="post" href="javascript:;" rel="${d.file}">${d.subject}</a></li>
+                <li class='list-group-item'><i class="fas fa-edit"></i> <a class="post" href="javascript:;" rel="${d.file}">${d.subject}</a></li>
             `
         })
         $("#popupId").html(`
