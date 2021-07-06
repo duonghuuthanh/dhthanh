@@ -53,7 +53,7 @@
 
 <h3><strong>Static Files</strong></h3>
 
-<p>Tạo thư mục <strong><code>demoapp/static</code></strong>,&nbsp;đ&acirc;y l&agrave; thư mục mặc định flask t&igrave;m c&aacute;c t&agrave;i nguy&ecirc;n ứng dụng Web như css, js, h&igrave;nh ảnh, &acirc;m thanh.&nbsp;Ta c&oacute; thể thay đổi điều n&agrave;y bằng c&aacute;ch thiết lập vị tr&iacute; thư mục chứa template cho biến&nbsp;<strong><code>app.static_folder</code></strong>.&nbsp;</p>
+<p>Tạo thư mục <strong><code>demoapp/static</code></strong>,&nbsp;đ&acirc;y l&agrave; thư mục mặc định flask t&igrave;m c&aacute;c t&agrave;i nguy&ecirc;n ứng dụng Web như css, js, h&igrave;nh ảnh, &acirc;m thanh.&nbsp;Ta c&oacute; thể thay đổi điều n&agrave;y bằng c&aacute;ch thiết lập vị tr&iacute; thư mục chứa tài nguyên cho biến&nbsp;<strong><code>app.static_folder</code></strong>.&nbsp;</p>
 
 <p>Trong thư mục n&agrave;y tạo tập tin <strong><code>style.css</code></strong> c&oacute; nội dung như sau:</p>
 

@@ -250,7 +250,7 @@ const loadLessonsHome = (id=contentId, lessons) => {
     loadHomePage()
 }
 
-const loadCarousel = (id="#myBanner", path="images/home/friends/", num=22) => {
+const loadCarousel = (id="#myBanner", path="images/home/friends/", num=24) => {
     let indicators = ""
     let items = ""
     for (let i = 0; i < num; i++) {
@@ -354,5 +354,13 @@ $(document).ready(() => {
         fetch(`${DOMAIN}/${path}`).then(res => res.text()).then((data) => {
             $(contentId).html(data)
         })
+    })
+
+    $(window).scroll(function() {
+        if ($(this).scrollTop() >= 200) {
+            $("#popupId").css("top", 0)
+        } else {
+            $("#popupId").css("top", "inherit")
+        }
     })
 })

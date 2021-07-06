@@ -1,6 +1,6 @@
 <h1 class="text-center text-danger"><strong>GIAO TIẾP GIỮA VIEWS V&Agrave; TEMPLATE</strong></h1>
 
-<h3><strong>Request Params</strong></h3>
+<h3><strong>Query Params</strong></h3>
 
 <p>Giả sử trong&nbsp;<code>/hello</code> cho ph&eacute;p truyền 2 tham số dạng request params như sau <strong><code>/hello?first_name=&amp;last_name=</code></strong>. Thuộc t&iacute;nh <code>request.args</code> chứa danh s&aacute;ch tham số truyền tr&ecirc;n url, ta lấy gi&aacute; trị hai tham số n&agrave;y trong views như sau:</p>
 

@@ -1,5 +1,8 @@
+#contentId > h1 {
+    font-size: 2rem !important;
+}
+
 div.card {
-   
     padding: 0;
 }
 
@@ -77,6 +80,19 @@ div.note:hover {
     width: 15%;
 }
 
+#popupId > ul {
+    max-height: 500px;
+    overflow: auto;
+}
+
+.dropdown-menu {
+    max-width: 20rem !important;
+    min-width: 16rem !important;
+}
+
+.dropdown-menu a {
+    white-space: normal !important;
+}
 
 
 @media screen and (max-width: 1500px) {
