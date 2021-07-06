@@ -81,7 +81,7 @@ div.note:hover {
 }
 
 #popupId > ul {
-    max-height: 500px;
+    max-height: 650px;
     overflow: auto;
 }
 
@@ -122,6 +122,10 @@ div.note:hover {
 }
 
 @media screen and (max-width: 600px) {
+    #popupId > ul {
+        max-height: 500px !important;
+    }
+
     #popupId {
         width: 60%;
         left:-60%;
