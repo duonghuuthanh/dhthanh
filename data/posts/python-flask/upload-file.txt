@@ -1,0 +1,93 @@
+<h1 class="text-center text-danger"><strong>UPLOAD TẬP TIN</strong></h1>
+
+<p>Để thực hiện upload tập tin l&ecirc;n server th&igrave; form phải khai b&aacute;o <code>enctype=multipart/form-data</code>. Thuộc t&iacute;nh <code>files</code> của đối tượng request chứa dữ liệu (kiểu dictionary) tập tin được gửi l&ecirc;n server. Phương thức <code>save()</code> cho ph&eacute;p lưu trữ tập tin v&agrave;o hệ thống tập tin tr&ecirc;n server.</p>
+
+<p>Tạo tập tin <code>templates/upload.html</code> như sau:</p>
+
+<table border="1" cellpadding="5" cellspacing="0" style="border-collapse:collapse; width:100%">
+	<tbody>
+		<tr>
+			<td><code>&lt;!DOCTYPE html&gt;<br />
+			&lt;html&gt;<br />
+			&nbsp; &lt;head&gt;<br />
+			&nbsp; &nbsp; &lt;title&gt;Login&lt;/title&gt;<br />
+			&nbsp; &lt;/head&gt;<br />
+			&nbsp; &lt;body&gt;<br />
+			&nbsp; &nbsp; {% if err_msg %}<br />
+			&nbsp; &nbsp; &nbsp; &lt;p style=&quot;color:red&quot;&gt;{{ err_msg }}&lt;/p&gt;<br />
+			&nbsp; &nbsp; {% endif %}<br />
+			&nbsp; &nbsp;&lt;form method=&quot;post&quot; action=&quot;{{ url_for(&#39;upload&#39;) }}&quot; <strong>enctype=&quot;multipart/form-data&quot;</strong>&gt;<br />
+			&nbsp; &nbsp; &nbsp; &lt;input type=&quot;file&quot; name=&quot;my_file&quot; /&gt;<br />
+			&nbsp; &nbsp; &nbsp; &lt;input type=&quot;submit&quot; value=&quot;Upload&quot; /&gt;<br />
+			&nbsp; &nbsp;&lt;/form&gt;<br />
+			&nbsp; &lt;/body&gt;<br />
+			&lt;/html&gt;</code></td>
+		</tr>
+	</tbody>
+</table>
+
+<p>Bổ sung phương thức xử l&yacute; upload trong tập tin <code>index.py</code> như sau:</p>
+
+<table border="1" cellpadding="5" cellspacing="0" style="border-collapse:collapse; width:100%">
+	<tbody>
+		<tr>
+			<td>
+			<p><code>@app.route(&#39;/upload&#39;, methods=[&#39;get&#39;, &#39;post&#39;])<br />
+			def upload():<br />
+			&nbsp; err_msg = &quot;&quot;<br />
+			&nbsp; if request.method == &#39;POST&#39;:<br />
+			&nbsp; &nbsp; &nbsp; f = request.files.get(&#39;my_file&#39;)<br />
+			&nbsp; &nbsp; if f:<br />
+			&nbsp; &nbsp; &nbsp; f = request.files[&#39;my_file&#39;]<br />
+			&nbsp; &nbsp; &nbsp; f.save(&#39;static/uploads/%s&#39; % f.filename)<br />
+			&nbsp; &nbsp; else:<br />
+			&nbsp; &nbsp; &nbsp; err_msg = &#39;Please choose the file!&#39;</code></p>
+
+			<p><code>&nbsp; return render_template(&#39;upload.html&#39;, err_msg=err_msg)</code></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>Ta c&oacute; thể sử dụng thuộc t&iacute;nh cấu h&igrave;nh&nbsp;<code>MAX_CONTENT_LENGTH</code> để chỉ định dung lượng tối đa được upload, chẳng hạn trong v&iacute; dụ sau quy định dung lượng tối đa được upload l&agrave; 2MB.</p>
+
+<table border="1" cellpadding="5" cellspacing="0" style="border-collapse:collapse; width:100%">
+	<tbody>
+		<tr>
+			<td>
+			<p><code>app = Flask(__name__)<br />
+			<strong>app.config[&#39;MAX_CONTENT_LENGTH&#39;] = 2 * 1024 * 1024</strong></code></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>Kiểm tra loại tập tin được upload, chẳng hạn v&iacute; dụ sau chỉ cho ph&eacute;p tập tin pdf v&agrave; docx.</p>
+
+<table border="1" cellpadding="5" cellspacing="0" style="border-collapse:collapse; width:100%">
+	<tbody>
+		<tr>
+			<td>
+			<p><code>import os</code></p>
+
+			<p><code>@app.route(&#39;/upload&#39;, methods=[&#39;get&#39;, &#39;post&#39;])<br />
+			def upload():<br />
+			&nbsp; err_msg = &quot;&quot;<br />
+			&nbsp; if request.method == &#39;POST&#39;:<br />
+			&nbsp; &nbsp; &nbsp; f = request.files.get(&#39;my_file&#39;)<br />
+			&nbsp; &nbsp; if f:<br />
+			&nbsp; &nbsp; &nbsp; file_ext = os.path.splitext(f.filename)[1]<br />
+			&nbsp; &nbsp; &nbsp; if file_ext in [&#39;.pdf&#39;, &#39;.docx&#39;]:<br />
+			&nbsp; &nbsp; &nbsp; &nbsp; f = request.files[&#39;my_file&#39;]<br />
+			&nbsp; &nbsp; &nbsp; &nbsp; f.save(&#39;static/uploads/%s&#39; % f.filename)<br />
+			&nbsp; &nbsp; &nbsp; else:<br />
+			&nbsp; &nbsp; &nbsp; &nbsp; err_msg = &#39;The file type is invalid!&#39;<br />
+			&nbsp; &nbsp; else:<br />
+			&nbsp; &nbsp; &nbsp; err_msg = &#39;Please choose the file!&#39;</code></p>
+
+			<p><code>&nbsp; return render_template(&#39;upload.html&#39;, err_msg=err_msg)</code></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<br>

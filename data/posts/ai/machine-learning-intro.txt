@@ -1,0 +1,25 @@
+<h1 class="text-center text-danger"><strong>TỔNG QUAN M&Aacute;Y HỌC (MACHINE LEARNING)</strong></h1>
+
+<h3><strong>KH&Aacute;I NIỆM</strong></h3>
+
+<p>Cho trước một tập dữ liệu đ&atilde; được g&aacute;n nh&atilde;n, c&aacute;c thuật to&aacute;n m&aacute;y học sẽ học từ tập dữ liệu n&agrave;y (training) v&agrave; đưa ra một dự đo&aacute;n cho một dữ liệu đầu v&agrave;o mới (predict) để g&aacute;n cho dữ liệu mới n&agrave;y một nh&atilde;n trong c&aacute;c nh&atilde;n đ&atilde; học.</p>
+
+<h3><strong>PH&Acirc;N LOẠI C&Aacute;C PHƯƠNG PH&Aacute;P HỌC</strong></h3>
+
+<p>Học gi&aacute;m s&aacute;t (supervised learning): c&aacute;c thuật to&aacute;n học gi&aacute;m s&aacute;t dựa tr&ecirc;n một bộ dữ liệu đ&atilde; đước g&aacute;n nh&atilde;n (gọi l&agrave; dữ liệu huấn luyện: training data) để dự đo&aacute;n đầu ra cho c&aacute;c dữ liệu mới. Nh&oacute;m n&agrave;y được chia l&agrave;m hai b&agrave;i to&aacute;n nhỏ<br />
+-&nbsp;&nbsp; &nbsp;Nếu dữ liệu đầu ra l&agrave; c&aacute;c gi&aacute; trị li&ecirc;n tục, ta c&oacute; b&agrave;i to&aacute;n hồi quy (regression).<br />
+-&nbsp;&nbsp; &nbsp;Nếu dữ liệu đầu ra l&agrave; c&aacute;c gi&aacute; trị rời rạc, ta c&oacute; b&agrave;i to&aacute;n ph&acirc;n lớp (classification).<br />
+Học kh&ocirc;ng gi&aacute;m s&aacute;t (unsupervised learning): c&aacute;c thuật to&aacute;n học kh&ocirc;ng gi&aacute;m s&aacute;t kh&ocirc;ng cần bộ dữ liệu g&aacute;n nh&atilde;n đầu v&agrave;o, m&agrave; n&oacute; dựa tr&ecirc;n cấu tr&uacute;c của dữ liệu để hoạt . Nh&oacute;m n&agrave;y chia l&agrave;m hai b&agrave;i to&aacute;n nhỏ<br />
+-&nbsp;&nbsp; &nbsp;Gom cụm (clustering): từ bộ dữ liệu ban đầu ph&acirc;n chia th&agrave;nh c&aacute;c nh&oacute;m dựa tr&ecirc;n mức độ li&ecirc;n quan c&aacute;c dữ liệu trong nh&oacute;m.<br />
+-&nbsp;&nbsp; &nbsp;Association: t&igrave;m một quy luật dựa tr&ecirc;n dữ liệu cho trước.<br />
+Học b&aacute;n gi&aacute;m s&aacute;t (semi-supervised learning): chỉ một phần nhỏ trong dữ liệu huấn luyện được g&aacute;n nh&atilde;n.<br />
+Học tăng cường (reinforcement learning): gi&uacute;p m&aacute;y t&iacute;nh tự động x&aacute;c định h&agrave;nh vi dựa tr&ecirc;n ngữ cảnh của b&agrave;i to&aacute;n.</p>
+
+<h3><strong>B&Agrave;I TO&Aacute;N PH&Acirc;N LỚP (CLASSIFICATION)</strong></h3>
+
+<p>Bài toán phân lớp (classification) là bài toán có nhiều ứng dụng rộng rãi trong lĩnh vực máy học, xử lý ngôn ngữ tự nhiên, … nhằm mục đích gán nhãn (lớp, danh mục) cho một tài liệu từ một tập các nhãn. Một cách hình thức, ta có N tài liệu D = {d<sub>1</sub>, d<sub>2</sub>, …, d<sub>N</sub>}, và môt tập gồm k nhãn được định nghĩa trước C = {c<sub>1</sub>, c<sub>2</sub>, …, c<sub>k</sub>}, một ánh xạ F:D×C→{true,false} gọi là bộ phân lớp (classifier). Cho d<sub>i</sub>∈D,c<sub>j</sub>∈C, nếu F(d<sub>i</sub>, c<sub>j</sub>) = true thì tài liệu d<sub>i</sub> có nhãn c<sub>j</sub> (hay tài liệu d<sub>i</sub> thuộc danh mục c<sub>j</sub>), ngược lại thì không.</p>
+<p>Bài toán  phân lớp được chia thành nhiều bài toán con khác</p>
+<p>- Binary classification: tập C chỉ có 2 nhãn.<br>
+- Multi-class classification: tập C có nhiều hơn 2 nhãn. <br>
+- Multi-label classification: một tài liệu có thể được gán hơn 1 nhãn.</p>
+

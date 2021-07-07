@@ -16,8 +16,8 @@
     "order": 4
 }, {
     "subject": "Tổng quan máy học (machine learning)",
-    "file": "",
-    "order": 4
+    "file": "data/posts/ai/machine-learning-intro.txt",
+    "order": 5
 }, {
     "subject": "Không gian vector",
     "file": "",

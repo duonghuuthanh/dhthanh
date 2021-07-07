@@ -12,7 +12,7 @@
     "order": 3
 }, {
     "subject": "Upload tập tin",
-    "file": "",
+    "file": "data/posts/python-flask/upload-file.txt",
     "order": 4
 }, {
     "subject": "Làm việc với SQLite",
