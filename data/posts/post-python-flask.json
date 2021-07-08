@@ -16,7 +16,7 @@
     "order": 4
 }, {
     "subject": "Làm việc với SQLite",
-    "file": "",
+    "file": "data/posts/python-flask/sqlite.txt",
     "order": 5
 }, {
     "subject": "Làm việc với SqlAlchemy",

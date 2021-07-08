@@ -1,6 +1,8 @@
 <h1 class="text-center text-danger"><strong>UPLOAD TẬP TIN</strong></h1>
 
-<p>Để thực hiện upload tập tin l&ecirc;n server th&igrave; form phải khai b&aacute;o <code>enctype=multipart/form-data</code>. Thuộc t&iacute;nh <code>files</code> của đối tượng request chứa dữ liệu (kiểu dictionary) tập tin được gửi l&ecirc;n server. Phương thức <code>save()</code> cho ph&eacute;p lưu trữ tập tin v&agrave;o hệ thống tập tin tr&ecirc;n server.</p>
+<p>Để thực hiện upload tập tin l&ecirc;n server th&igrave; form phải khai b&aacute;o <code>enctype=multipart/form-data</code>.&nbsp;<br />
+Thuộc t&iacute;nh <code>files</code> của đối tượng request chứa dữ liệu (kiểu dictionary) tập tin được gửi l&ecirc;n server.&nbsp;<br />
+Phương thức <code>save()</code> cho ph&eacute;p lưu trữ tập tin v&agrave;o hệ thống tập tin tr&ecirc;n server.</p>
 
 <p>Tạo tập tin <code>templates/upload.html</code> như sau:</p>
 
@@ -61,6 +63,10 @@
 		</tr>
 	</tbody>
 </table>
+
+<p>Khi upload tập tin vượt qu&aacute; 2MB sẽ thấy lỗi như sau:</p>
+
+<p><img alt="t" src="images/lessons/2021/07/08/screen-shot-2021-07-07-at-82918-pm.png" style="width:40%" /></p>
 
 <p>Kiểm tra loại tập tin được upload, chẳng hạn v&iacute; dụ sau chỉ cho ph&eacute;p tập tin pdf v&agrave; docx.</p>
 

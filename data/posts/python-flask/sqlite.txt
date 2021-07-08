@@ -1,0 +1,59 @@
+<h1 class="text-center text-danger"><strong>L&Agrave;M VIỆC SQLITE</strong></h1>
+
+<p>SQLite được viết bằng ANSI-C, l&agrave;m việc được tr&ecirc;n nhiều hệ điều h&agrave;nh như Linux, MacOS, Windows. SQLite hoạt động kh&ocirc;ng cần c&oacute; server, kh&ocirc;ng cần cấu h&igrave;nh, c&agrave;i đặt hay quản trị v&agrave; c&oacute; đầy đủ c&aacute;c thuộc t&iacute;nh ACID, hỗ trợ ng&ocirc;n ngữ truy vấn chuẩn SQL. Để c&oacute; thể dễ d&agrave;ng tương t&aacute;c cơ sở dữ lieu SQLite ta c&oacute; thể c&agrave;i c&ocirc;ng cụ SQLiteStudio: https://sqlitestudio.pl/index.rvt</p>
+
+<h3>
+<strong>C&aacute;c bước l&agrave;m việc SQLite</strong></h3>
+
+<p>- Import thư viện sqlite3: import sqlite3</p>
+
+<p>- Thiết lập kết nối đến cơ sở dữ liệu: conn = sqlite3.connect(&lt;sqlite_path&gt;). Ch&uacute; &yacute;: khi kết nối nếu chưa c&oacute; cơ sở dữ liệu chỉ định th&igrave; n&oacute; sẽ được tạo ra.</p>
+
+<p>- Thực thi truy vấn bằng phương thức execute(): conn.execute(sql_query)</p>
+
+<h3><strong>C&aacute;c v&iacute; dụ</strong></h3>
+
+<p>V&iacute; dụ ch&egrave;n một d&ograve;ng dữ liệu v&agrave;o b&agrave;ng product</p>
+
+<table border="1" cellpadding="5" cellspacing="0" style="border-collapse:collapse; width:100%">
+	<tbody>
+		<tr>
+			<td>
+			<p><code>conn = sqlite3.connect(&quot;data/sale.db&quot;)<br />
+			sql = &quot;&quot;&quot;<br />
+			INSERT INTO product(name, price, category_id) VALUES(?, ?, ?)<br />
+			&quot;&quot;&quot;</code></p>
+
+			<p><code>if conn.execute(sql, (&#39;iPhone 7 Plus&#39;, 17, 1)):<br />
+			&nbsp; &nbsp; print(&quot;Add successful&quot;)</code></p>
+
+			<p><code>conn.commit()<br />
+			conn.close()</code></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>V&iacute; dụ lấy danh s&aacute;ch tất cả c&aacute;c sản phẩm, y&ecirc;u cầu hiển thị th&ocirc;ng tin m&atilde; sản phẩm, t&ecirc;n sản phẩm, gi&aacute; b&aacute;n v&agrave; t&ecirc;n danh mục c&oacute; gi&aacute; lớn hơn 25.</p>
+
+<table border="1" cellpadding="5" cellspacing="0" style="border-collapse:collapse; width:100%">
+	<tbody>
+		<tr>
+			<td>
+			<p><code>conn = sqlite3.connect(&quot;data/sale.db&quot;)<br />
+			sql = &quot;&quot;&quot;<br />
+			&nbsp;&nbsp; &nbsp;SELECT P.id, P.name, P.price, C.name<br />
+			&nbsp;&nbsp; &nbsp;FROM product P INNER JOIN category C ON C.id = P.category_id<br />
+			&nbsp;&nbsp; &nbsp;WHERE P.price &gt; ?<br />
+			&quot;&quot;&quot;<br />
+			cursor = conn.execute(sql, (25, ))<br />
+			for row in cursor:<br />
+			&nbsp; &nbsp; print(row)</code></p>
+
+			<p><code>conn.close()</code></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<br>
+<p><img src="images/lessons/2021/07/08/image.png" style="width:40%" /></p>
