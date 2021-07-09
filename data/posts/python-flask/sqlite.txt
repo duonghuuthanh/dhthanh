@@ -5,11 +5,11 @@
 <h3>
 <strong>C&aacute;c bước l&agrave;m việc SQLite</strong></h3>
 
-<p>- Import thư viện sqlite3: import sqlite3</p>
+<p>- Import thư viện sqlite3: <code>import sqlite3</code></p>
 
-<p>- Thiết lập kết nối đến cơ sở dữ liệu: conn = sqlite3.connect(&lt;sqlite_path&gt;). Ch&uacute; &yacute;: khi kết nối nếu chưa c&oacute; cơ sở dữ liệu chỉ định th&igrave; n&oacute; sẽ được tạo ra.</p>
+<p>- Thiết lập kết nối đến cơ sở dữ liệu: <code>conn = sqlite3.connect(&lt;sqlite_path&gt;)</code>. Ch&uacute; &yacute;: khi kết nối nếu chưa c&oacute; cơ sở dữ liệu chỉ định th&igrave; n&oacute; sẽ được tạo ra.</p>
 
-<p>- Thực thi truy vấn bằng phương thức execute(): conn.execute(sql_query)</p>
+<p>- Thực thi truy vấn bằng phương thức execute(): <code>conn.execute(sql_query)</code></p>
 
 <h3><strong>C&aacute;c v&iacute; dụ</strong></h3>
 

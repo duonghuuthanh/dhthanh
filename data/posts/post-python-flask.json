@@ -20,7 +20,7 @@
     "order": 5
 }, {
     "subject": "Làm việc với SqlAlchemy",
-    "file": "",
+    "file": "data/posts/python-flask/sqlalchemy.txt",
     "order": 6
 }, {
     "subject": "Xây dựng các trang quản trị",

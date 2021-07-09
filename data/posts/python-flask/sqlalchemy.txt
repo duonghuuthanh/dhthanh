@@ -1,0 +1,213 @@
+<h1 class="text-center text-danger"><strong>L&Agrave;M VIỆC SQLALCHEMY</strong></h1>
+
+<p>SqlAchemy l&agrave; một c&ocirc;ng cụ Python, sử dụng kỹ thuật ORM tương t&aacute;c với cơ sở dữ liệu.&nbsp;ORM (Object-Relational Mapping) l&agrave; một kỹ thuật lập tr&igrave;nh chuyển dữ liệu giữa c&aacute;c cơ cở dữ liệu quan hệ v&agrave; c&aacute;c ng&ocirc;n ngữ lập tr&igrave;nh hướng đối tượng như Python, Java, C#, v.v.&nbsp;</p>
+
+<p><img src="images/lessons/2021/07/09/image.png" style="width:70%" /></p>
+
+<p>Để sử dụng SqlAchemy trong ứng dụng flask ta c&agrave;i extension flask-sqlalchemy: <code>pip install flask-sqlalchemy</code></p>
+
+<h3><strong>Cấu h&igrave;nh th&ocirc;ng tin kết nối</strong></h3>
+
+<p>Khi l&agrave;m việc SqlAlchemy, ta cần cấu h&igrave;nh c&aacute;c th&ocirc;ng tin sau trong app.config:</p>
+
+<p>SQLALCHEMY_DATABASE_URI<br />
+- mysql://username:password@server/db<br />
+- postgresql://scott:tiger@localhost/mydatabase<br />
+- oracle://scott:tiger@127.0.0.1:1521/sidname<br />
+- sqlite:///absolute/path/to/foo.db<br />
+SQLALCHEMY_ENGINE_OPTIONS</p>
+
+<p>Trong c&aacute;c v&iacute; dụ tiếp theo ta sẽ tương t&aacute;c với cơ sở dữ liệu MySQL, n&ecirc;n ta c&agrave;i thư viện pymysql l&agrave;m driver tương t&aacute;c mysql: <code>pip install pymysql</code></p>
+
+<p>Cấu h&igrave;nh kết nối MySQL</p>
+
+<table border="1" cellpadding="5" cellspacing="0" style="border-collapse:collapse; width:100%">
+	<tbody>
+		<tr>
+			<td>
+			<p><code>from flask import Flask<br />
+			from flask_sqlalchemy import SQLAlchemy</code></p>
+
+			<p><code>app = Flask(__name__)<br />
+			app.config[&quot;<strong>SQLALCHEMY_DATABASE_URI</strong>&quot;] = &quot;mysql+pymysql://user:password@localhost/flashsaledb?charset=utf8mb4&quot;<br />
+			app.config[&quot;<strong>SQLALCHEMY_TRACK_MODIFICATIONS</strong>&quot;] = True</code></p>
+
+			<p><code>db = SQLAlchemy(app)</code></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<h3><strong>Tạo c&aacute;c lớp Model</strong></h3>
+
+<p>C&aacute;c lớp model l&agrave; c&aacute;c lớp đại diện cho c&aacute;c bảng dưới CSDL v&agrave; l&agrave; nơi ch&iacute;nh tương t&aacute;c trực tiếp CSDL.<br />
+- Lớp cơ sở của c&aacute;c lớp model l&agrave; db.Model.<br />
+- T&ecirc;n bảng mặc định sẽ lấy t&ecirc;n lớp chuyển th&agrave;nh c&aacute;c k&yacute; tự thường (lowercase), để chỉ định t&ecirc;n bảng sử dụng thuộc t&iacute;nh <code>__tablename__</code> trong lớp model.<br />
+- Để tạo cơ sở dữ liệu đ&atilde; thiết lập thực thi lệnh: <code>db.create_all()</code></p>
+
+<p>V&iacute; dụ taọ hai model Category v&agrave; Product tương ứng hai bảng CSDL l&agrave; category v&agrave; product, để &yacute; c&aacute;ch thức khai b&aacute;o kho&aacute; ngoại th&ocirc;ng qua ForeignKey.</p>
+
+<table border="1" cellpadding="5" cellspacing="0" style="border-collapse:collapse; width:100%">
+	<tbody>
+		<tr>
+			<td>
+			<p><code>from sqlalchemy import Column, Integer, String, Float, ForeignKey<br />
+			from sqlalchemy.orm import relationship<br />
+			from flask_sqlalchemy import SQLAlchemy</code></p>
+
+			<p><code>db = SQLAlchemy(app)</code></p>
+
+			<p><code>class Category(db.Model):<br />
+			&nbsp; &nbsp; __tablename__ = &#39;category&#39;<br />
+			&nbsp; &nbsp;&nbsp;<br />
+			&nbsp; &nbsp; id = Column(Integer, primary_key=True, autoincrement=True)<br />
+			&nbsp; &nbsp; name = Column(String(50), nullable=False)<br />
+			&nbsp; &nbsp; products = relationship(&#39;Product&rsquo;,&nbsp;<br />
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; backref=&#39;category&#39;, lazy=True)</code></p>
+
+			<p><code>class Product(db.Model):<br />
+			&nbsp; &nbsp; __tablename__ = &#39;product&#39;</code></p>
+
+			<p><code>&nbsp; &nbsp; id = Column(Integer, primary_key=True, autoincrement=True)<br />
+			&nbsp; &nbsp; name = Column(String(50), nullable=False)<br />
+			&nbsp; &nbsp; price = Column(Float, default=0)<br />
+			&nbsp; &nbsp; category_id = Column(Integer,&nbsp;<br />
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;ForeignKey(Category.id), nullable=False)</code></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>V&iacute; dụ thiết lập quan hệ ManyToMany</p>
+
+<table border="1" cellpadding="5" cellspacing="0" style="border-collapse:collapse; width:100%">
+	<tbody>
+		<tr>
+			<td>
+			<p><code>prod_manufactuer = db.Table(&#39;prod_manufactuer&#39;, Column(&#39;product_id&#39;, Integer, ForeignKey(&#39;product.id&rsquo;),&nbsp;primary_key=True), Column(&#39;manufacturer_id&#39;, Integer, ForeignKey(&#39;manufacturer.id&#39;), primary_key=True))</code></p>
+
+			<p><br />
+			<code>class Product(db.Model):<br />
+			&nbsp;&nbsp; &nbsp;...<br />
+			&nbsp;&nbsp; &nbsp;<strong>manufacturers = relationship(&#39;Manufacturer&#39;,&nbsp;<br />
+			&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; secondary=&#39;prod_manufactuer&rsquo;,<br />
+			&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; lazy=&#39;subquery&#39;,&nbsp;<br />
+			&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; backref=backref(&#39;products&#39;, lazy=True))</strong></code></p>
+
+			<p><code>class Manufacturer(db.Model):<br />
+			&nbsp;&nbsp; &nbsp;__tablename__ = &#39;manufacturer&#39;</code></p>
+
+			<p><code>&nbsp;&nbsp; &nbsp;id = Column(Integer, primary_key=True, autoincrement=True)<br />
+			&nbsp;&nbsp; &nbsp;name = Column(String(50), nullable=False)<br />
+			&nbsp;&nbsp; &nbsp;country = Column(String(50), nullable=False)</code></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<h3><strong>Minh hoạ một số truy vấn</strong></h3>
+
+<p>Th&ecirc;m dữ liệu</p>
+
+<table border="1" cellpadding="5" cellspacing="0" style="border-collapse:collapse; width:100%">
+	<tbody>
+		<tr>
+			<td>
+			<p><code><strong># Th&ecirc;m d&ograve;ng v&agrave;o bảng category</strong><br />
+			c = Category(name=&quot;Mobile Phone&quot;)<br />
+			db.session.add(c)<br />
+			db.session.commit()<br />
+			<strong># Th&ecirc;m d&ograve;ng v&agrave;o bảng manufacturer</strong><br />
+			m = Manufacturer(name=&quot;Apple&quot;, country=&quot;America&quot;)<br />
+			db.session.add(m)<br />
+			db.session.commit()<br />
+			<strong># Th&ecirc;m d&ograve;ng v&agrave;o bảng product</strong><br />
+			p = Product(name=&quot;iPhone 7&quot;, price=18, category=c)<br />
+			p.manufacturers.add(m)<br />
+			p.manufacturers.append(m)<br />
+			db.session.add(p)<br />
+			db.session.commit()</code></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>Cập nhật dữ liệu</p>
+
+<table border="1" cellpadding="5" cellspacing="0" style="border-collapse:collapse; width:100%">
+	<tbody>
+		<tr>
+			<td>
+			<p><code>p = Product.query.get(1)<br />
+			p.price = 22<br />
+			db.session.add(p)<br />
+			db.session.commit()</code></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>Xo&aacute; dữ liệu</p>
+
+<table border="1" cellpadding="5" cellspacing="0" style="border-collapse:collapse; width:100%">
+	<tbody>
+		<tr>
+			<td>
+			<p><code>p = Product.query.get(1)<br />
+			db.session.delete(p)<br />
+			db.session.commit()</code></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>Truy vấn dữ liệu</p>
+
+<table border="1" cellpadding="5" cellspacing="0" style="border-collapse:collapse; width:100%">
+	<tbody>
+		<tr>
+			<td>
+			<p><code>from sqlalchemy import or_</code></p>
+
+			<p><code># Lấy sản phẩm c&oacute; id = 1<br />
+			Product.query.get(1)</code></p>
+
+			<p><code># Lấy sản phẩm c&oacute; t&ecirc;n bắt đầu &lsquo;iPhone&rsquo;<br />
+			Product.query.filter(Product.name.startswith(&#39;iPhone&#39;)).all()</code></p>
+
+			<p><code># Lấy sản phẩm c&oacute; t&ecirc;n chứa từ &lsquo;galaxy&rsquo;<br />
+			Product.query.filter(Product.name.contains(&#39;galaxy&#39;)).all()</code></p>
+
+			<p><code># Lấy sản phẩm c&oacute; gi&aacute; &gt; 15 v&agrave; &lt; 20<br />
+			Product.query.filter(Product.price.__gt__(15), Product.price.__lt__(20)).order_by(Product.id).all()</code></p>
+
+			<p><code># T&igrave;m sản phẩm c&oacute; id=2 hoặc c&oacute; gi&aacute; &gt; 30<br />
+			Product.query.filter(or_(Product.id==2, Product.price.__gt__(30))).all()</code></p>
+
+			<p><code># T&igrave;m sản phẩm c&oacute; t&ecirc;n danh mục chứa từ &lsquo;mobile&rsquo;<br />
+			Product.query.join(Category, Product.category_id == Category.id).filter(Category.name.contains(&quot;mobile&quot;)).add_columns(Category.name).all()</code></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>Truy vấn thống k&ecirc; dữ liệu</p>
+
+<table border="1" cellpadding="5" cellspacing="0" style="border-collapse:collapse; width:100%">
+	<tbody>
+		<tr>
+			<td>
+			<p><code>from sqlalchemy import func</code></p>
+
+			<p><code># T&igrave;m sản phẩm c&oacute; gi&aacute; cao nhất<br />
+			db.session.query(func.max(Product.price)).first()</code></p>
+
+			<p><code># Đếm số lượng sản phẩm, gi&aacute; trunh b&igrave;nh từng danh mục<br />
+			db.session.query(Category.id, Category.name, func.count(Product.id).label(&#39;So Luong&rsquo;), func.avg(Product.price).label(&#39;Gia TB&#39;)).join(Product, Product.category_id == Category.id, isouter=True).group_by(Category.id, Category.name).all()</code></p>
+
+			<p><code># Ch&uacute; &yacute;: isouter = True -&gt;&nbsp;LEFT OUTER JOIN</code></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<br>
