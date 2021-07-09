@@ -1,6 +1,6 @@
 <h1 class="text-center text-danger"><strong>T&Igrave;M KIẾM HEURISTIC</strong></h1>
 
-<p>Theo Feigenbaum Feldman th&igrave; &quot;heuristic l&agrave; c&aacute;c qui tắc, phương ph&aacute;p, chiến lược, mẹo giải hay phương c&aacute;ch n&agrave;o đ&oacute; nhằm l&agrave;m giảm khối lượng t&igrave;m kiếm lời giải trong kh&ocirc;ng gian b&agrave;i to&aacute;n cực lớn&quot;. Heuristic l&agrave; phỏng đo&aacute;n, ước chừng dựa tr&ecirc;n trực gi&aacute;c v&agrave; kinh nghiệm. T&igrave;m kiếm kiểu Heuristic đ&ocirc;i l&uacute;c lại đưa ra kết quả kh&ocirc;ng tốt, thẩm ch&iacute; l&agrave; rất tồi.</p>
+<p>Theo Feigenbaum Feldman th&igrave; &quot;heuristic l&agrave; c&aacute;c qui tắc, phương ph&aacute;p, chiến lược, mẹo giải hay phương c&aacute;ch n&agrave;o đ&oacute; nhằm l&agrave;m giảm khối lượng t&igrave;m kiếm lời giải trong kh&ocirc;ng gian b&agrave;i to&aacute;n cực lớn&quot;. Heuristic l&agrave; phỏng đo&aacute;n, ước chừng dựa tr&ecirc;n trực gi&aacute;c v&agrave; kinh nghiệm. T&igrave;m kiếm kiểu Heuristic đ&ocirc;i l&uacute;c lại đưa ra kết quả kh&ocirc;ng tốt, thậm ch&iacute; l&agrave; rất tồi.</p>
 
 <h2><strong>H&agrave;m đ&aacute;nh gi&aacute;</strong></h2>
 
