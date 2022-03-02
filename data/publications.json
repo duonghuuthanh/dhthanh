@@ -88,4 +88,22 @@
     "authors": "Huu-Thanh Duong, Vinh Truong Hoang",
     "ref": "<strong>H. Duong</strong> and V. T. Hoang, “Data Augmentation Based on Color Features for Limited Training Texture Classification,” 2019 4th International Conference on Information Technology (InCIT), 2019, pp. 208-211, doi: 10.1109/INCIT.2019.8911934.",
     "order": 10
+}, {
+    "id": 11,
+    "subject": "The Impacts of the Contextual Substitutions in Vietnamese Micro-text Augmentation",
+    "abstract": "The deep learning models rely on a huge amount of annotated training data to learn multiple layers of the features or representations and also avoid overfitting. However, the annotated dataset is unavailable, especially for the low resource languages. Building them is a tedious, time-consuming and expensive task. Thus, data augmentation has been mentioned as a perfect approach to generate the annotated data from the limited data without user intervention. In this paper, we evaluate the importances and the impacts of the contextual words to enhance the training data based on a pre-trained model which we build based on the reviews extracting the e-commerce websites in Vietnamese. We experiment on the sentiment analysis problem to evaluate the effectiveness of our approach.",
+    "year": 2022,
+    "doi": "https://doi.org/10.1007/978-3-030-92942-8_3",
+    "authors": "Huu-Thanh Duong, Trung-Kiet Tran",
+    "ref": "<strong>Duong HT.</strong>, Tran TK. (2021) The Impacts of the Contextual Substitutions in Vietnamese Micro-text Augmentation. In: Cong Vinh P., Huu Nhan N. (eds) Nature of Computation and Communication. ICTCC 2021. Lecture Notes of the Institute for Computer Sciences, Social Informatics and Telecommunications Engineering, vol 408. Springer, Cham. https://doi.org/10.1007/978-3-030-92942-8_3",
+    "order": 11
+}, {
+    "id": 12,
+    "subject": "An Approach for Multiple Choice Question Answering System",
+    "abstract": "Multiple choice question (MCQ) system, which is a form of question answering system, includes a question, a set of choices and the correct answers from these choices. The rapidly growth of linguistics models improves natural language understanding and motivates the automatic systems in natural language processing. This paper proposes an approach based on the Language Model for MCQ system as incomplete questions in English tests. This not only reduces the burden of human experts to teach their students, but also is useful for self-studying the students. We perform many experiments to evaluate the effectiveness and achieve 85.45% accuracy for our proposal.",
+    "year": 2022,
+    "doi": "https://doi.org/10.1007/978-3-030-92942-8_7",
+    "authors": "Dinh-Huy Vo. Anh-Khoa Do-Vo, Tram-Anh Nguyen-Thi, Huu-Thanh Duong",
+    "ref": "Vo DH., Do-Vo AK., Nguyen-Thi TA., <strong>Duong HT.</strong> (2021) An Approach for Multiple Choice Question Answering System. In: Cong Vinh P., Huu Nhan N. (eds) Nature of Computation and Communication. ICTCC 2021. Lecture Notes of the Institute for Computer Sciences, Social Informatics and Telecommunications Engineering, vol 408. Springer, Cham. https://doi.org/10.1007/978-3-030-92942-8_7",
+    "order": 12
 }]
