@@ -9,7 +9,7 @@ const contentId = "#contentId"
 const loadCategories = (id="#categoryId") => {
     fetch(`${DOMAIN}/data/category.json`).then(res => res.json()).then(data => {
         let msg = ""
-        data.forEach(d => {
+        data.filter(d => d.active === 1).forEach(d => {
             // load for home
             if (d.id == 1 && 'sub' in d)
                 loadLessonsHome(contentId, d['sub'])
