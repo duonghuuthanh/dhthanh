@@ -3,6 +3,7 @@
     "name": "Bài viết",
     "rel": "course",
     "icon": "fas fa-book-reader",
+    "active": 1,
     "sub": [{
         "name": "Thiết kế Web",
         "image": "images/home/lessons/web-design.png",
@@ -28,6 +29,7 @@
     "id": 2,
     "name": "Video",
     "icon": "fas fa-photo-video",
+    "active": 0,
     "sub": [{
         "name": "Thiết kế Web",
         "rel": "video-web-design"
@@ -59,6 +61,7 @@
 }, {
     "id": 3,
     "name": "Công bố khoa học",
+    "active": 1,
     "rel": "publication",
     "icon": "fas fa-university"
 }, {
