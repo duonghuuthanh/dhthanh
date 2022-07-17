@@ -106,4 +106,13 @@
     "authors": "Dinh-Huy Vo. Anh-Khoa Do-Vo, Tram-Anh Nguyen-Thi, Huu-Thanh Duong",
     "ref": "Vo DH., Do-Vo AK., Nguyen-Thi TA., <strong>Duong HT.</strong> (2021) An Approach for Multiple Choice Question Answering System. In: Cong Vinh P., Huu Nhan N. (eds) Nature of Computation and Communication. ICTCC 2021. Lecture Notes of the Institute for Computer Sciences, Social Informatics and Telecommunications Engineering, vol 408. Springer, Cham. https://doi.org/10.1007/978-3-030-92942-8_7",
     "order": 12
+}, {
+    "id": 13,
+    "subject": "Data-driven Modeling and Dynamic Analysis of Complex Networks: Applications to Social Networks",
+    "abstract": "The annotated dataset is an essential requirement to develop an artificial intelligence (AI) system effectively and expect the generalization of the predictive models and to avoid overfitting. Lack of the training data is a big barrier so that AI systems can broaden in several domains which have no or missing training data. Building these datasets is a tedious and expensive task and depends on the domains and languages. This is especially a big challenge for low-resource languages. In this paper, we experiment and evaluate many various approaches on sentiment analysis problems so that they can still obtain high performances under limited training data. This paper uses the preprocessing techniques to clean and normalize the data and generate the new samples from the limited training dataset based on many text augmentation techniques such as lexicon substitution, sentence shuffling, back translation, syntax-tree transformation, and embedding mixup. Several experiments have been performed for both well-known machine learning-based classifiers and deep learning models. We compare, analyze, and evaluate the results to indicate the advantage and disadvantage points of the techniques for each approach. The experimental results show that the data augmentation techniques enhance the accuracy of the predictive models; this promises that smart systems can be applied widely in several domains under limited training data.",
+    "year": 2022,
+    "doi": "https://doi.org/10.1155/2022/3188449",
+    "authors": "Huu-Thanh Duong, Tram-Anh Nguyen-Thi,  and Vinh Truong Hoang",
+    "ref": "<strong>Huu-Thanh Duong</strong>, Tram-Anh Nguyen-Thi, Vinh Truong Hoang, Vietnamese Sentiment Analysis under Limited Training Data Based on Deep Neural Networks, Complexity, vol. 2022, Article ID 3188449, 14 pages, 2022. https://doi.org/10.1155/2022/3188449",
+    "order": 13
 }]
